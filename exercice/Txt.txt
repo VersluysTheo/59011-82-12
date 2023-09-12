@@ -1,0 +1,9 @@
+Position x initial => x = 0
+Position y initial => y = 0 
+
+
+If Arrow_left act => x-- ( position.x -= position.x )
+If Arrow_Right act => x++ ( position.x += position.x )
+
+If Arrow_Up act => y++ ( position.y += position.y )
+If Arrow_Down => y-- ( position.y -= position.y )

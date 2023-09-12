@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+}
+
+footer{
+    bottom: 0;
+}
+
+
+#carré{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+}
+
+#haut{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 60px ;
+}
+
+#bas{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 150px;
+}
+
+#gauche{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 240px ;
+}
+
+#droite{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 330px;
+}
+
+#haut, #bas, #droite, #gauche, p {
+    text-align: center;
+    color: white;
+    font: bold;
+}
