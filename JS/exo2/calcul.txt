@@ -1,0 +1,4 @@
+Quantite * Prix unitaire = Prix 
+
+
+Total = Somme des prix 

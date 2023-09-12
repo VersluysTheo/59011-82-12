@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+}
+
+footer{
+    bottom: 0;
+}
+
+
+#carre{
+    top: 0px;
+    left: 0px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+}
+
+#haut{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 60px ;
+}
+
+#bas{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 150px;
+}
+
+#gauche{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 240px ;
+}
+
+#droite{
+    height: 75px;
+    width: 75px;
+    background-color: grey;
+    position: absolute;
+    bottom: 2%;
+    margin-left: 330px;
+}
+
+#haut, #bas, #droite, #gauche,.fin, p {
+    text-align: center;
+    color: white;
+    font: bold;
+}
+
+/* Obstacles */
+
+.obst{
+    position: absolute;
+    background-color: red;
+}
+
+#obst1{
+    left: 0px;
+    top: 80px;
+    height: 25px;
+    width: 1200px;
+}
+
+#obst2{
+    left: 1200px;
+    top: 80px;
+    height: 600px;
+    width: 25px;
+}
+
+#obst3{
+    left: 350px;
+    top: 380px;
+    height: 25px;
+    width: 875px;
+}
+
+#obst4{
+    top: 200px;
+    left: 175px;
+    height: 600px;
+    width: 25px;
+}
+
+#obst5{
+    top: 200px;
+    left: 200px;
+    height: 25px;
+    width: 525px;
+}
+
+#obst6{
+    left: 0px;
+    top: 800px;
+    height: 25px;
+    width: 1225px;
+}
+
+#obst7{
+    top: 500px;
+    left: 750px;
+    height: 300px;
+    width: 25px;
+}
+
+#obst8{
+    top: 500px;
+    left: 850px;
+    height: 300px;
+    width: 25px;
+}
+
+#obst9{
+    top: 400px;
+    left: 600px;
+    height: 300px;
+    width: 25px;
+}
+
+#obst10{
+    top: 500px;
+    left: 350px;
+    height: 300px;
+    width: 25px;
+}
+
+#obst11{
+    top: 500px;
+    left: 450px;
+    height: 300px;
+    width: 25px;
+}
+
+/* Bonus */
+
+.bonus{
+    position: relative;
+    height: 25px;
+    width: 25px;
+}
+
+#bonus1{
+    left: 400px;
+    top: 700px;
+    background-color: blue;
+}
+
+#bonus2{
+    left: 800px;
+    top: 675px;
+    background-color: aqua;
+}
+
+/* Arrivé */
+
+.fin{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+}
+
+#fin{
+    left: 0;
+    top: 700px;
+    background-color: green;
+    opacity: 80%;
+}

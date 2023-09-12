@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exoform.css">
+    <title>Tristitude</title>
+</head>
+<body>
+    <div class="divform">
+        <form id="myForm" action="exoform.html" method="GET" enctype="multipart/form-data">
+            <div id="nom">
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" placeholder="Nom"
+                pattern="[A-za-z]*" 
+                title="">
+                <small></small>
+            </div>
+            <div id="numero">
+                <label for="numero">Numero</label>
+                <input type="tel" name="numero" id="numero" placeholder="Numero" 
+                pattern="0+([0-9]{9})" 
+                title="">
+                <small></small>
+            </div>
+            <div id="postal">
+                <label for="postal">Code Postal</label>
+                <input type="text" name="postal" id="postal" placeholder="Code postal" 
+                pattern="[0-9]{5}" 
+                title="">
+                <small></small>
+            </div>
+            <div id="email">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Mail"
+                pattern="[a-zA-Z0-9._\-]{1,50}@[a-zA-Z0-9]{1,50}.[a-zA-Z]{1,10}" 
+                title="">
+                <small></small>
+            </div>
+            <div id="motdp">
+                <label for="mdp">Mot de Passe</label>
+                <input type="password" name="mdp" id="mdp" placeholder="Mot de Passe"
+                pattern="[a-zA-Z0-9!@#$%^&*_=+\-].{12,}"
+                title="">
+                <small></small>
+            </div>
+            <div id="bouton" class="button">
+                <input id="submit" type="submit" value="Envoyer">
+            </div>
+        </form>
+    </div>
+</body>
+<script src="exoform.js"></script>
+</html>

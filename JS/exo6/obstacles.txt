@@ -1,0 +1,65 @@
+Qu'est qu'une collision ?
+
+Quand obj A rentre en contact avec obj B
+
+obj => height + width
+
+si height or width de Obj A = width de Obj B => collision
+
+
+ (Recherche si collision trouvé sur MDN)
+var rect1 = { x: 5, y: 5, width: 50, height: 50 };
+var rect2 = { x: 20, y: 10, width: 10, height: 10 };
+
+if (
+  rect1.x < rect2.x + rect2.width &&
+  rect1.x + rect1.width > rect2.x &&
+  rect1.y < rect2.y + rect2.height &&
+  rect1.height + rect1.y > rect2.y
+) {
+  // collision détectée !
+}
+
+// remplissage des valeurs =>
+
+if (5 < 30 && 55 > 20 && 5 < 20 && 55 > 10) {
+  // collision détectée !
+}
+
+
+// Methode Clement : if bottom de l'obstacle se fait toucher par le top du carré ==> collision
+pareil pour gauche obstacle qui touche la droite du carré et vice et versa 
+
+si plusieurs Obstacles => boucles
+
+
+
+// Methode Martine
+
+
+function deplace(dx, dy) {
+var styleCarre = window.getComputedStyle(leCarre,null);
+var widthCarre = parseInt(styleCarre.width);
+var heightCarre = parseInt(styleCarre.height);
+var topCarre = parseInt(styleCarre.top);
+var leftCarre = parseInt(styleCarre.left);
+
+var styleObst = window.getComputedStyle(document.getElementById('obst'), null);
+var widthObst = parseInt(styleObst.width);
+var heightObst = parseInt(styleObst.height);
+var topObst = parseInt(styleObst.top);
+var leftObst = parseInt(styleObst.left);
+console.log(styleCarre.x,styleCarre.y,styleCarre.width,styleCarre);
+console.log(styleObst.x,styleObst.y,styleObst.width,styleObst);
+
+if (detecObst(topObst, leftObst, widthObst, heightObst, topCarre + dy, leftCarre + dx, widthCarre, heightCarre)) {
+    leCarre.style.top = topCarre + dy + 'px';
+    leCarre.style.left = leftCarre + dx + 'px';
+}
+}
+
+
+
+// Recherche de Collision
+
+

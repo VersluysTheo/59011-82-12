@@ -1,0 +1,4 @@
+client.id -> customer_order.client_id
+
+customer_order.id -> order_line.order_id
+ 

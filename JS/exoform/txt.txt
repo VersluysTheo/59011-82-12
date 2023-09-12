@@ -1,0 +1,59 @@
+Première methode qui prend trop de temps et qui est compliqué a souahit
+
+
+
+// function verifNom(){
+//     if(myForm.nom.value == ""){
+//         console.log("Pas de nom");
+//         return false
+//     }
+//     return true;
+// }
+
+// function verifNumero(){
+//     if(myForm.numero.value == ""){
+//         console.log("Pas de numéro");
+//         return false;
+//     }
+//     return true;
+// }
+// function verifCodePostal(){
+//     if(myForm.postal.value == ""){
+//         console.log("Pas de code postal");
+//         return false;
+//     }
+//     return true;
+// }
+
+// function verifEmail(){
+//     if(myForm.email.value == ""){
+//         console.log("Pas de email");
+//         return false;
+//     }
+//     return true;
+// }
+
+// function verifMdp(){
+//     if(myForm.mdp.value == ""){
+//         console.log("Pas de mot de passe");
+//         return false;
+//     }
+//     return true;
+// }
+
+
+// function verifAll(event){
+//     if(myForm.nom.value !== "" && myForm.numero.value !== "" && myForm.postal.value !== "" && myForm.email.value !== "" && myForm.mdp.value !== ""){
+//         submitForm(event);
+//     }
+//     else{
+//         verifNom();
+//         verifNumero();
+//         verifCodePostal();
+//         verifEmail();
+//         verifMdp();
+//         event.preventDefault();
+//     }
+// };
+
+// butSubmit.addEventListener('click', verifAll);

@@ -1,0 +1,162 @@
+Position x initial => x = 0
+Position y initial => y = 0 
+
+
+If Arrow_left act => x-- ( position.x -= position.x )
+If Arrow_Right act => x++ ( position.x += position.x )
+
+If Arrow_Up act => y++ ( position.y += position.y )
+If Arrow_Down => y-- ( position.y -= position.y )
+
+
+
+position carré = position.carré + mouvement du carré
+
+
+
+positionCarre.x= position de la varibale positionCarre en abscisse => 0
+PositionCarre.y= position de la varibale positionCarre en ordonnées => 0
+
+
+
+
+eventpreventdefault pour empecher l'interaction quand on est en dehors de la page
+
+
+event.mouseup => lorsqu'on relache un click sur l'element sur lequel on a cliqué
+event.mousedown => Click + souris sur l'element
+event.mousemove => lorsqu'on met sur le curseur sur l'element qu'on a selectionné
+
+
+
+Nous on veut => Tant qu'on clique sur l'element on peut le bouger
+=> moueseup == arret 
+=> mousedown == possibilité de deplacer 
+
+tant qu'on est pas en mouse up on est en mousedown donc c'est bon
+
+
+Trouvez :
+-Comment recuperer la position du curseur (V)
+-Comment relié le curseur au carré
+
+
+La méthode Element.getBoundingClientRect() retourne un objet fournissant des informations sur la taille d'un élément et sa position relative par rapport à la zone d'affichage.
+
+
+
+
+
+
+
+Anciennes Methode ou tu te repète 
+
+// leCarre.addEventListener("mousedown", function(event) {
+//     xCurseur = event.clientX - bodySize.left;
+//     yCurseur = event.clientY - bodySize.top;
+//     xCarre = xCurseur;
+//     yCarre = yCurseur;
+//     leCarre.style.transform = `translate(${xCarre}px,${yCarre}px)`;
+//     console.log("Donc la tu tiens la position");
+//     console.log(xCarre,yCarre);
+// });
+
+// leCarre.addEventListener("mouseup", function() {
+//     console.log("et la tu as relaché");
+//     console.log(xCarre,yCarre);
+// });
+
+// leCarre.addEventListener("mousemove", function(event){
+//     xCurseur = event.clientX - bodySize.left;
+//     yCurseur = event.clientY - bodySize.top;
+//     xCarre = xCurseur;
+//     yCarre = yCurseur;
+//     leCarre.style.transform = `translate(${xCarre}px,${yCarre}px)`;
+// });
+
+
+
+
+// Solution Martine 
+
+// Souris
+
+var enfonce = false
+
+leCarre.addEventListener("mousedown", enfonceClic);
+document.addEventListener("mousemove", moveCurseur);
+document.addEventListener("mouseup", moveCarre);
+
+function enfonceClic(event) {
+    enfonce = true;
+    xDecalage = event.clientX - leCarre.style.left.substring(0, leCarre.style.left.length + 2);
+    yDecalage = event.clientY - leCarre.style.top.substring(0, leCarre.style.top.length + 2);
+    // console.log(xCarre,yCarre);
+    console.log("tu enfonces");
+}
+
+function moveCarre() {
+    enfonce = false;
+    // console.log(xCarre,yCarre);
+    console.log("tu relaches");
+}
+
+function moveCurseur(event) {
+    if (enfonce) {
+        // xCarre = xCurseur;
+        // yCarre = yCurseur;
+        leCarre.style.left = (event.clientX - xDecalage) + 'px';
+        leCarre.style.top = (event.clientY - yDecalage) + 'px';
+        // console.log(xCarre,yCarre);
+    }
+
+}
+
+
+
+
+
+
+
+
+// La mienne qui possède un curseur pas opti 
+
+// Souris
+
+let body = document.querySelector("body");
+let bodySize = body.getBoundingClientRect();
+let holdCurseur = 0;
+
+
+function moveCarre() {
+    holdCurseur = 0;
+    // xCurseur = event.clientX - bodySize.left;
+    // yCurseur = event.clientY - bodySize.top;
+    // xCarre = xCurseur;
+    // yCarre = yCurseur;
+    // leCarre.style.transform = `translate(${xCarre}px,${yCarre}px)`;
+    console.log(xCarre,yCarre);
+    console.log("tu relaches");
+}
+
+function moveCurseur(event) {
+    if (holdCurseur == 1) {
+        xCurseur = event.clientX - leCarre.style.left.substring(0, leCarre.style.left.length - 2);
+        yCurseur = event.clientY - leCarre.style.top.substring(0, leCarre.style.top.length - 2);
+        xCarre = xCurseur;
+        yCarre = yCurseur;
+        leCarre.style.transform = `translate(${xCarre}px,${yCarre}px)`;
+        console.log(xCarre,yCarre);
+    }
+
+}
+
+function enfonceClic() {
+    holdCurseur = 1;
+    console.log(xCarre,yCarre);
+    console.log("tu enfonces");
+}
+
+leCarre.addEventListener("mousedown", enfonceClic);
+document.addEventListener("mousemove", moveCurseur);
+document.addEventListener("mouseup", moveCarre);
