@@ -8,4 +8,16 @@ where
 	'hex')
 	and first_name = 'Muriel';
 
-select ol.last_name , count(co.reference) from customer_order co join order_line ol on co.id = ol.order_id group by ol.last_name having count(co.reference) > 1;
+select
+	ol.last_name ,
+	count(co.reference)
+from
+	customer_order co
+join order_line ol on
+	co.id = ol.order_id
+group by
+	ol.last_name
+having
+	count(co.reference) > 1;
+
+update order_line set total_price = quantity * unit_price ;
