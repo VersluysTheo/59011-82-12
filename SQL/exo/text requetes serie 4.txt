@@ -1,0 +1,7 @@
+item.id = sale_offer.item_id
+item.id = order_line.item_id
+
+supplier.id = sale_offer.supplier_id
+supplier.id = order.supplier_id
+
+order.id = order_line.order_id

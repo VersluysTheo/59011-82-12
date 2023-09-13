@@ -94,7 +94,7 @@ order by "Mois" ;
 
 
 alter table order_line
-add column categorie_commande int4 constraint ;
+add column categorie_commande int4 ;
 
 update order_line set categorie_commande = case 
 	when total_price < 200 then 1
@@ -102,5 +102,5 @@ update order_line set categorie_commande = case
 	when total_price >= 500 and total_price < 1000 then 3
 	when total_price >= 1000 then 4
 	else 0
-end;
+end ;
 
