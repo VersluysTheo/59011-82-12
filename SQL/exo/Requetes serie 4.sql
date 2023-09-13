@@ -98,3 +98,14 @@ join "order" o on
 join order_line ol on
 	o.id = ol.order_id
 where ol.unit_price * ol.delivered_quantity > 10000000 ;
+
+select 
+	s.*,
+	i."name" 
+from supplier s 
+join sale_offer so on
+	s.id = so.supplier_id
+join item i on
+	so.item_id = i.id 
+group by s.id, i.id, so.item_id, so.supplier_id
+order by s.id asc ;
