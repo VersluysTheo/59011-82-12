@@ -32,8 +32,20 @@ having count(so.supplier_id) > 2
 order by so.supplier_id asc ;
 
 select 
-	o.*
+	*
 from "order" o 
 join order_line ol on
 	o.id = ol.order_id 
 where ol.delivered_quantity is NULL;
+
+
+select 
+	i.*,
+	s.*
+from item i 
+join sale_offer so on
+	i.id = so.item_id 
+join supplier s on
+	so.supplier_id = s.id 
+group by i.id,s.id 
+having s."name" like 'DICOBOL';
