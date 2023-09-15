@@ -89,13 +89,20 @@ begin
 	from supplier s
 	join "order" o on s.id = o.supplier_id 
 group by s.id, supplier_id
-having count(o.supplier_id) > all (count(o.supplier_id)) ;
+having count(o.supplier_id) > all (select count(o.supplier_id));
 return best_supplier ;
 end;
 $$
 
 
 select best_supplier() as "Meilleur Fournisseur" ;
+
+
+select s.id, count(o.supplier_id)
+from supplier s
+join "order" o on s.id = o.supplier_id 
+group by s.id, supplier_id 
+having count(o.supplier_id) =  max(count(o.supplier_id)) ;
 
 
 
