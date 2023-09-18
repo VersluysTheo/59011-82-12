@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Oui</h1>
-    <?php echo "Oui"; ?>
+
+    <?php include 'form.php' ; 
+    ?>
+
 </body>
 </html>
