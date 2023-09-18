@@ -47,10 +47,10 @@ function validateName(input, requiredMsg, invalidMsg) {
     return true;
 }
 
-function validatenamePattern(namePattern){
-	const namePattern = "[A-Za-z]*";
-	if (namePattern = myForm.nom.pattern) {
-		myForm.nom.title.innerHTML = "NON";
+const nomPattern = "[A-Za-z]*";
+function validatenamePattern(nomPattern){
+	if (nomPattern = myForm.nom.pattern) {
+		myForm.setAttribute(nom.title, "title");
 }
 }
 
@@ -119,6 +119,17 @@ function validateMotdePasse(input, requiredMsg, invalidMsg) {
     return true;
 }
 
+
+
+
+// Mot de passe ecrit à la main
+let elmotdepasse = document.getElementById('mdp');
+elmotdepasse.onpaste = function(e) {
+	e.preventDefault();
+};
+
+
+
 // Messages d'erreur
 
 const NOM_REQUIS = "Entrez votre Nom";
@@ -135,9 +146,7 @@ const MOTDEPASSE_REQUIS = "Entrez votre mot de passe";
 myForm.addEventListener("submit", function (event) {
 
 	event.preventDefault();
-	console.log(myForm.nom.title);
-
-
+	
     // Verification
 
 	let nameValid = validateName(myForm.elements["nom"], NOM_REQUIS);
@@ -149,3 +158,7 @@ myForm.addEventListener("submit", function (event) {
 		alert("Oui");
 	}
 });
+
+// myForm.addEventListener("click", function () {
+// 	console.log(input.nom);
+// });
