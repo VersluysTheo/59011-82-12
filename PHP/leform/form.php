@@ -14,7 +14,7 @@ public function addField($name, $type, $label, $value = '') {
 }
 
 public function generateForm() {
-    $form = '<form>';
+    $form = '<form action="index.php" method="post">';
 
     foreach ($this->fields as $field) {
         $name = $field['name'];
@@ -43,13 +43,15 @@ public function generateForm() {
 }
 
 $form = new leForm();
-$form->addField('name', 'text', 'Name', 'John Doe');
-$form->addField('age', 'number', 'Age', 54);
-$form->addField('email', 'text', 'Email', 'john@example.com');
-$form->addField('password', 'password', 'Password' , '51615321');
+$form->addField('name', 'text', 'Name', '');
+$form->addField('age', 'number', 'Age', '');
+$form->addField('email', 'text', 'Email', '');
+$form->addField('password', 'password', 'Password' , '');
 $form->addField('id', 'hidden', '', 1);
 $htmlform = $form->generateForm();
 echo $htmlform ;
-
-
+echo $_POST['name'] . '<br>';
+echo $_POST['age'] . '<br>' ;
+echo $_POST['email'] . '<br>';
+echo $_POST['password'] . '<br>';
 ?>
