@@ -10,5 +10,6 @@
     <?php include 'form.php' ; 
     ?>
 
+<script src="VerifForm.js"></script>
 </body>
 </html>
