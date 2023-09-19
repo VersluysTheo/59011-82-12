@@ -200,7 +200,7 @@ myForm.addEventListener("submit", function (event) {
 	let emailValid = validateEmail(myForm.elements["email"], EMAIL_REQUIS, EMAIL_INVALIDE);
 	let motdepasseValid = validateMotdePasse(myForm.elements["mdp"], MOTDEPASSE_REQUIS , MOTDEPASSE_INVALIDE);
 	if (nameValid && emailValid && numeroValid && postalValid && motdepasseValid) {
-		alert("Oui");
+		alert("Simulation d'envoi de données");
 	}
 	}
 );
