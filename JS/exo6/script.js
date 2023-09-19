@@ -1,18 +1,18 @@
-let enBas = document.getElementById("bas");
-let enHaut = document.getElementById("haut");
-let laGauche = document.getElementById("gauche");
-let laDroite = document.getElementById("droite");
-let leCarre = document.getElementById("carre");
+var enBas = document.getElementById("bas");
+var enHaut = document.getElementById("haut");
+var laGauche = document.getElementById("gauche");
+var laDroite = document.getElementById("droite");
+var leCarre = document.getElementById("carre");
 
 //Position du carre
 
-let positionCarre = {
+var positionCarre = {
     x: 0,
     y: 0,
 };
 
-let xCarre = positionCarre.x;
-let yCarre = positionCarre.y;
+var xCarre = positionCarre.x;
+var yCarre = positionCarre.y;
 
 
 
@@ -126,9 +126,9 @@ document.addEventListener("keydown", function(event) {
 
 // Souris
 
-let body = document.querySelector("body");
-let bodySize = body.getBoundingClientRect();
-let holdCurseur = 0;
+var body = document.querySelector("body");
+var bodySize = body.getBoundingClientRect();
+var holdCurseur = 0;
 
 
 function moveCarre() {
@@ -150,7 +150,7 @@ function moveCurseur(event) {
 }
 
 function enfonceClic() {
-    holdCurseur = 1;
+    holdCurseur = 1 ;
     // console.log(xCarre,yCarre);
     // console.log("tu enfonces");
 }
@@ -166,28 +166,29 @@ document.addEventListener("mouseup", moveCarre);
 function deplace(dx, dy) {
     var deplacement_ok = true;
     var styleCarre = window.getComputedStyle(document.getElementById('carre'), null);
-    var t = parseInt(styleCarre.y);
-    var l = parseInt(styleCarre.x);
+    var t = parseInt(styleCarre.top);
+    var l = parseInt(styleCarre.left);
     var w = parseInt(styleCarre.width);
     var h = parseInt(styleCarre.height);
     var listeObs = document.querySelectorAll('.obst');
     listeObs.forEach(function (elt) {
         var styleObst = window.getComputedStyle(elt, null);
-        var tob = parseInt(styleObst.y);
-        var lob = parseInt(styleObst.x);
+        var tob = parseInt(styleObst.top);
+        var lob = parseInt(styleObst.left);
         var wob = parseInt(styleObst.width);
         var hob = parseInt(styleObst.height);
         deplacement_ok = deplacement_ok && depl_ok(tob, lob, wob, hob, t + dy, l + dx, w, h);
+
     });
     if (deplacement_ok) {
-        document.getElementById('carre').style.y = t + dy + 'px';
-        document.getElementById('carre').style.x = l + dx + 'px';
+        document.getElementById('carre').style.top = t + dy + 'px';
+        document.getElementById('carre').style.left = l + dx + 'px';
     }
 }
 
-function depl_ok(tob, lob, wob, hob, t, l, w, h) {
+function depl_ok(t, l, w, h, tob, lob, wob, hob) {
     if (l < lob + wob && l + w > lob && t < tob + hob && t + h > tob) {
-    return false;
+        return false
     }
     return true;
 }
@@ -211,4 +212,3 @@ document.onkeydown = function (event) {
             break;
     }
 }
-
