@@ -49,11 +49,11 @@ public function generateForm() {
 }
 
 $form = new leForm();
-$form->addField('name', 'text', 'Nom', '' , 'Nom' , '[A-Za-Z]*', '');
-$form->addField('numero', 'number', 'Numero', '', 'Numero', '0+([0-9]{9})', '');
-$form->addField('postal', 'number', 'Code Postal', '' , 'Code Postal' ,'[0-9]{5,5}', '' );
-$form->addField('email', 'text', 'Email', '' , 'Email' ,'[a-zA-Z0-9._\-].{1,50}@[a-zA-Z0-9]{1,50}.[a-zA-Z].{1,10}', '');
-$form->addField('mdp', 'password', 'Password' , '' , 'Mot de passe', '[a-zA-Z0-9!@#$%^&*_=+\-].{12,}', '');
+$form->addField('name', 'text', 'Nom', null , 'Nom' , '[A-Za-Z]*', '');
+$form->addField('numero', 'number', 'Numero', null, 'Numero', '0+([0-9]{9})', '');
+$form->addField('postal', 'number', 'Code Postal', null , 'Code Postal' ,'[0-9]{5,5}', '' );
+$form->addField('email', 'text', 'Email', null , 'Email' ,'[a-zA-Z0-9._\-].{1,50}@[a-zA-Z0-9]{1,50}.[a-zA-Z].{1,10}', '');
+$form->addField('mdp', 'password', 'Password' , null , 'Mot de passe', '[a-zA-Z0-9!@#$%^&*_=+\-].{12,}', '');
 $form->addField('id', 'hidden', '', 1 ,'' ,'','');
 $htmlform = $form->generateForm();
 echo $htmlform ;

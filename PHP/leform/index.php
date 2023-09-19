@@ -10,12 +10,14 @@
 
     <?php include 'form.php' ;
     ?> 
-    <p><?php echo $_POST['name'] . '<br>';
+    <p>
+    <?php echo $_POST['name'] . '<br>';
     echo $_POST['numero'] . '<br>' ;
     echo $_POST['postal'] . '<br>' ;
     echo $_POST['email'] . '<br>';
     echo $_POST['mdp'] . '<br>';
- ?></p>
+    ?>
+ </p>
 
 <script src="VerifForm.js"></script>
 </body>

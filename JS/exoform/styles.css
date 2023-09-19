@@ -100,11 +100,12 @@ small{
 }
 
 input{
-    background-color: white;
+    border-color: black;
 }
 
 
 input:invalid{
-    background-color: rgb(241, 68, 68);
+    border-color: rgb(241, 68, 68);
 }
+
 
