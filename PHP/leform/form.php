@@ -31,13 +31,13 @@ public function generateForm() {
         $form .= '<label for="' . $name . '">' . $label . ' </label>';
 
         if ($type === 'text') {
-            $form .= '<input type="text" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br>';
+            $form .= '<input type="text" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br><br>';
         } elseif ($type === 'password') {
-            $form .= '<input type="password" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br>';
+            $form .= '<input type="password" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br><br>';
         } elseif ($type === 'hidden') {
-            $form .= '<input type="hidden" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br>';
+            $form .= '<input type="hidden" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br><br>';
         } elseif ($type === 'number'){
-            $form .= '<input type="number" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br>';
+            $form .= '<input type="number" id="' . $name . '" name="' . $name . '" value="' . $value . '" placeholder = "' . $holder . '" pattern="'. $pattern . '" title="' . $title .'" ><br><br>';
         }
     }
 
@@ -57,10 +57,4 @@ $form->addField('mdp', 'password', 'Password' , '' , 'Mot de passe', '[a-zA-Z0-9
 $form->addField('id', 'hidden', '', 1 ,'' ,'','');
 $htmlform = $form->generateForm();
 echo $htmlform ;
-echo $_POST['name'] . '<br>';
-echo $_POST['numero'] . '<br>' ;
-echo $_POST['postal'] . '<br>' ;
-echo $_POST['email'] . '<br>';
-echo $_POST['mdp'] . '<br>';
-
 ?>
