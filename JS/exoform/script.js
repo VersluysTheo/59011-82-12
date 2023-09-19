@@ -166,6 +166,18 @@ elmotdepasse.onpaste = function(e) {
 };
 
 
+// oeil
+
+let oeilMdp = document.getElementById('oeil');
+oeilMdp.addEventListener('click', function() {
+	if (mdp.type == 'password') {
+		mdp.setAttribute("type", "text");
+	} else {
+		mdp.setAttribute("type", "password");
+	}
+});
+
+
 
 // Messages d'erreur
 

@@ -1,3 +1,5 @@
+/* Css General */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -16,6 +18,8 @@ form{
     text-align: center;
     transform: translate(0,100px);
 }
+
+/* Css div */
 
 div{
     margin-top: 5px;
@@ -43,13 +47,15 @@ div#email{
 }
 
 div#motdp{
-    margin-right: 30px;
+    margin-right: 2px;
 }
 
 div#bouton{
     margin-top: 10px;
     margin-left: 75px;
 } 
+
+/* Css Input*/
 
 input[type=text], input[type=tel], input[type=number], input[type=email],input[type=password]{
     border-radius: 6px;
@@ -84,6 +90,15 @@ input[type=submit],p{
     font-size: large;
 }
 
+/* Css Oeil */
+
+input[type=password],img{
+    margin-left: 10px;
+}
+
+
+/* label et small */
+
 label{
     font-size: 20px;
     font-weight: bold;
@@ -98,6 +113,8 @@ small{
     font-weight: bold;
     font-style: italic;
 }
+
+/* Border des entrées */
 
 input{
     border-color: black;
