@@ -192,6 +192,8 @@ myForm.addEventListener("submit", function (event) {
 	
     // Verification
 
+	event.preventDefault();
+
 	let nameValid = validateName(myForm.elements["nom"], NOM_REQUIS);
 	let numeroValid = validateNumero(myForm.elements["numero"], NUMERO_REQUIS);
 	let postalValid = validatePostal(myForm.elements["postal"], POSTAL_REQUIS);
