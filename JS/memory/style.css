@@ -14,14 +14,11 @@
     margin: 1vw;
     height: 5vw;
     width: 10vw;
-    background-color: lightcyan;
+    background-color: cyan;
     border-radius: 6px;
     color: black;
 }
 
-.param > button:hover{
-    background-color: cyan;
-}
 /* CSS Cards */
 
 
@@ -31,7 +28,7 @@
   }
   
 .container > div {
-    background-color:  #8ca0ff;
+    background-color:  cyan;
     width: 10vw;
     height: 10vw;
     margin: 1vw;
@@ -39,5 +36,9 @@
 div > img{
     height: 10vw;
     width: 10vw;
+}
+
+button:disabled, #pairs:disabled, #player:disabled, #chrono:disabled{
+    border-color: red;
 }
 

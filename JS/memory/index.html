@@ -15,7 +15,10 @@
         </select>
         <select name="pairs" id="pairs">
             <option value="vide">Choisissez le nombre de pairs</option>
-            <option value="5pairs">5 Pairs</option>
+            <option value="troisp">3 Pairs</option>
+            <option value="cinqp">5 Pairs</option>
+            <option value="huitp">8 Pairs</option>
+            <option value="dixp">10 Pairs</option>
         </select>
         <select name="chrono" id="chrono">
             <option value="vide">Choisissez un temps</option>
@@ -23,8 +26,10 @@
             <option value="2min30">2 Minutes 30</option>
         </select>
         <button> Commencez </button>
+        <button class="reset">Reset</button>
     </div>
-    <div class="container">
+    <div class="container"></div>
+    <!-- <div class="container">
         <div class="image"><img src="./images/1.jpg"></div>
         <div class="image"><img src="./images/1.jpg"></div>
         <div class="image"><img src="./images/2.jpg"></div>
@@ -35,10 +40,10 @@
         <div class="image"><img src="./images/4.jpg"></div>
         <div class="image"><img src="./images/5.jpg"></div>
         <div class="image"><img src="./images/5.jpg"></div>
-    </div>
-    <template>
-        <div class="image"></div>
-    </template>
+    </div> -->
+        <template id="templatecard">
+            <div class="image"><img src="./images/VALEUR.jpg"></div>
+        </template>
     <script src="script.js"></script>
 </body>
 </html>
