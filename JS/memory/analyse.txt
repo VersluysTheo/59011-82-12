@@ -1,0 +1,34 @@
+- Choix nbr de joueurs ( on dit que c'est 1 )
+- Choix nombre de pair  ( on dit que c'est 1 aussi ^^ )
+- Chrono, Point de vie ? ( bof )
+
+
+
+
+Cartes  réparti aléatoirement face retournées et le jeu commence :
+- Pour chaque pair de cartes retournée correspondante on les laisse face retournée,
+et face cachée si fausse
+
+
+
+- Comment verifier que les cartes correspondent ? => Id de cartes identique ( ou classe identiques )? => pitetre
+
+- Comment simuler une carte a deux faces => l'animation de retournement de carte
+
+- Comment simuler un nombre de cartes ( potentiellement infini ) ( aucune idée ) => le limiter de 2 pairs a 26 pairs ( jeu de cartes classique )
+
+- Comment simuler l'aléatoire des cartes ? ( euuuuuh )
+
+- Condition de Victoire : Quand il n'y a plus de cartes 
+
+
+
+- Les verif se font par deux ( si l'id ou la classe de la 1ere carte cliquée correspond a la deuxième )
+
+( Function : Verif / retournement de cartes / Victoire / Randomizer ou Shuffle )
+
+
+
+
+
+( Par ou commencer ? creer les cartes ? )

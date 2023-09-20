@@ -1,0 +1,43 @@
+.param{
+    display: flex;
+    align-content: center;
+}
+
+.param > select{
+    margin: 1vw;
+    border: black 1px solid;
+    border-radius: 6px;
+    padding: 2vw;
+}
+
+.param > button{
+    margin: 1vw;
+    height: 5vw;
+    width: 10vw;
+    background-color: lightcyan;
+    border-radius: 6px;
+    color: black;
+}
+
+.param > button:hover{
+    background-color: cyan;
+}
+/* CSS Cards */
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+.container > div {
+    background-color:  #8ca0ff;
+    width: 10vw;
+    height: 10vw;
+    margin: 1vw;
+  }
+div > img{
+    height: 10vw;
+    width: 10vw;
+}
+
