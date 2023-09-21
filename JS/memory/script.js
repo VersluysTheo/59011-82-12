@@ -1,15 +1,22 @@
 /* Initialisation */
 // Variables Cartes, Bouton etc
 var lesCartes = document.querySelectorAll('.image');
+
 var leBouton = document.querySelector('button');
 var leReset = document.querySelector('.reset');
+
 var paramCorrect = false;
 var gameStarted = false;
+
 var nbrJoueur = document.getElementById('player');
 var nbrPair = document.getElementById('pairs');
 var leChrono = document.getElementById('chrono');
+
 var grille = document.querySelector(".container");
+
 var temp = document.querySelector('#templatecard');
+
+
 
 /* Nombre de Joueurs */
 nbrJoueur.addEventListener("change", checkParameters);
@@ -26,6 +33,8 @@ leBouton.addEventListener('click', startGame);
 
 /* Reload Page */
 leReset.addEventListener('click', reLoad);
+
+/* Flip card */
 
 
 // Appel du template et l'endroit ou on le met
@@ -76,8 +85,8 @@ function inGame(){
 }
 
 /* Retourner les cartes au début de partie */
-function initCard(){
-    alert('Je suis censé retourné les cartes');
+function initCard() {
+    alert('rien');
 }
 
 /* Function Card Generation */
@@ -114,6 +123,9 @@ function setTimer(){
 
 
 /* function checkCard */
+
+
+/* function checkCardsMatch */
 
 
 /* function CheckOk */
