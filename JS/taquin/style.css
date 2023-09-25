@@ -1,0 +1,36 @@
+h1{
+    color: pink;
+    font-size: 5vh;
+}
+p{
+    color: black;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+hr {
+    clear: both;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+#taquin {
+    margin: 0 auto 0 auto;
+}
+
+button.case,
+button.caseblanche {
+    width: 10vw;
+    height: 10vw;
+    font-size: 2em;
+    float: left;
+    border: solid 1pt black;
+    margin: 1px 2px 1px 2px;
+}
+
+button.caseblanche {
+    background-color: inherit;
+    border: none;
+}
