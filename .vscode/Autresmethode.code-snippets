@@ -1,0 +1,19 @@
+{
+	"Autresmethode": {
+		"scope": "php",
+		"prefix": "Autresmethode",
+		"body": [
+			"    /*****************Autres Méthodes***************** */"
+			"	function __toString()"
+			"{"
+				"	return ;"
+			"}"
+	
+			"	function $1(){"
+				"	echo $$this->__toString();"
+			"}"
+		],
+		"description": "Ajoute les autres methodes"
+	}
+
+}
