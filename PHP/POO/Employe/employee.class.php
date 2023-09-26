@@ -84,13 +84,14 @@ class Employee
 
     public function __toString()
     {
-        return $this->getPrenom() . " a été recruté il y a " . $this->recrutement() . " et recevra une prime de " . $this->prime() . " euros";
+        return $this->getPrenom() . " a été recruté il y a " . $this->recrutement() . " ans et recevra une prime de " . $this->prime() . " euros \n";
     }
 
     public function recrutement(){
-        $date = $this->getDateembauche();
-        $annee = $date->format('Y');
-        return (date('Y') - $annee);
+        $date = date_create($this->getDateembauche());
+        $dateauj = date_create('now');
+        $interval = date_diff($date, $dateauj);
+       return $interval->format('%Y');
 
     }
     public function infos(){
@@ -98,5 +99,12 @@ class Employee
     }
     public function prime(){
         return ($this->getSalairebrutannuel()*(0.05 + (0.02*$this->recrutement())));
-}
+    }
+    public function versement(){
+        $jourvers = new DateTime('now');
+        if ($jourvers->format('d-m') == "30-11" ){
+            echo "Le versement de " . $this->prime() . " euros a été effectué" ;
+        }
+    }
+    
 }
