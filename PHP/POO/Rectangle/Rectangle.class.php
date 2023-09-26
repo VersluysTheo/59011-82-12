@@ -68,10 +68,10 @@ class Rectangle
 
         function __toString()
         {
-            return "Longueur : [" . $this->getLongueur() . "] - " . "Largeur : [" . $this->getLargeur() . "] - " . "Perimetre : [" . $this->perimetre() . "] - " . "Aire : [" . $this->aire() . "] - " . $this->isCarre();
+            return "Rectangle => Longueur : [" . $this->getLongueur() . "] - " . "Largeur : [" . $this->getLargeur() . "] - " . "Perimetre : [" . $this->perimetre() . "] - " . "Aire : [" . $this->aire() . "] - " . $this->isCarre();
         }
 
-        function AfficherRectangle(){
+        function Afficher(){
             echo $this->__toString();
         }
 }

@@ -20,7 +20,18 @@ class Pave extends Rectangle
         /********Autres Methodes*************/
         function perimetre()
         {
-            $perimetre = $this->getHauteur() + 2;
-            return $perimetre;
+            return (parent::perimetre()*2+$this->getHauteur()*4);
+        }
+        function volume(){
+            return (parent::aire()* $this->getHauteur()); 
+        }
+        function __toString()
+        {
+            return "Pave => Perimetre : [" . $this->perimetre() . "] - " . "Volume : [" . $this->volume() . "]";
+        }
+        
+        function Afficher(){
+            echo $this->__toString();
         }
 }
+

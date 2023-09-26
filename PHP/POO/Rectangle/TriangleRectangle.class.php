@@ -61,9 +61,9 @@ class Trianglerectangle
 
         function __toString()
     {
-        return "Base : [" . $this->getBase() . "] - " . "Hauteur : [" . $this->getHauteur() . "] - " . "Perimetre : [" . $this->perimetre() . "] - " . "Aire : [" . $this->aire() . "] - ";
+        return "Triangle => Base : [" . $this->getBase() . "] - " . "Hauteur : [" . $this->getHauteur() . "] - " . "Perimetre : [" . $this->perimetre() . "] - " . "Aire : [" . $this->aire() . "]";
     }
-        function afficherTriangle(){
+        function Afficher(){
         echo $this->__toString();
     }
 }

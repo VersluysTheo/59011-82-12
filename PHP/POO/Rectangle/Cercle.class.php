@@ -50,9 +50,9 @@ class Cercle
 
         function __toString()
     {
-        return "Diametre : [" . $this->getDiametre() . "] - " . "Perimetre : [" . $this->perimetre() . "] - " . "Aire : [" . $this->aire() . "]";
+        return "Cercle => Diametre : [" . $this->getDiametre() . "] - " . "Perimetre : [" . $this->perimetre() . "] - " . "Aire : [" . $this->aire() . "]";
     }
-        function afficherCercle(){
+        function Afficher(){
         echo $this->__toString();
     }
 }
