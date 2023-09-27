@@ -84,22 +84,39 @@ class Employee
 
     public function __toString()
     {
-        return $this->getPrenom() . " a été recruté il y a " . $this->recrutement() . " ans et recevra une prime de " . $this->prime() . " euros \n";
+        return $this->getPrenom() . " " . $this->getNom() . " a été recruté il y a " . $this->recrutement() . " ans et fait parti du service " . $this->getService() . " et possède un salaire brut annuel de " . $this->getSalairebrutannuel() . " euros \n";
     }
-
+    // fonction date de recrutement
     public function recrutement(){
         $date = date_create($this->getDateembauche());
         $dateauj = date_create('now');
         $interval = date_diff($date, $dateauj);
        return $interval->format('%Y');
-
     }
+
+    // Fonction de Tri
+    public static function triparNom($a,$b){
+        return ($a->getNom()) <=> ($b->getNom());
+    }
+    public static function triparPrenom($a,$b){
+        return ($a->getPrenom()) <=> ($b->getPrenom());
+    }
+
+    public static function triparService($a,$b){
+        return ($a->getService()) <=> ($b->getService());
+    }
+
+    /* Fonction pour indiquer les infos */
     public function infos(){
         echo $this->__toString();
     }
+
+    /* Fonction pour indiquer le montant de la prime */
     public function prime(){
         return ($this->getSalairebrutannuel()*(0.05 + (0.02*$this->recrutement())));
     }
+
+    /* Fonction pour indiquer que le versement a été fait */
     public function versement(){
         $jourvers = new DateTime('now');
         if ($jourvers->format('d-m') == "30-11" ){
