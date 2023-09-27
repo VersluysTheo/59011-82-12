@@ -18,7 +18,7 @@ class Employee
     {
     $this->hydrate($options);
     }
-    self::$compteur++; // Compter le nombre d'objet  instancié 
+    self::$compteur++; // Compter le nombre d'objet instancié 
 }
     public function hydrate($data)
 {
@@ -133,5 +133,12 @@ class Employee
         if ($jourvers->format('d-m') == "30-11" ){
             echo "Le versement de " . $this->prime() . " euros a été effectué" ;
         }
+    }
+    public static function masseSalariale($employe){
+        $masseSalariale = 0;
+        foreach ($employe as $employes) {
+            $masseSalariale += $employes->getSalairebrutannuel() + $employes->prime();
+        }
+        return $masseSalariale;
     }
 }

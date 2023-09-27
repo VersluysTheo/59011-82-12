@@ -36,4 +36,5 @@ $employe[] = new Employee(["nom" => "Bouchard" , "prenom" => "Louis" , "dateemba
 //     echo $employes->infos() . "\n";
 // }
 
-echo "Il y a " . Employee::getCompteur() . " Employés ";
+echo "Il y a " . Employee::getCompteur() . " Employés \n";
+echo "La masse salariale est de " . Employee::masseSalariale($employe) . " euros ";
