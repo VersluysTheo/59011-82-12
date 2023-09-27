@@ -9,6 +9,7 @@ class Employee
     private $_salairebrutannuel;
     private $_service;
     public static $compteur;
+    private $_agence;
 
 /*****************Constructeur***************** */
 
@@ -90,12 +91,21 @@ class Employee
     {
         return self::$compteur = $compteur;
     }
+    public function getAgence()
+    {
+        return $this->_agence;
+    }
+
+    public function setAgence($agence)
+    {
+        $this->_agence = $agence;
+    }
 
         /*****************Autres Méthodes***************** */
 
     public function __toString()
     {
-        return $this->getPrenom() . " " . $this->getNom() . " a été recruté il y a " . $this->recrutement() . " ans et fait parti du service " . $this->getService() . " et possède un salaire brut annuel de " . $this->getSalairebrutannuel() . " euros \n";
+        return $this->getPrenom() . " " . $this->getNom() . " a été recruté il y a " . $this->recrutement() . " ans et fait parti du service " . $this->getService() . " et possède un salaire brut annuel de " . $this->getSalairebrutannuel() . " euros \n" . "et a pour de restauration : " . $this->getAgence()->getModeRestauration();
     }
     // fonction calcul du nombre d'années de recrutement
     public function recrutement(){
