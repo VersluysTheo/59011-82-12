@@ -10,6 +10,7 @@ class Employee
     private $_service;
     public static $compteur;
     private $_agence;
+    private $_vacances;
 
 /*****************Constructeur***************** */
 
@@ -100,12 +101,21 @@ class Employee
     {
         $this->_agence = $agence;
     }
+    public function getVacances()
+    {
+        return $this->_vacances;
+    }
+
+    public function setVacances($vacances)
+    {
+        $this->_vacances = $vacances;
+    }
 
         /*****************Autres Méthodes***************** */
 
     public function __toString()
     {
-        return $this->getPrenom() . " " . $this->getNom() . " a été recruté il y a " . $this->recrutement() . " ans et fait parti du service " . $this->getService() . " et possède un salaire brut annuel de " . $this->getSalairebrutannuel() . " euros \n" . "et a pour de restauration : " . $this->getAgence()->getModeRestauration();
+        return $this->getPrenom() . " " . $this->getNom() . " a été recruté il y a " . $this->recrutement() . " ans et fait parti du service " . $this->getService() . " et possède un salaire brut annuel de " . $this->getSalairebrutannuel() . " euros \n" . "et a pour type de restauration : " . $this->getAgence()->getModeRestauration() ;
     }
     // fonction calcul du nombre d'années de recrutement
     public function recrutement(){
@@ -150,5 +160,14 @@ class Employee
             $masseSalariale += $employes->getSalairebrutannuel() + $employes->prime();
         }
         return $masseSalariale;
+    }
+    public function vacances($employe){
+        foreach($employe as $employes){
+            if($this->recrutement() > 1){
+                $employes->setVacances() == "dispose de cheques vacances";
+            } else {
+                $employes->setVacances() == "ne dispose pas de cheques vacances" ;
+            }
+        }
     }
 }
