@@ -8,6 +8,7 @@ class Employee
     private $_dateembauche;
     private $_salairebrutannuel;
     private $_service;
+    public static $compteur;
 
 /*****************Constructeur***************** */
 
@@ -17,19 +18,20 @@ class Employee
     {
     $this->hydrate($options);
     }
+    self::$compteur++; // Compter le nombre d'objet  instancié 
 }
     public function hydrate($data)
 {
     foreach ($data as $key => $value)
     {
-    $methode = 'set' . ucfirst($key);
+    $methode = 'set' . ucfirst($key); // changer la typographie pour les setters et getters
     if (is_callable([$this, $methode]))
         {
     $this->$methode($value);
         }
     }
 }
-
+/* Setter et Getter */
     public function getNom()
     {
         return $this->_nom;
@@ -79,6 +81,15 @@ class Employee
     {
         $this->_service = $service;
     }
+    public static function getCompteur()
+    {
+        return self::$compteur;
+    }
+
+    public static function setCompteur($compteur)
+    {
+        return self::$compteur = $compteur;
+    }
 
         /*****************Autres Méthodes***************** */
 
@@ -86,7 +97,7 @@ class Employee
     {
         return $this->getPrenom() . " " . $this->getNom() . " a été recruté il y a " . $this->recrutement() . " ans et fait parti du service " . $this->getService() . " et possède un salaire brut annuel de " . $this->getSalairebrutannuel() . " euros \n";
     }
-    // fonction date de recrutement
+    // fonction calcul du nombre d'années de recrutement
     public function recrutement(){
         $date = date_create($this->getDateembauche());
         $dateauj = date_create('now');
@@ -123,5 +134,4 @@ class Employee
             echo "Le versement de " . $this->prime() . " euros a été effectué" ;
         }
     }
-    
 }

@@ -35,3 +35,5 @@ $employe[] = new Employee(["nom" => "Bouchard" , "prenom" => "Louis" , "dateemba
 //     foreach ($employe as $employes){
 //     echo $employes->infos() . "\n";
 // }
+
+echo "Il y a " . Employee::getCompteur() . " Employés ";
