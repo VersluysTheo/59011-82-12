@@ -1,7 +1,7 @@
 <?php
 
 include './employee.class.php';
-
+// Tableau Objet
 $employe[] = new Employee(["nom" => "Mergli" , "prenom" => "Laurent" , "dateembauche" => "15-06-2018" , "salairebrutannuel" => 42424 , "service" => "comptabilite" ]);
 $employe[] = new Employee(["nom" => "Bouchard" , "prenom" => "Patricia" , "dateembauche" => "01-12-2010" , "salairebrutannuel" => 39000 , "service" => "Ressources Humaines" ]);
 $employe[] = new Employee(["nom" => "Galomp" , "prenom" => "Florian" , "dateembauche" => "11-08-2023" , "salairebrutannuel" => 28000 , "service" => "Informatique" ]);
@@ -36,5 +36,5 @@ $employe[] = new Employee(["nom" => "Bouchard" , "prenom" => "Louis" , "dateemba
 //     echo $employes->infos() . "\n";
 // }
 
-echo "Il y a " . Employee::getCompteur() . " Employés \n";
-echo "La masse salariale est de " . Employee::masseSalariale($employe) . " euros ";
+echo "Il y a " . Employee::getCompteur() . " Employés \n"; // Affichage du nombre d'employés
+echo "La masse salariale est de " . Employee::masseSalariale($employe) . " euros "; // Affichage de la masse salariale 
