@@ -46,4 +46,4 @@ $employe[] = new Employee(["nom" => "Bouchard" , "prenom" => "Louis" , "dateemba
 // echo "Il y a " . Employee::getCompteur() . " Employés \n"; // Affichage du nombre d'employés
 // echo "La masse salariale est de " . Employee::masseSalariale($employe) . " euros "; // Affichage de la masse salariale 
 
-echo $employe[0]->vacances($employe);
+echo $employes->vacances($employe);
