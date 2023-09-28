@@ -2,9 +2,14 @@
 
 class MonstreDifficile extends MonstreFacile
 {
+#region Attributs
+
         /************Attributs************************/
         static $Nbmonstre;
         const DEGATS_SORT = 5;
+
+#regionend Attributs
+#region Constructeur
 
         /***************Constructeurs*************************/
 
@@ -17,10 +22,20 @@ class MonstreDifficile extends MonstreFacile
             self::$Nbmonstre++;
         }
 
+#endregion Constructeur
+#region Autres methodes
+
         /*****************Autres Méthodes***************** */
         public function Attaque($joueur)
         {
-            return "" ;
+            $joueurde = Joueur::Lancerlede();
+            $monstrediffde = MonstreDifficile::Lancerlede();
+            if ($monstrediffde < $joueurde){
+                return $joueur->Subitdegat(MonstreFacile::DEGATS);
+                $this->sortmagique();
+            } else {
+                return "";
+            };
         }
 
         public function Subitdegat()
@@ -30,7 +45,8 @@ class MonstreDifficile extends MonstreFacile
 
         public function sortmagique(){
             $sortmag = Dice::Lancerlede();
-            $degatmag = $sortmag * 5 ;
+            $degatmag = $sortmag * MonstreDifficile::DEGATS_SORT ;
             return $degatmag;
         }
+#endregion Autre methodes      
 }

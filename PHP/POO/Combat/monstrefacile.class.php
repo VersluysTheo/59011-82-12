@@ -54,14 +54,20 @@ class MonstreFacile
 
     /*****************Autres Méthodes***************** */
 
-    public function Attaque($joueur){
-        return "" ;
+    public function Attaque($joueur){ // Fonction d'attaque
+        $joueurde = Joueur::Lancerlede();
+        $monstrede = MonstreFacile::Lancerlede();
+        if ($monstrede <= $joueurde){
+            return $joueur->Subitdegat(MonstreFacile::DEGATS);
+        } else {
+            return "";
+        };
     }
-    public function Lancerlede(){
+    public static function Lancerlede(){ // Lancer de des 
         return Dice::Lancerlede();
     }
     public function Subitdegat(){
-        return "" ;  
+        return "" ;
     }
 
     #endregion Autre Methodes

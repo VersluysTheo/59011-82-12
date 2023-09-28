@@ -57,7 +57,7 @@ class Joueur
 #region Autres Methodes
 
     /*****************Autres Méthodes***************** */
-    public function estVivant(){
+    public function estVivant(){ // Fonction pour savoir si le joueur est en vie
         if ($this->getPointdevie() > 0){
             return true;
         } else {
@@ -65,11 +65,11 @@ class Joueur
         }
     }
 
-    public function Attaque($monstre){
+    public function Attaque(){ // Fonction d'attaque (avec le lancer de des)
         return "";
     }
 
-    public function Bouclier(){
+    public function Bouclier(){ // Fonction du Bouclier pour bloquer potentiellement les degats
         $bouclier = Dice::Lancerlede();
         if ($bouclier <= 2){
             return true;
@@ -78,12 +78,10 @@ class Joueur
         }
     }
 
-    public function Subitdegats(){
-        if ($this->Bouclier() == false){
-            return true;
-        }
+    public function Subitdegats(){ // Fonction pour savoir si on subit des degats
+        return "";
     }
-    public function Lancerlede(){
+    public static function Lancerlede(){ // Fonction Lancer le de
         return Dice::Lancerlede();
     }
 
