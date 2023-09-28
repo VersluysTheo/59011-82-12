@@ -1,0 +1,30 @@
+- Quatres classe => Joueur (nous) , MonstreFacile, Monstre Difficile, Dé (genre un Dice)
+- Tout est automatique et aléatoire
+
+* Règles : Voir combien le héros va pouvoir tuer de monstresFacile et Difficile avant de Guillaume ( Canet )
+- Condition de mort : HP a 0 ( 50 HP start )
+- Chaque monstres rapporte des points : 1 Facile ; 2 Difficile
+
+* Combat tour par tour : Le héros attaque => si le monstre meurt , on passe au suivant sinon le monstre attaque  
+Comment le monstre meurt => Si notre jet de DÉ est + élevé que le monstre sinon il ne se passe rien et c'est au tour du monstre
+(Particularité ) =======> Jet du Heros > JetMonstreDifficile pour toucher MAIIIIIIIIIIIIS Jet du Heros >= Monstre Facile pour toucher
+
+* En cas de Hit : Un bouclier se declenche ==> Jet de dés ==> si >= 2 alors pas de degats subis
+Sinon => Cheh -10HP 
+
+SAUUUUUUF QUUUUUE ( c lon ) si c'est un monstreDifficile alors il enclenche une attaque magique et du coup si il fait 6 tu prend pas de degats
+Sinon tu prend : SonjetdeDé x 5 degats ( donc très cher )
+
+* Details de classe : 
+- Joueurs =====> HP : Constructeur ; Methode est vivant pour savoir si.... ben il est vivant oui bravo ; Méthode Attaque pouuur Attaquer un monstre ? ; Methode SubitDegats quand il prend des degats
+- Monstre Facile ==> Methode Attaque pour attaquer ; un ATTRIBUT pour savoir si il est encore en vie
+- Monstre Difficile ==> "Modifie" le comportement de la mthode Attaque ; implement le sort magique
+- Dé ==> c'est un dé voila bisou ( Methode LancédeDé qui renvoie un entier )
+
+
+
+
+
+
+
+JE SUIS UN TEXTE EN GROS ET TOUT SEUL
