@@ -36,7 +36,7 @@ $employe[] = new Employee(["nom" => "Bouchard" , "prenom" => "Louis" , "dateemba
 
 // echo "\n";
 // echo "Tri par Service: \n ";
-// usort($employe, ["Employee", "triparService"]); // Tri par prenom
+// usort($employe, ["Employee", "triparService"]); // Tri par Service
 // echo "\n";
 
 //     foreach ($employe as $employes){ // Affichage infos 
@@ -46,7 +46,7 @@ $employe[] = new Employee(["nom" => "Bouchard" , "prenom" => "Louis" , "dateemba
 // echo "Il y a " . Employee::getCompteur() . " Employés \n"; // Affichage du nombre d'employés
 // echo "La masse salariale est de " . Employee::masseSalariale($employe) . " euros "; // Affichage de la masse salariale 
 
-// foreach ($employe as $employes){ // Affichage des quques vacances
+// foreach ($employe as $employes){ // Affichage des cheques vacances
 //     $employes->vacances();
 // }
 

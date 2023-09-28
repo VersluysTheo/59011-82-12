@@ -11,6 +11,7 @@ class Employee
     public static $compteur;
     private $_agence;
     private $_vacances;
+    private $chequesnoel;
 
 /*****************Constructeur***************** */
 
@@ -110,6 +111,15 @@ class Employee
     {
         $this->_vacances = $vacances;
     }
+    public function getChequesnoel()
+    {
+        return $this->chequesnoel;
+    }
+
+    public function setChequesnoel($chequesnoel)
+    {
+        $this->chequesnoel = $chequesnoel;
+    }
 
         /*****************Autres Méthodes***************** */
 
@@ -169,4 +179,5 @@ class Employee
             }
             echo $this->getNom() . " " . $this->getPrenom() . " A-t-il droit au cheque vacances ? " . $this->getVacances() . " \n";
     }
+
 }
