@@ -2,12 +2,16 @@
 
 class MonstreFacile
 {
+
 #region Attribut
 
 /*****************Attributs***************** */
-    private $_Estenvie;
+    protected $_Estenvie;
+    static $Nbmonstre;
+    const DEGATS = 10;
 
 #endregion Attribut
+
 #region Constructeur
 
 /*****************Constructeur***************** */
@@ -18,6 +22,7 @@ class MonstreFacile
     {
     $this->hydrate($options);
     }
+    self::$Nbmonstre++;
 }
     public function hydrate($data)
 {
@@ -41,5 +46,24 @@ class MonstreFacile
         $this->_Estenvie = $Estenvie;
     }
 
+
 #endregion Constructeur
+
+
+#region Autres Methodes
+
+    /*****************Autres Méthodes***************** */
+
+    public function Attaque(){
+        return "Monstre (resultat dice)" ;
+    }
+    public function Lancerlede(){
+        return "";
+    }
+    public function Subitdegat(){
+        return "" ;  
+    }
+
+    #endregion Autre Methodes
+
 }

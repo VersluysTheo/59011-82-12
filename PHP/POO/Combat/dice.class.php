@@ -2,8 +2,15 @@
 
 class Dice
 {
+
+#region Attributs    
+
 /*****************Attributs***************** */
-    private $_result; //Resultat lancé de dé
+
+
+#endregion Attributs
+
+#region Constructeur
 
 /*****************Constructeur***************** */
 
@@ -25,14 +32,10 @@ class Dice
         }
     }
 }
-// Setter et Getter
-    public function getResult()
-    {
-        return $this->_result;
-    }
+#endregion Constructeur
 
-    public function setResult($result)
-    {
-        $this->_result = $result;
+/*****************Autres Méthodes***************** */
+    public static function Lancerlede(){
+        return rand(1,6);
     }
 }

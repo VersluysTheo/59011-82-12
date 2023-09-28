@@ -18,7 +18,7 @@ Sinon tu prend : SonjetdeDé x 5 degats ( donc très cher )
 * Details de classe : 
 - Joueurs =====> HP : Constructeur ; Methode est vivant pour savoir si.... ben il est vivant oui bravo ; Méthode Attaque pouuur Attaquer un monstre ? ; Methode SubitDegats quand il prend des degats
 - Monstre Facile ==> Methode Attaque pour attaquer ; un ATTRIBUT pour savoir si il est encore en vie
-- Monstre Difficile ==> "Modifie" le comportement de la mthode Attaque ; implement le sort magique
+- Monstre Difficile ==> "Modifie" le comportement de la methode Attaque ; implement le sort magique
 - Dé ==> c'est un dé voila bisou ( Methode LancédeDé qui renvoie un entier )
 
 

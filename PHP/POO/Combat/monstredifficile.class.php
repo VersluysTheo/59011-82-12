@@ -1,30 +1,34 @@
 <?php
 
-class MonstreDifficile
+class MonstreDifficile extends MonstreFacile
 {
-#region Constructeur
+        /************Attributs************************/
+        static $Nbmonstre;
+        const DEGATS_SORT = 5;
 
-/*****************Constructeur***************** */
+        /***************Constructeurs*************************/
 
-    public function __construct(array $options = [])
-{
-    if (!empty($options)) // empty : renvoi vrai si le tableau est vide
-    {
-    $this->hydrate($options);
-    }
-}
-    public function hydrate($data)
-{
-    foreach ($data as $key => $value)
-    {
-    $methode = 'set' . ucfirst($key);
-    if (is_callable([$this, $methode]))
+        public function __construct(array $options = [])
         {
-    $this->$methode($value);
+            if (!empty($options)) // empty : renvoi vrai si le tableau est vide
+            {
+            $this->hydrate($options);
+            }
+            self::$Nbmonstre++;
         }
-    }
-}
 
-#endregion Constructeur
+        /*****************Autres Méthodes***************** */
+        public function Attaque()
+        {
+            return "" ;
+        }
 
+        public function Subitdegat()
+        {
+            return "";
+        }
+
+        public function sortmagique(){
+            return "Sort magique (Resultat dice)";
+        }
 }
