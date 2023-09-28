@@ -12,6 +12,8 @@ class Employee
     private $_agence;
     private $_vacances;
     private $chequesnoel;
+    private $_montantchequenoel;
+    private $_enfants;
 
 /*****************Constructeur***************** */
 
@@ -120,6 +122,25 @@ class Employee
     {
         $this->chequesnoel = $chequesnoel;
     }
+    public function getMontantchequenoel()
+    {
+        return $this->_montantchequenoel;
+    }
+
+    public function setMontantchequenoel($montantchequenoel)
+    {
+        $this->_montantchequenoel = $montantchequenoel;
+    }
+
+    public function getEnfants()
+    {
+        return $this->_enfants;
+    }
+
+    public function setEnfants($enfants)
+    {
+        $this->_enfants = $enfants;
+    }
 
         /*****************Autres Méthodes***************** */
 
@@ -179,5 +200,16 @@ class Employee
             }
             echo $this->getNom() . " " . $this->getPrenom() . " A-t-il droit au cheque vacances ? " . $this->getVacances() . " \n";
     }
-
+    public function chequenoel(){
+        if ($this->getEnfants()->getAge() >= 0 && $this->getEnfants()->getAge() <= 10 && $this->getEnfants()->getAge() != Null){
+            $this->setChequesnoel("20 euros");
+    } else if ($this->getEnfants()->getAge() >= 11 && $this->getEnfants()->getAge() <= 15){
+        $this->setChequesnoel("30 Euros");
+    } else if ($this->getEnfants()->getAge() >= 16 && $this->getEnfants()->getAge() <= 18){
+        $this->setChequesnoel("50 Euros");
+    } else {
+        return "";
+    }
+    echo $this->getPrenom() . " " . $this->getNom() .  " recevra "  . $this->chequesnoel . " de cheques noel \n";
+}
 }
