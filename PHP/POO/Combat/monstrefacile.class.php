@@ -54,11 +54,11 @@ class MonstreFacile
 
     /*****************Autres Méthodes***************** */
 
-    public function Attaque(){
-        return "Monstre (resultat dice)" ;
+    public function Attaque($joueur){
+        return "" ;
     }
     public function Lancerlede(){
-        return "";
+        return Dice::Lancerlede();
     }
     public function Subitdegat(){
         return "" ;  

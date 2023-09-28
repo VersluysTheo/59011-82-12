@@ -58,21 +58,30 @@ class Joueur
 
     /*****************Autres Méthodes***************** */
     public function estVivant(){
-        if ($this->getPointdevie() == 0){
-            return " Vous êtes mort ";
+        if ($this->getPointdevie() > 0){
+            return true;
+        } else {
+            return false;
         }
     }
 
-    public function Attaque(){
-        return "Heros (resultat dice)" ;
+    public function Attaque($monstre){
+        return "";
     }
 
     public function Bouclier(){
-        return "Bouclier ( Resultat dice )" ;
+        $bouclier = Dice::Lancerlede();
+        if ($bouclier <= 2){
+            return true;
+        } else {
+            return false ;
+        }
     }
 
     public function Subitdegats(){
-        return "Heros subit N degats. Il vous reste N point de vie" ;
+        if ($this->Bouclier() == false){
+            return true;
+        }
     }
     public function Lancerlede(){
         return Dice::Lancerlede();

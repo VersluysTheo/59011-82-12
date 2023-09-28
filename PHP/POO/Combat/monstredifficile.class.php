@@ -18,7 +18,7 @@ class MonstreDifficile extends MonstreFacile
         }
 
         /*****************Autres Méthodes***************** */
-        public function Attaque()
+        public function Attaque($joueur)
         {
             return "" ;
         }
@@ -29,6 +29,8 @@ class MonstreDifficile extends MonstreFacile
         }
 
         public function sortmagique(){
-            return "Sort magique (Resultat dice)";
+            $sortmag = Dice::Lancerlede();
+            $degatmag = $sortmag * 5 ;
+            return $degatmag;
         }
 }
