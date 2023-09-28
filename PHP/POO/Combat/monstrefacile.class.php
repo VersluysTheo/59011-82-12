@@ -57,7 +57,7 @@ class MonstreFacile
     public function Attaque($joueur){ // Fonction d'attaque
         $joueurde = Joueur::Lancerlede();
         $monstrede = MonstreFacile::Lancerlede();
-        if ($monstrede <= $joueurde){
+        if (($monstrede <= $joueurde) && (Joueur::Bouclier() == false)){
             return $joueur->Subitdegat(MonstreFacile::DEGATS);
         } else {
             return "";

@@ -30,7 +30,7 @@ class MonstreDifficile extends MonstreFacile
         {
             $joueurde = Joueur::Lancerlede();
             $monstrediffde = MonstreDifficile::Lancerlede();
-            if ($monstrediffde < $joueurde){
+            if (($monstrediffde < $joueurde) && (Joueur::Bouclier() == false)){
                 return $joueur->Subitdegat(MonstreFacile::DEGATS);
                 $this->sortmagique();
             } else {

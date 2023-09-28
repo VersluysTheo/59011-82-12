@@ -69,7 +69,7 @@ class Joueur
         return "";
     }
 
-    public function Bouclier(){ // Fonction du Bouclier pour bloquer potentiellement les degats
+    public static function Bouclier(){ // Fonction du Bouclier pour bloquer potentiellement les degats
         $bouclier = Dice::Lancerlede();
         if ($bouclier <= 2){
             return true;
@@ -78,7 +78,7 @@ class Joueur
         }
     }
 
-    public function Subitdegats(){ // Fonction pour savoir si on subit des degats
+    public function Subitdegats(){ // Fonction pour savoir les degats infliges
         return "";
     }
     public static function Lancerlede(){ // Fonction Lancer le de
