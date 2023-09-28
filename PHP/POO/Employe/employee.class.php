@@ -161,13 +161,12 @@ class Employee
         }
         return $masseSalariale;
     }
-    public function vacances($employe){
-        foreach($employe as $employes){
-            if($this->recrutement() > 1){
-                $employes->setVacances() == "dispose de cheques vacances";
+    public function vacances(){
+            if($this->recrutement() >= 1){
+                $this->setVacances("Oui");
             } else {
-                $employes->setVacances() == "ne dispose pas de cheques vacances" ;
+                $this->setVacances("Non");
             }
-        }
+            echo $this->getNom() . " " . $this->getPrenom() . " A-t-il droit au cheque vacances ? " . $this->getVacances() . " \n";
     }
 }
