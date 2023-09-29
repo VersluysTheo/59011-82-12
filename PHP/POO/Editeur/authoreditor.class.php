@@ -40,4 +40,11 @@ class AuthorEditor extends User implements Author, Editor
     public function getEditorPrivileges(){
         return $this->_authorPrivilegesArray;
     }
+
+
+        /*****************Autres Méthodes***************** */
+        function __toString()
+    {
+        return $this->getUsername() . " " . $this->getAuthorprivileges() . " " . $this->getEditorPrivileges() ;
+    }
 }
