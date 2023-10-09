@@ -10,14 +10,15 @@ function ChargerClasse($classe)
 spl_autoload_register("ChargerClasse");
 
 DbConnect::init();
-// $perso = new Personnes(["idPersonne"=>1,"nom"=>"dupond2","prenom"=>"toto"]);
+
+// $perso = new Personnes(["idPersonne"=>1,"nom"=>"pol","prenom"=>"toit"]);
 // PersonnesManager::add($perso);
-// $perso = new Personnes();
-// $perso->setIdPersonne(1);
-// $perso->setNom("durand");
-// PersonnesManager::update($perso);
+$perso = new Personnes();
+$perso->setIdPersonne(2);
+$perso->setNom("durand");
+PersonnesManager::update($perso);
 // PersonnesManager::delete($perso);
 // PersonnesManager::findById(2);
 // $tab = ["idPersonne"=>1,"nom"=>"dupond2","prenom"=>"toto"];
 // echo json_encode($tab);
-// var_dump(PersonnesManager::select("Personnes",["idPersonne","nom","prenom"],null,["nom"=>true,"prenom"=>false],"2,3",true));
+// var_dump(PersonnesManager::getList("Personnes",["idPersonne","nom","prenom"],null,["nom"=>true,"prenom"=>false],"2,3",true));
