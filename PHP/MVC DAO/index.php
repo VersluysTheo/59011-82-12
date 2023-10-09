@@ -11,14 +11,24 @@ spl_autoload_register("ChargerClasse");
 
 DbConnect::init();
 
+
+// Ajout d'une personne
 // $perso = new Personnes(["idPersonne"=>1,"nom"=>"pol","prenom"=>"toit"]);
 // PersonnesManager::add($perso);
-$perso = new Personnes();
-$perso->setIdPersonne(2);
-$perso->setNom("durand");
-PersonnesManager::update($perso);
-// PersonnesManager::delete($perso);
-// PersonnesManager::findById(2);
+
+// Update d'une personne
+// $perso = new Personnes();
+// $perso->setIdPersonne(5);
+// $perso->setNom("jesuisnilahsaran");
+// $perso->setPrenom("Oulala");
+// PersonnesManager::update($perso);
+
+// Delete d'une personne
+PersonnesManager::findById(4);
+PersonnesManager::delete($perso);
+
+
+
 // $tab = ["idPersonne"=>1,"nom"=>"dupond2","prenom"=>"toto"];
 // echo json_encode($tab);
 // var_dump(PersonnesManager::getList("Personnes",["idPersonne","nom","prenom"],null,["nom"=>true,"prenom"=>false],"2,3",true));
