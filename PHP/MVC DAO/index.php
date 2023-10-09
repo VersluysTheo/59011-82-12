@@ -13,20 +13,20 @@ DbConnect::init();
 
 
 // Ajout d'une personne
-// $perso = new Personnes(["idPersonne"=>1,"nom"=>"pol","prenom"=>"toit"]);
-// PersonnesManager::add($perso);
+$perso = new Personnes(["idPersonne"=> 1,"nom"=>"zefh","prenom"=>"dkgr"]);
+PersonnesManager::add($perso);
 
 // Update d'une personne
-// $perso = new Personnes();
+// $perso = new Personnes;
 // $perso->setIdPersonne(5);
-// $perso->setNom("jesuisnilahsaran");
-// $perso->setPrenom("Oulala");
+// $perso->setNom("jesuis");
+// $perso->setPrenom("cestbien");
 // PersonnesManager::update($perso);
 
 // Delete d'une personne
-$perso = PersonnesManager::findById(7);
-var_dump($perso);
-PersonnesManager::delete($perso);
+// $perso = PersonnesManager::findById(6);
+// var_dump($perso);
+// PersonnesManager::delete($perso);
 
 
 

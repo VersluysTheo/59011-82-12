@@ -33,6 +33,37 @@ class DAO
         return false;
     }
 
+    public static function add(string $table, ?array $colonnes = null)
+    {
+        $verif = $table . json_encode($colonnes);
+        if (!strpos($verif, ";"))
+        {
+            $db = DbConnect::getDb();
+            $requete = "INSERT INTO ". $table;
+            $requete.= self::setColonnes($colonnes);
+            $valeur = [];
+            $requete.= " VALUES ". $valeur;
+            $req = $db->prepare($requete);
+            $req->execute();
+            $req->closeCursor();
+        }
+    }
+
+    public static function delete(string $table, ?array $conditions = null)
+    {
+        //verif ;
+        $verif = $table . json_encode($conditions);
+        if (!strpos($verif, ";"))
+        {
+            $db = DbConnect::getDb();
+            $requete = "DELETE FROM ". $table;
+            $requete.= self::setConditions($conditions);
+            $req = $db->prepare($requete);
+            $req->execute();
+            $req->closeCursor();
+        }
+    }
+
     private static function setColonnes(?array $colonnes)
     {
         if ($colonnes != null)
