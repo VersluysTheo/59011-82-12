@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Je suis fou c'est pour un test</p>
 
     <?php include 'form.php' ;
     ?> 
