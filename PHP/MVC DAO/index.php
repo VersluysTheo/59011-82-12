@@ -24,8 +24,10 @@ DbConnect::init();
 // PersonnesManager::update($perso);
 
 // Delete d'une personne
-PersonnesManager::findById(4);
+$perso = PersonnesManager::findById(7);
+var_dump($perso);
 PersonnesManager::delete($perso);
+
 
 
 

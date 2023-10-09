@@ -63,7 +63,7 @@ class PersonnesManager
 
     public static function findById($id)
     {
-        DAO::select("Personnes",null,["idPersonne"=>$id]);
+        return DAO::select("Personnes",null,["idPersonne"=>$id])[0]; // Crochet du tableau a la fin pour renvoyez un objet et pouvoir le delete avec une variable sans devoir rajouter [0] derriere
     }
     
     public static function getList( ?array $colonnes = null, ?array $conditions = null, ?array $orderBy = null, ?string $limit = null, ?bool $debug = false)
