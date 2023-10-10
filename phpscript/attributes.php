@@ -21,6 +21,7 @@ function generateattributes($table,$colonnes)
     //Accesseurs
     $return.= " /******************Accesseurs*******************/" . "\n";
     $return.= "\n" ;
+    // fonction getter
     foreach ($colonnes as $key => $value) {
     $return.= " public function get" . ucfirst($value) . "()" . "\n";
     $return.= "{" . "\n";
@@ -28,6 +29,15 @@ function generateattributes($table,$colonnes)
     $return.= "}" . "\n" ;
     $return.= "\n" ;
     }
+    // fonction setter
+    foreach ($colonnes as $key => $value) {
+        $return.= " public function set" . ucfirst($value) . "()" . "\n";
+        $return.= "{" . "\n";
+        $return.= '     $this' . '->_' . $value . "=" . '$' . $value . "\n";
+        $return.= "}" . "\n" ;
+        $return.= "\n" ;
+        }
+    // fonction get attributes
     $return.= "public static function getAttributes()". "\n";
     $return.= "{". "\n";
     $return.= "     return self::" . '$_attributes' . ";" . "\n";
@@ -43,7 +53,7 @@ function generateattributes($table,$colonnes)
     $return.= "        \$this->hydrate(\$options);\n";
     $return.= "    }\n";
     $return.= "}\n";
-
+    // Hydrate
     $return.= "public function hydrate(\$data)\n";
     $return.= "{\n";
     $return.= "    foreach (\$data as \$key => \$value) {\n";
@@ -54,10 +64,10 @@ function generateattributes($table,$colonnes)
     $return.= "        }\n";
     $return.= "    }\n";
     $return.= "}\n";
-
+    // fonction to string
     $return.= "public function toString()\n";
     $return.= "{\n";
-        
+
     $return.= "}\n";
     return $return;
 }
