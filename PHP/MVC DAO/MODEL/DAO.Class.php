@@ -62,6 +62,44 @@ class DAO
 		return $db->query("DELETE FROM ". $class . " WHERE " . $colonnes[0] . " = " . $obj->$methode());
 	}
 
+// Function Update et delete fait par moi 
+//     public static function update($obj)
+// {
+// 	$db = Dbconnect::getdb();
+// 	$class = get_class($obj);
+// 	$colonnes = $class::getAttributes();
+// 	$requ = "Update ". $class . " SET ";
+// for ($i = 1; $i < count($colonnes); $i++){
+// 	$requ .= $colonnes[$i] . "=" . " :" . $colonnes[i] . "," ;
+// 	}
+
+// 	$requ .= substr($requ,0 strlen($requ) - 1);
+// 	$requ .= " WHERE " . $colonnes[0] . "=:" . $colonnes[0] ;
+// 	$q = $db->prepare($requ);
+	
+// for ($i = 0; $i < count($colonnes); $i++){
+// 	$methode = "get" . ucfirst($colonnes[$i]);
+// 	if ($obj->$methode() !== null )
+// 	$q->bindValue(":" . $colonnes[$i], $obj->methode());
+// 	}
+
+// 	$q->execute();
+// 	return $db->lastInsertId();
+// }
+
+// public static function delete($obj)
+// {
+// 	$db = Dbconnect::getdb();
+// 	$class = get_class($obj);
+// 	$colonnes = $class::getAttributes();
+// 	$requ = "DELETE FROM " . $class ;
+// 	$requ .= " WHERE " . $colonnes[0] . "=:" . $colonnes[0] ;
+// 	$methode = "getId" . $class ;
+// 	$q = $db->prepare($requ) ; 
+// 	$q->bindValue(":" .$colonnes[0], $obj->methode());
+// 	$q->execute();
+// }
+
     /**
 	 * permet de faire un select paramétré sur une table
      * 
