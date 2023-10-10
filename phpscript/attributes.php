@@ -57,11 +57,7 @@ function generateattributes($table,$colonnes)
 
     $return.= "public function toString()\n";
     $return.= "{\n";
-    $return.= "    \$aff = '';\n";
-    $return.= "    foreach (\$this as \$key => \$value) {\n";
-    $return.= "        \$aff .= ucfirst(\$key) . \" : \" . \$value . \"\\n\";\n";
-    $return.= "    }\n";
-    $return.= "    return \"\\n\" . \$aff . \"\\n\";\n";
+        
     $return.= "}\n";
     return $return;
 }
