@@ -9,8 +9,8 @@ function ChargerClasse($classe)
 }
 spl_autoload_register("ChargerClasse");
 
-DbConnect::init();
 Parametres::init();
+DbConnect::init();
 
 
 // Ajout d'une personne

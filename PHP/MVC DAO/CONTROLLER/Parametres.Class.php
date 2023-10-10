@@ -95,14 +95,29 @@ class Parametres
 
     public static function init(){
     $jsonStr = file_get_contents("config.json");
-    $config = json_decode($jsonStr,true);
-    var_dump($config);
+    $config = json_decode($jsonStr,true); // Decode du fichier Json
+    // var_dump($config);
     $database = $config["database"];
-    var_dump($database["host"]);
-    self::set_host($database["host"]);
-    var_dump(self::get_host());
-        // foreach ($database as $key => $value){
-        //     var_dump(($value));
-        // }
+    //Setter
+    // self::set_host($database["host"]);
+    // var_dump(self::get_host());
+
+    // Boucle pour les valeurs du json
+        foreach ($database as $key => $value){
+            if($key == "host"){
+                self::set_host($value);
+            } else if($key == "port"){
+                self::set_port($value);
+            } else if($key == "user"){
+                self::set_user($value);
+            } else if ($key == "password"){
+                self::set_password($value);
+            } else if ($key == "dbname"){
+                self::set_dbname($value);
+            }
+            else{
+                echo "Il n'y a pas de " . $key ;
+            }
+        }
     }
 }
