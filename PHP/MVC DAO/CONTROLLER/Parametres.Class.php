@@ -38,6 +38,10 @@ class Parametres
         return self::$_host;
     }
 
+    public static function set_host($value){
+        self::$_host = $value;
+    }
+
     /**
      * Get the value of _port
      */ 
@@ -46,12 +50,20 @@ class Parametres
         return self::$_port;
     }
 
+    public static function set_port($value){
+        self::$_port = $value;
+    }
+
     /**
      * Get the value of _user
      */ 
     public static function get_user()
     {
         return self::$_user;
+    }
+
+    public static function set_user($value){
+        self::$_user = $value;
     }
 
 
@@ -63,6 +75,10 @@ class Parametres
         return self::$_password;
     }
 
+    public static function set_password($value){
+        self::$_password = $value;
+    }
+
 
     /**
      * Get the value of _dbname
@@ -72,4 +88,21 @@ class Parametres
         return self::$_dbname;
     }
 
+    public static function set_dbname($value){
+        self::$_dbname = $value;
+    }
+
+
+    public static function init(){
+    $jsonStr = file_get_contents("config.json");
+    $config = json_decode($jsonStr,true);
+    var_dump($config);
+    $database = $config["database"];
+    var_dump($database["host"]);
+    self::set_host($database["host"]);
+    var_dump(self::get_host());
+        // foreach ($database as $key => $value){
+        //     var_dump(($value));
+        // }
+    }
 }
