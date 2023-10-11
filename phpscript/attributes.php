@@ -38,7 +38,7 @@ function generateattributes($table,$colonnes)
         }
         $return.= " public function set" . ucfirst($value) . "(" . $type . " " . '$' . $value . ")" . "\n";
         $return.= "{" . "\n";
-        $return.= '     $this' . '->_' . $value . "=" . '$' . $value . "\n";
+        $return.= '     $this' . '->_' . $value . " = " . '$' . $value . "\n";
         $return.= "}" . "\n" ;
         $return.= "\n" ;
         }
