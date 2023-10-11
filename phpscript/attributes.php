@@ -31,9 +31,11 @@ function generateattributes($table,$colonnes)
     }
     // fonction setter
     foreach ($colonnes as $key => $value) {
-        if (str_contains($value, 'id')){
+        if (str_contains($key, 'id')){
             $type = "?int";
-        } else {
+        } else if (str_contains($key, 'Date')){
+            $type ="date";
+        }else {
             $type = "string";
         }
         $return.= " public function set" . ucfirst($value) . "(" . $type . " " . '$' . $value . ")" . "\n";
