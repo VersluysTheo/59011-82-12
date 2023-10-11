@@ -1,10 +1,11 @@
 <?php 
 
+class Poco {
 // pour un Poco 
 // Generer attribut ( table et colonnes ) avec leurs setter et getter ( et attributs )
 // Table = classe et colonnes = attributs
 
-function generateattributes($table,$colonnes)
+public function generateattributes($table,$colonnes)
 {
     $return= "<?php" . "\n";
     $return.= "\n" ;
@@ -64,7 +65,7 @@ function generateattributes($table,$colonnes)
  *
  * @return void
  */
-function generateConstruct()
+public function generateConstruct()
 {
     $aff = '';
 
@@ -84,7 +85,7 @@ function generateConstruct()
  *
  * @return void
  */
-function generateHydrate()
+public function generateHydrate()
 {
     $aff = '';
 
@@ -107,7 +108,7 @@ function generateHydrate()
  *
  * @return String
  */
-function generateToString()
+public function generateToString()
 {
     $aff = '';
 
@@ -124,9 +125,14 @@ function generateToString()
     return $aff;
 }
 
+
 // Fonction pour générer les attributs et les accesseurs
 // toto = classe et le tableau = $colonnes
-generateattributes("toto", ["IdPersonne","DateCreation","nom","prenom"]);
-generateConstruct();
-generateHydrate();
-generateToString();
+public function generatepoco($table,$colonnes){
+    $this->generateattributes($table,$colonnes);
+    $this->generateConstruct();
+    $this->generateHydrate();
+    $this->generateToString();
+}
+
+}
