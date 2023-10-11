@@ -123,6 +123,8 @@ function generateToString()
     return $aff;
 }
 
+// Fonction pour générer les attributs et les accesseurs
+// toto = classe et le tableau = $colonnes
 generateattributes("toto", ["IdPersonne","DateCreation","nom","prenom"]);
 generateConstruct();
 generateHydrate();
