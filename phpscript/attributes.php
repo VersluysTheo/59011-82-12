@@ -31,8 +31,9 @@ function generateattributes($table,$colonnes)
     }
     // fonction setter
     foreach ($colonnes as $key => $value) {
-        // key = int(0), int(1) ....
-        //value = nom a l'interieur
+        // dans ce cas précis
+        // $key = int(0), int(1) ....
+        // $value = nom a l'interieur
         // var_dump(($key));
         // var_dump($value);
         if (str_contains($value, 'Id')){
