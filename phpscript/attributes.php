@@ -42,6 +42,9 @@ function generateattributes($table,$colonnes)
     $return.= "{". "\n";
     $return.= "     return self::" . '$_attributes' . ";" . "\n";
     $return.= "}". "\n" ;
+    var_dump($return);
+
+}
     //Partie de Florent 
     
 /**
@@ -109,5 +112,7 @@ function generateToString()
     return $aff;
 }
 
-// generateattributes("toto", ["nom","prenom"]);
-var_dump(generateattributes("toto", ["nom","prenom"]));
+generateattributes("toto", ["nom","prenom"]);
+generateConstruct();
+generateHydrate();
+generateToString();
