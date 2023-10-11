@@ -117,7 +117,7 @@ function generateToString()
     return $aff;
 }
 
-generateattributes("toto", ["nom","prenom" , "idpersonne"]);
+generateattributes("toto", ["nom","prenom"]);
 generateConstruct();
 generateHydrate();
 generateToString();
