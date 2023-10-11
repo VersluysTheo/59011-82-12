@@ -31,7 +31,12 @@ function generateattributes($table,$colonnes)
     }
     // fonction setter
     foreach ($colonnes as $key => $value) {
-        $return.= " public function set" . ucfirst($value) . "()" . "\n";
+        if (str_contains($value, 'id')){
+            $type = "?int";
+        } else {
+            $type = "string";
+        }
+        $return.= " public function set" . ucfirst($value) . "(" . $type . " " . '$' . $value . ")" . "\n";
         $return.= "{" . "\n";
         $return.= '     $this' . '->_' . $value . "=" . '$' . $value . "\n";
         $return.= "}" . "\n" ;
@@ -112,7 +117,7 @@ function generateToString()
     return $aff;
 }
 
-generateattributes("toto", ["nom","prenom"]);
+generateattributes("toto", ["nom","prenom" , "idpersonne"]);
 generateConstruct();
 generateHydrate();
 generateToString();
