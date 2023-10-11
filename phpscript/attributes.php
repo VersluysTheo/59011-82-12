@@ -31,9 +31,13 @@ function generateattributes($table,$colonnes)
     }
     // fonction setter
     foreach ($colonnes as $key => $value) {
-        if (str_contains($key, 'id')){
+        // key = int(0), int(1) ....
+        //value = nom a l'interieur
+        // var_dump(($key));
+        // var_dump($value);
+        if (str_contains($value, 'Id')){
             $type = "?int";
-        } else if (str_contains($key, 'Date')){
+        } else if (str_contains($value, 'Date')){
             $type ="date";
         }else {
             $type = "string";
@@ -119,7 +123,7 @@ function generateToString()
     return $aff;
 }
 
-generateattributes("toto", ["nom","prenom"]);
+generateattributes("toto", ["IdPersonne","DateCreation","nom","prenom"]);
 generateConstruct();
 generateHydrate();
 generateToString();
