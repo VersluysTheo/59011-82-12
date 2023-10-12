@@ -28,43 +28,22 @@ class GenPoco {
         $return.= "class " . ucfirst($table) . "\n" ;
         $return.= "{" . "\n" ;
         //Attributs
-        $return.= " /*****************Attributs*********************/ " . "\n";
+        $return.= " /*****************Attributs*********************/ \n";
+        $listeAttributs="";
+        $attr="";
+        $access="";
         foreach ($colonnes as $key => $value) {
-            $return.= " private ". '$_' . $value. ";". "\n";
-            $return.= "\n" ;
-        }
-        $return.= " private static " . '$_attributes' . "[" ;
-        foreach ($colonnes as $key => $value){
-            $return.= "$value,";
-        }
-        // On retire la virgule
-        $return.= substr($return,0,-1);
-        $return.= "]" . "\n";
-        $return.= "\n" . "\n";
-        //Accesseurs
-        $return.= " /******************Accesseurs*******************/" . "\n";
-        $return.= "\n" ;
-
-        /** fonction Getter
-         * return string
-         */
-
-        foreach ($colonnes as $key => $value) {
-        $return.= "     public function get" . ucfirst($value) . "()" . "\n";
-        $return.= " {" . "\n";
-        $return.= "     return " . '$this' . '->_' . $value . ";" ."\n";
-        $return.= " }" . "\n" ;
-        $return.= "\n" ;
-        }
-
-        /** fonction Setter
-         * return string
-         */
-        foreach ($colonnes as $key => $value) {
-            // dans ce cas :
-            // $key => int(0), int(1) etc
-            // $value => "nom de la colonne"
-            // Dans le cas du tableau "Id... => int" remplacer $value par $key
+            $attr.= " private ". '$_' . $key. ";". "\n";
+            $attr.= "\n" ;
+            $listeAttributs.="'".$key."', ";
+            //getter
+            $access.= "     public function get" . ucfirst($key) . "()\n";
+            $access.= " {\n";
+            $access.= "     return " . '$this' . '->_' . $key . ";" ."\n";
+            $access.= " }\n" ;
+            $access.= "\n" ;
+            //setter
+            // Modifier pour utiliser le type.json
             if (str_contains($value, 'id')){
                 $type = "?int";
             } else if (str_contains($value, 'date')){
@@ -72,18 +51,27 @@ class GenPoco {
             } else {
                 $type = "string";
             }
-            $return.= "     public function set" . ucfirst($value) . "(" . $type . " " . '$' . $value . ")" . "\n";
-            $return.= " {" . "\n";
-            $return.= '     $this' . '->_' . $value . " = " . '$' . $value . ";" . "\n";
-            $return.= " }" . "\n" ;
-            $return.= "\n" ;
-            }
+            $access.= "     public function set" . ucfirst($key) . "(?" . $type . " " . '$' . lcfirst($key) . ")" . "\n";
+            $access.= " {" . "\n";
+            $access.= '     $this' . '->_' . $key . " = " . '$' . lcfirst($key) . ";" . "\n";
+            $access.= " }" . "\n" ;
+            $access.= "\n" ;
+        }
+        $return.= $attr;
+        $return.= " private static " . '$_attributes' . "=[".substr($listeAttributs,0,-2)."];";
+        
+        $return.= "\n\n";
+        //Accesseurs
+        $return.= " /******************Accesseurs*******************/\n";
+        $return.= "\n" ;
+        $return.= $access . "\n";
+        
         // fonction get attributes
         $return.= "     public static function getAttributes()". "\n";
         $return.= " {". "\n";
         $return.= "     return self::" . '$_attributes' . ";" . "\n";
         $return.= " }". "\n" ;
-        $return.= " }". "\n";
+        // $return.= " }". "\n";
         //var_dump($return);
         return $return;
     }
