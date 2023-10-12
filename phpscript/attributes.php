@@ -44,6 +44,9 @@ class GenPoco {
             $access.= "\n" ;
             //setter
             // Modifier pour utiliser le type.json
+            $json = json_decode(file_get_contents("type.json"), true);
+            var_dump($json);
+
             if (str_contains($value, 'id')){
                 $type = "?int";
             } else if (str_contains($value, 'date')){
@@ -73,7 +76,7 @@ class GenPoco {
         $return.= " }". "\n" ;
         // $return.= " }". "\n";
         //var_dump($return);
-        return $return;
+        // return $return;
     }
         
     /**
