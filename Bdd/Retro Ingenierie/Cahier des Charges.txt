@@ -1,0 +1,7 @@
+Un client est associé à un contrat.
+Chaque client possède un Numéro Client, un Nom, une Adresse.
+
+Les contrats des clients assurent leurs voitures en cas d'accident : 
+- Les contrats sont séparés en 4 catégories en fonction du contrat, ainsi qu'une date de contrat.
+- Les Véhicules sont repérables grâce à leurs Numeros Vehicule, leurs marques, leurs modeles.
+Les accidents ont une date.
