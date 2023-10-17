@@ -7,7 +7,9 @@ CREATE TABLE Faute(
     PRIMARY KEY(Id_Faute),
    Id_Faute COUNTER,
    Libellé_Faute VARCHAR(50),
-   Commentaire_Faute VARCHAR(50)
+   Commentaire_Faute VARCHAR(50),
+   Date_Detection DATE,
+   Date_Reparation DATE
 );
 
 // Table Produit
@@ -15,8 +17,7 @@ CREATE TABLE Faute(
 DROP TABLE IF EXISTS Produit;
 
 CREATE TABLE Produit(
-    PRIMARY KEY(Id_Produit),
-   Id_Produit COUNTER,
+    Id_Produit INT AUTO_INCREMENT PRIMARY KEY,
    Nom_Produit VARCHAR(50),
    Numero_de_Serie INT,
    Année_de_Production DATE
@@ -28,8 +29,7 @@ CREATE TABLE Produit(
 DROP TABLE IF EXISTS Modèle;
 
 CREATE TABLE Modele(
-    PRIMARY KEY(Id_Modele),
-   Id_Modele COUNTER,
+   Id_Modele INT AUTO_INCREMENT PRIMARY KEY,
    Nom_modele VARCHAR(50),
    Code_Modele VARCHAR(50),
    Date_Mise_sur_le_Maché_Modele DATE
@@ -42,10 +42,10 @@ CREATE TABLE Modele(
 DROP TABLE IF EXISTS Catégories;
 
 CREATE TABLE Categories(
-    PRIMARY KEY(Id_Categories),
-   Id_Categories COUNTER,
+     Id_Categories INT AUTO_INCREMENT PRIMARY KEY,
    Nom_Categorie VARCHAR(50),
    Description_Categorie VARCHAR(50),
    Nom_Sous_Categorie VARCHAR(50),
    Description_Sous_Categorie VARCHAR(50)
 );
+
