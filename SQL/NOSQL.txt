@@ -1,0 +1,44 @@
+RECHERCHE FAIT SUR LE NOSQL
+
+
+
+Que signifie NOSQL => Not Only SQL 
+
+
+
+
+A l'inverse du SQL on utilise des documents qui correspondent a des collections d'objets.
+c'est un enrichissement utile des bases de données SQL relationnelles traditionnelles. ( C'EST UN + pas un concurrent ).
+
+
+L'utilité => permet de stocker les valeurs de manière intuitives et qui sera plus facile a comprendre et qui sera plus proche de la façon dont elles sont utilisées par les applications.
+
+
+
+
+
+Pourquoi parle t-on de non relationnel ?
+
+- Car les données ne sont pas stockées dans un schéma tabulaire avec des lignes et des colonnes mais + des valeurs non structurées ( comme présent dans la plupart des systèmes )
+
+
+Naissance base NoSQL : 11/06/2009, Britannique , Johan Oskarsson ( ingénieur informaticien )
+Comment c'est né ? Car les bases de données relationnelles avaient un problème de restrictions et le NoSQL apportaient une solution à ce problème.
+
+
+
+
+Un seul type de NoSQL ?
+
+NON : 
+- Bases de données orientées documents ( Données enregistrées qui n'ont pas besoin d'être structurées ) 
+- Bases de données graphiques ( Données orienté sous forme de graphique ) ( utilisé pour les reseaux sociaux )
+- Bases de données Clé-Valeur ( Données enregistrées sous forme de paire de valeurs cryptées => données affecté dans un clé qui possèdent une valeur ) ( les cookies utilisent ça )
+- Bases de données orientées colonnes ( Données sous forme de jeu de données en colonne )
+
+
+
+
+Dans quel cas utilise t-on NoSQL ?
+
+Les bases de données NOSQL sont adaptées pour stocker et retrouver des larges volumes de données et elles conviennent aussi lorsque les relations entre les données ne sont pas spécialement important.
