@@ -9,12 +9,12 @@ C) SELECT MIN(`cde_total`) FROM `commandes` as "Moyenne des montants" ;
 
 D) SELECT COUNT(*) FROM `commandes` ;
 
-E) SELECT FLOOR(AVG(`cde_total`)) as "Montant moyen de commande" , `nomClient`, `prenomClient`
+E) SELECT AVG(`cde_total`) as "Montant moyen de commande" , `nomClient`, `prenomClient`
 FROM `commandes`
 INNER JOIN `clients` ON clients.idClient = commandes.idClient 
 GROUP BY `nomClient` ;
 
-F) SELECT FLOOR(MAX(`cde_total`)) as "Montant maximum dépensé" , `nomClient`, `prenomClient`
+F) SELECT MAX(`cde_total`) as "Montant maximum dépensé" , `nomClient`, `prenomClient`
 FROM `commandes`
 INNER JOIN `clients` ON clients.idClient = commandes.idClient 
 GROUP BY `nomClient` ;
@@ -24,7 +24,7 @@ FROM `commandes`
 INNER JOIN `clients` ON clients.idClient = commandes.idClient 
 GROUP BY `nomClient` ;
 
-H) SELECT ROUND(AVG(`quantiteCommande`)) as "Moyenne d'articles commandés" , `nomClient`, `prenomClient`
+H) SELECT (AVG(`quantiteCommande`) as "Moyenne d'articles commandés" , `nomClient`, `prenomClient`
 FROM `commandes`
 INNER JOIN `clients` ON clients.idClient = commandes.idClient 
 GROUP BY `nomClient` ;
@@ -38,3 +38,19 @@ J) SELECT SUM(`quantiteCommande`), `descriptionArticle`
 FROM `commandes`
 INNER JOIN `articles` ON articles.idArticle = commandes.idArticle 
 GROUP BY `descriptionArticle`;
+
+K) SELECT AVG(quantiteCommande), `prenomClient`,`nomClient`, `dateCommande`
+FROM `commandes`
+INNER JOIN `clients` ON clients.idClient = commandes.idClient
+INNER JOIN `articles` ON articles.idArticle = commandes.idArticle
+GROUP BY `prenomClient`,`nomClient`, `dateCommande` ;
+
+L) SELECT Count(*) as "Nombre de Commandes" , `dateCommande` FROM `commandes` GROUP BY `dateCommande`;
+
+M) SELECT Count(`prenomClient`) as "Nombre de Client" from `clients`;
+
+N) SELECT COUNT(DISTINCT idClient) FROM `commandes`;
+
+O)SELECT COUNT(DISTINCT idArticle) FROM `commandes`;
+
+P) SELECT COUNT(DISTINCT `dateCommande`) FROM `commandes`;
