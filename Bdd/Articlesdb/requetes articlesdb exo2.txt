@@ -1,0 +1,40 @@
+cde_total a été ajouté. Il est calculé en multipliant le prix de l'articles avec la quantiteCommande.
+( Article6 = 2 ; QuantiteCommande = 9 ; cde_total = 18)
+
+A) SELECT MAX(`cde_total`) FROM `commandes` as "Montant le plus élevé" ;
+
+B) SELECT AVG(`cde_total`) FROM `commandes` as "Montant le moins élevé" ;
+
+C) SELECT MIN(`cde_total`) FROM `commandes` as "Moyenne des montants" ;
+
+D) SELECT COUNT(*) FROM `commandes` ;
+
+E) SELECT FLOOR(AVG(`cde_total`)) as "Montant moyen de commande" , `nomClient`, `prenomClient`
+FROM `commandes`
+INNER JOIN `clients` ON clients.idClient = commandes.idClient 
+GROUP BY `nomClient` ;
+
+F) SELECT FLOOR(MAX(`cde_total`)) as "Montant maximum dépensé" , `nomClient`, `prenomClient`
+FROM `commandes`
+INNER JOIN `clients` ON clients.idClient = commandes.idClient 
+GROUP BY `nomClient` ;
+
+G) SELECT COUNT(`cde_total`) as "Nombre de Commande" , `nomClient`, `prenomClient`
+FROM `commandes`
+INNER JOIN `clients` ON clients.idClient = commandes.idClient 
+GROUP BY `nomClient` ;
+
+H) SELECT ROUND(AVG(`quantiteCommande`)) as "Moyenne d'articles commandés" , `nomClient`, `prenomClient`
+FROM `commandes`
+INNER JOIN `clients` ON clients.idClient = commandes.idClient 
+GROUP BY `nomClient` ;
+
+I) SELECT (AVG(`quantiteCommande`), `descriptionArticle`
+FROM `commandes`
+INNER JOIN `articles` ON articles.idArticle = commandes.idArticle 
+GROUP BY `descriptionArticle`;
+
+J) SELECT SUM(`quantiteCommande`), `descriptionArticle`
+FROM `commandes`
+INNER JOIN `articles` ON articles.idArticle = commandes.idArticle 
+GROUP BY `descriptionArticle`;

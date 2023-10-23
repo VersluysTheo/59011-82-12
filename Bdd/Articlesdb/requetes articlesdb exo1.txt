@@ -1,0 +1,35 @@
+a) SELECT * FROM `clients`;
+
+b) SELECT `nomClient` FROM `clients`;
+
+c) SELECT Distinct `dateCommande` FROM `commandes`;
+
+d) SELECT `nomClient` FROM `clients` WHERE `nomClient` = "sophie";
+
+e) SELECT idArticle, quantiteCommande FROM `commandes` WHERE idClient = 1;
+
+f) SELECT UPPER(`nomClient`) FROM `clients`;
+
+g) SELECT CONCAT(UPPER(SUBSTR(`nomClient`,1,1)),SUBSTR(`nomClient`,2)) as "Nom du Client" FROM `clients`;
+
+h) SELECT `nomClient` FROM `clients` WHERE LENGTH (Trim(`nomClient`)) = 5;
+
+( ou SELECT `nomClient` FROM `clients` WHERE LENGTH (`nomClient`) = 5;)
+
+i) SELECT `nomClient` FROM `clients` WHERE `nomClient` LIKE 't%' OR '__l%' ;
+
+j) SELECT `idClient`, `idArticle`, `dateCommande`, DATE_ADD( `dateCommande`, INTERVAL 15 DAY) as "Date de Paiement" FROM `commandes`;
+
+k) SELECT CURDATE() ,CURRENT_TIME();
+
+l) SELECT DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), `dateEntreeClient`)), '%y') as "Anciennete" FROM `clients`;
+
+m) SELECT `idCommande`, `idClient`, `idArticle`, MAX(`quantiteCommande`) FROM `commandes` ;
+
+n) SELECT SUM( `quantiteCommande` ) FROM `commandes` WHERE `idClient` = 1;
+
+o) SELECT AVG( `quantiteCommande` ) FROM `commandes` WHERE `idClient` = 2;
+
+p) SELECT * FROM `clients` ORDER BY `nomClient` ASC ;
+
+q) SELECT * FROM `articles` ORDER BY `prixArticle` DESC ;
