@@ -1,0 +1,18 @@
+A) SELECT CONCAT(`nomEtudiant`," ", `prenomEtudiant`) as "Etudiant" FROM `etudiants` WHERE `dateNaissanceEtudiant` < (SELECT `dateNaissanceEtudiant` FROM `etudiants` WHERE `nomEtudiant` = "leclercq" AND `prenomEtudiant` = "jules");
+
+B) SELECT CONCAT(`nomEtudiant`," ", `prenomEtudiant`) as "Etudiant", `note`
+FROM `etudiants`
+INNER JOIN `avoir_note` ON avoir_note.idEtudiant = etudiants.idEtudiant
+WHERE idEpreuve = 4 AND `note` > (SELECT AVG(`note`) FROM `avoir_note` WHERE idEpreuve = 4);
+
+C)SELECT CONCAT(`nomEtudiant`," ", `prenomEtudiant`) as "Etudiant"
+FROM `etudiants`
+INNER JOIN `avoir_note` ON avoir_note.idEtudiant = etudiants.idEtudiant 
+WHERE `note` > 12;
+
+D)SELECT CONCAT(`nomEtudiant`," ", `prenomEtudiant`) as "Etudiant"
+FROM `etudiants`
+INNER JOIN `avoir_note` ON avoir_note.idEtudiant = etudiants.idEtudiant
+WHERE idEpreuve = 4 AND `note` > (SELECT `note` FROM `avoir_note` WHERE etudiants.nomEtudiant = 'luc' AND etudiants.prenomEtudiant = 'dupont');
+
+E)
