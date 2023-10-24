@@ -119,3 +119,23 @@ SELECT `comm`, `sala`, `nomemp` FROM `employe` ORDER BY `comm` ASC;
 /* 5) Donner la liste des commissions, salaires et noms triée selon l'ordre décroissant des commissions */
 
 SELECT `comm`, `sala`, `nomemp` FROM `employe` ORDER BY `comm` DESC;
+
+
+/* D */
+
+/* 1) Donner la ville dans laquelle travaille Costanza */
+
+SELECT `ville` FROM `departement` d
+INNER JOIN `employe` e ON e.nodep = d.nodep
+WHERE e.nomemp = 'Costanza';
+
+/* 2) Donner les noms, fonctions, et noms des départements des employés des départements 30 et 40 */
+
+SELECT `nomemp`, `fonction`,`nomdep` FROM `employe` e
+INNER JOIN `departement` d ON e.nodep = d.nodep
+WHERE e.nodep = 30 AND e.nodep = 40;
+
+/* 3) Donner le grade, la fonction, le nom et le salaire de chaque employé */
+/* 4) Donner la liste des noms et salaires des employés qui gagnent plus que leur responsable */
+/* 5) Donner la liste des noms, salaires, fonctions des employés qui gagnent plus que Perou */
+
