@@ -210,9 +210,88 @@ SELECT `nodep`,ROUND(AVG(`sala`),2) AS "Moyenne des salaires" from `employe` GRO
 
 /* 2) Donner pour chaque département, le salaire annuel moyen des employés qui ne sont ni directeur ni président */
 
-SELECT `nodep`, ROUND(AVG((`sala`+`comm`)*12),2) AS "Moyenne Revenu Annuel" FROM `employe` GROUP BY `nodep` WHERE `fonction` != 'directeur' AND `fonction` != 'président';
+SELECT `nodep`, ROUND(AVG((`sala`+`comm`)*12),2) AS "Moyenne Revenu Annuel" FROM `employe` WHERE `fonction` != 'directeur' AND `fonction` != 'président' GROUP BY `nodep`;
 
 /* 3) Donner pour chaque fonction de chaque département le nombre d'employés et le salaire annuel moyen */
+
+SELECT `fonction`, d.nodep, COUNT(`nomemp`) AS `Nombre d'employes`, ROUND(AVG((`sala`+`comm`)*12),2) AS "Moyenne Revenu Annuel"
+FROM `employe` e
+INNER JOIN `departement` d ON d.nodep = e.nodep
+GROUP BY `fonction`, d.nodep;
+
 /* 4) Donner la liste des salaires annuels moyens pour les fonctions comportant plus de deux employés */
+
+SELECT `fonction`, ROUND(AVG((`sala`+`comm`)*12),2) AS "Moyenne Revenu Annuel" FROM `employe` WHERE COUNT(`fonction`) > 2 GROUP BY `fonction`;
+
 /* 5) Donner la liste des départements avec au moins deux ouvriers */
+
+SELECT `nomdep` , COUNT(`fonction`) AS "NOMBRE D'EMPLOYE"
+FROM `departement` d 
+INNER JOIN `employe` e ON e.nodep = d.nodep 
+WHERE `fonction` IN ('ouvrier')
+GROUP BY `nomdep`
+HAVING COUNT(`fonction`) > 2;
+
+
 /* 6) Donner les salaires moyens des présidents, directeurs et responsables */
+
+SELECT ROUND(AVG(`sala`),2) as "Moyenne Salaire Président,directeur,responsable"
+FROM `employe`
+WHERE `fonction` IN ('président','directeur','responsable');
+
+
+/* G */
+
+/* 1 )Donner les noms et fonctions des employés qui gagnent plus que "Bibaut"; */ 
+
+SELECT `nomemp`, `fonction`
+FROM `employe`
+WHERE `sala` > (SELECT `sala` FROM `employe` WHERE `nomemp` = 'Bibaut');
+
+/* 2 )Donner les fonctions dont la moyenne des salaires est supérieure à la moyenne des "vendeurs"; */
+
+SELECT e.fonction , AVG(e.sala) AS "Moyennef"
+FROM `employe` e
+GROUP BY e.fonction
+HAVING Moyennef > (SELECT AVG(em.sala) from `employe` em WHERE em.fonction = 'vendeur');
+
+
+
+/* 3 )Donner les noms des départements des employés qui gagnent plus de 2 700 € ; */
+
+SELECT DISTINCT `nomdep`
+FROM `departement` d 
+INNER JOIN `employe` e ON e.nodep = d.nodep 
+WHERE e.sala > 2700;
+
+/* 4 )Déterminer le salarié le plus ancien */
+
+SELECT `nomemp`, MIN(`datemb`) AS "Date d'embauche la plus ancienne" from `employe`;
+
+/* 5 )Déterminer le dernier salarié embauché */
+
+SELECT `nomemp`, MAX(`datemb`) AS "Date d'embauche la plus recente" from `employe`;
+
+/* 6 )Afficher la liste des employés responsables d\autres employés. */
+
+SELECT DISTINCT e.nomemp from `employe` e
+INNER JOIN `employe` em ON em.noresp = e.noemp;
+
+/* 7 )Donner les employés qui ont occupé les fonctions de vendeur et de directeur */
+
+Select e.nomemp, h.noemp, COUNT(h.noemp) AS "Nombre de poste Occupé"
+FROM `employe` e
+INNER JOIN `histofonction` h ON h.noemp = e.noemp
+WHERE h.fonction = 'directeur' OR h.fonction = 'vendeur'
+GROUP BY `nomemp`
+HAVING COUNT(h.noemp) = 2;
+
+/* 8 )Donner les noms des employés (avec leur numéro de département et leur salaire) qui gagnent plus que la moyenne des employés de leur département */
+
+SELECT e.nodep, e.nomemp,e.sala, AVG(e.sala) AS "MoyenneSalaire"
+FROM `employe` e
+GROUP BY e.nodep
+HAVING MoyenneSalaire <
+(SELECT AVG(e.sala)
+FROM `employe` e
+INNER JOIN `departement` d ON d.nodep = e.nodep );
