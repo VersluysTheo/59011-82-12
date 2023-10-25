@@ -294,4 +294,4 @@ GROUP BY e.nodep
 HAVING MoyenneSalaire <
 (SELECT AVG(e.sala)
 FROM `employe` e
-INNER JOIN `departement` d ON d.nodep = e.nodep );
+INNER JOIN `departement` d ON d.nodep = e.nodep ); 
