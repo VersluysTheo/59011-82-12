@@ -288,10 +288,21 @@ HAVING COUNT(h.noemp) = 2;
 
 /* 8 )Donner les noms des employés (avec leur numéro de département et leur salaire) qui gagnent plus que la moyenne des employés de leur département */
 
-SELECT e.nodep, e.nomemp,e.sala, AVG(e.sala) AS "MoyenneSalaire"
+
+SELECT d.nodep, e.nomemp, e.sala, AVG(e.sala) AS " Moyenne"
 FROM `employe` e
+INNER JOIN `departement` d ON d.nodep = e.nodep
+GROUP BY e.nodep;
+HAVING Moyenne < (SELECT em.sala from `employe` em);
+
+Ca n\affiche que 4 lignes donc il y a une manipulation a faire pour afficher tout les lignes salaires 
+
+
+// ESSAI DE BOULE JOINTURES ( sans doute une idée douteuse)
+
+SELECT d.nodep, e.nomemp, e.sala, AVG(e.sala) AS " Moyenne"
+FROM `employe` e
+INNER JOIN `departement` d ON d.nodep = e.nodep
 GROUP BY e.nodep
-HAVING MoyenneSalaire <
-(SELECT AVG(e.sala)
-FROM `employe` e
-INNER JOIN `departement` d ON d.nodep = e.nodep ); 
+HAVING Moyenne < (SELECT em.sala from `employe` em
+INNER JOIN `departement` de ON de.nodep = em.nodep);
