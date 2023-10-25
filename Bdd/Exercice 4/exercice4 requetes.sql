@@ -136,6 +136,15 @@ INNER JOIN `departement` d ON e.nodep = d.nodep
 WHERE e.nodep = 30 AND e.nodep = 40;
 
 /* 3) Donner le grade, la fonction, le nom et le salaire de chaque employé */
+
+Jouer avec les salaires pour avoir les grades 
+
 /* 4) Donner la liste des noms et salaires des employés qui gagnent plus que leur responsable */
+
+Pareil que au dessus recup l\info du responsable pour ensuite determine qi il gagne plus ou pas 
+
+
 /* 5) Donner la liste des noms, salaires, fonctions des employés qui gagnent plus que Perou */
 
+SELECT `nomemp`, `sala`, `fonction` from `employe` e
+WHERE `sala` > ( SELECT `sala` FROM `employe` WHERE `nomemp` = 'perou');
