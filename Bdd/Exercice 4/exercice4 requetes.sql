@@ -138,7 +138,9 @@ WHERE e.nodep = 30 AND e.nodep = 40;
 
 /* 3) Donner le grade, la fonction, le nom et le salaire de chaque employé */
 
-Jouer avec les salaires pour avoir les grades 
+SELECT g.Id_grade, e.fonction, e.nomemp, e.sala 
+FROM employe AS e 
+JOIN grade AS g ON e.sala BETWEEN g.salmin AND g.salmax;
 
 /* 4) Donner la liste des noms et salaires des employés qui gagnent plus que leur responsable */
 
@@ -156,13 +158,61 @@ WHERE `sala` > ( SELECT `sala` FROM `employe` WHERE `nomemp` = 'perou');
 
 /* E */ 
 
-1.	Donner les noms, salaires, commissions et revenus des vendeurs
-2.	Donner les noms, salaires et les commissions des employés dont la commission est supérieure à 25% de leur salaire
-3.	Donner la liste des vendeurs dans l'ordre décroissant de leur commission divisée par leur salaire
-4.	Donner le revenu annuel de chaque vendeur
-5.	Donner le salaire quotidien des vendeurs
-6.	Donner la moyenne des salaires des ouvriers
-7.	Donner le total des salaires et des commissions des vendeurs
-8.	Donner le revenu annuel moyen de tous les vendeurs
-9.	Donner le plus haut salaire, le plus bas et l'écart entre les deux
-10.	Donner le nombre d'employés du département 30
+/* 1) Donner les noms, salaires, commissions et revenus des vendeurs */
+
+SELECT `nomemp`, `sala`, `comm` , (`sala`+`comm`) AS "Revenu Vendeur" FROM `employe` WHERE `fonction` = "vendeur";
+
+/* 2) Donner les noms, salaires et les commissions des employés dont la commission est supérieure à 25% de leur salaire */
+
+SELECT `noemp`,`sala`,`comm` FROM `employe` WHERE `comm` >= 0.25*`sala`;
+
+/* 3) Donner la liste des vendeurs dans l'ordre décroissant de leur commission divisée par leur salaire */
+
+SELECT `nomemp`,`fonction`,`sala`,`comm`,`datemb` FROM `employe` ORDER BY `comm` / `sala`DESC ;
+
+/* 4) Donner le revenu annuel de chaque vendeur */
+
+SELECT `nomemp`, `fonction` , (`sala`+`comm`)*12 AS "Revenu annuel" FROM `employe` ;
+
+/* 5) Donner le salaire quotidien des vendeurs */
+
+SELECT `nomemp`, `fonction` , `sala`/30 AS "Revenu Quotidien" FROM `employe` ; /* methode pas ouf a mon avis */
+SELECT `nomemp`, `fonction` , ROUND(((`sala`+`comm`)*12)/365 ,2) AS "Revenu Quotidien" FROM `employe` ; /* methode qui me parait la mieux*/
+SELECT `nomemp`, `fonction` , ROUND(((`sala`+`comm`)*3)/91.25 ,2) AS "Revenu Quotidien" FROM `employe`; /* Calcul qui prend en compte les indemnités si je me referre a mon navigateur préféré qui ne mange pas toute ma ram : Google Chrome */
+
+/* 6) Donner la moyenne des salaires des ouvriers */
+
+SELECT AVG(`sala`) AS "Moyenne Salaire Ouvrier" from `employe` WHERE `fonction` = 'ouvrier';
+
+/* 7) Donner le total des salaires et des commissions des vendeurs */
+
+SELECT SUM(`sala`) AS "Total Salaires" , SUM(`comm`) AS "Total Commissions" from `employe` ;
+
+/* 8) Donner le revenu annuel moyen de tous les vendeurs */
+
+SELECT ROUND(AVG((`sala`+`comm`)*12),2) AS "Moyenne Revenu Annuel" from `employe`;
+
+/* 9) Donner le plus haut salaire, le plus bas et l'écart entre les deux */
+
+SELECT MAX(`sala`) AS "Salaire le plus haut", MIN(`sala`) AS "Salaire le plus bas", (MAX(`sala`)-MIN(`sala`)) AS "Etendu de Salaire"  FROM `employe`;
+
+/* 10) Donner le nombre d'employés du département 30 */
+
+SELECT COUNT(`nomemp`) FROM `employe` WHERE `nodep` = 30;
+
+
+
+/* F */
+
+/* 1) Donner la moyenne des salaires pour chaque département */
+
+SELECT `nodep`,ROUND(AVG(`sala`),2) AS "Moyenne des salaires" from `employe` GROUP BY `nodep`;
+
+/* 2) Donner pour chaque département, le salaire annuel moyen des employés qui ne sont ni directeur ni président */
+
+SELECT `nodep`, ROUND(AVG((`sala`+`comm`)*12),2) AS "Moyenne Revenu Annuel" FROM `employe` GROUP BY `nodep` WHERE `fonction` != 'directeur' AND `fonction` != 'président';
+
+/* 3) Donner pour chaque fonction de chaque département le nombre d'employés et le salaire annuel moyen */
+/* 4) Donner la liste des salaires annuels moyens pour les fonctions comportant plus de deux employés */
+/* 5) Donner la liste des départements avec au moins deux ouvriers */
+/* 6) Donner les salaires moyens des présidents, directeurs et responsables */
