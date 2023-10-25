@@ -125,7 +125,8 @@ SELECT `comm`, `sala`, `nomemp` FROM `employe` ORDER BY `comm` DESC;
 
 /* 1) Donner la ville dans laquelle travaille Costanza */
 
-SELECT `ville` FROM `departement` d
+SELECT `ville` 
+FROM `departement` d
 INNER JOIN `employe` e ON e.nodep = d.nodep
 WHERE e.nomemp = 'Costanza';
 
@@ -141,10 +142,27 @@ Jouer avec les salaires pour avoir les grades
 
 /* 4) Donner la liste des noms et salaires des employés qui gagnent plus que leur responsable */
 
-Pareil que au dessus recup l\info du responsable pour ensuite determine qi il gagne plus ou pas 
-
+SELECT e.nomemp, e.sala
+FROM `employe` e
+INNER JOIN `employe` em ON em.noemp = e.noresp 
+WHERE e.sala > em.sala;
 
 /* 5) Donner la liste des noms, salaires, fonctions des employés qui gagnent plus que Perou */
 
-SELECT `nomemp`, `sala`, `fonction` from `employe` e
+SELECT `nomemp`, `sala`, `fonction` 
+FROM `employe` e
 WHERE `sala` > ( SELECT `sala` FROM `employe` WHERE `nomemp` = 'perou');
+
+
+/* E */ 
+
+1.	Donner les noms, salaires, commissions et revenus des vendeurs
+2.	Donner les noms, salaires et les commissions des employés dont la commission est supérieure à 25% de leur salaire
+3.	Donner la liste des vendeurs dans l'ordre décroissant de leur commission divisée par leur salaire
+4.	Donner le revenu annuel de chaque vendeur
+5.	Donner le salaire quotidien des vendeurs
+6.	Donner la moyenne des salaires des ouvriers
+7.	Donner le total des salaires et des commissions des vendeurs
+8.	Donner le revenu annuel moyen de tous les vendeurs
+9.	Donner le plus haut salaire, le plus bas et l'écart entre les deux
+10.	Donner le nombre d'employés du département 30
