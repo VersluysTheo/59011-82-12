@@ -292,7 +292,7 @@ HAVING COUNT(h.noemp) = 2;
 SELECT d.nodep, e.nomemp, e.sala, AVG(e.sala) AS " Moyenne"
 FROM `employe` e
 INNER JOIN `departement` d ON d.nodep = e.nodep
-GROUP BY e.nodep;
+GROUP BY e.nodep
 HAVING Moyenne < (SELECT em.sala from `employe` em);
 
 Ca n\affiche que 4 lignes donc il y a une manipulation a faire pour afficher tout les lignes salaires 
