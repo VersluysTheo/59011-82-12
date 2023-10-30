@@ -16,7 +16,7 @@ namespace Test2
             //String s = Console.ReadLine();
             //Console.WriteLine("Bonjour " + s);
 
-            // Exo 2
+            //Exo 2
             //Console.Write("Votre Age ?");
             //String valeur = Console.ReadLine();
             //Int convert = Convert.ToInt32(valeur);
