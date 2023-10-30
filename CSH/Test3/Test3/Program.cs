@@ -234,7 +234,6 @@
 // Trouvez le plus petit
 
 //Double valeur1, valeur2, valeur3, valeurmin;
-//String val1, val2, val3;
 
 //for (int i = 1; i < 4; i++)
 //{
@@ -311,9 +310,20 @@
 
 //3.9
 // Movement de Cavalier
+using System.ComponentModel.Design.Serialization;
+
 static void Echec()
 {
-    int i, j, i2, j2;
+    //Char piece;
+    int i, j, i2, j2, piece;
+    do
+    {
+        Console.WriteLine("0 = cavalier\r\n1 = Tour\r\n2 = Fou\r\n3 = Dame\r\n4 = Roi \r\n" +
+            "Quelle pièce souhaitez-vous deplacer ?");
+
+        piece = Convert.ToInt32(Console.ReadLine());
+    } while (piece > 4);
+
 
     //Demande des valeurs 
     do
@@ -332,43 +342,87 @@ static void Echec()
         j2 = Convert.ToInt32(Console.ReadLine());
     } while (i2 >= 9 | j2 >= 9);
 
-    //Mouvement de cavalier
-    //if (Math.Abs(i2 - i) == 2 & Math.Abs(j2 - j) == 1 ^ Math.Abs(i2 - i) == 1 & Math.Abs(j2 - j) == 2)
-    //{
-    //    Console.WriteLine("Le mouvement du Cavalier de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    //}
-    //else
-    //{
-    //    Console.WriteLine("Le mouvement du Cavalier de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
-    //}
-    //Mouvement de tour
-    //if ((i2 == i) | (j2 == j)){
-    //    Console.WriteLine("Le mouvement de la Tour de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    //} else
-    //{
-    //    Console.WriteLine("Le mouvement de la Tour " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
-    //}
-    // Mouvement de fou
-    if ((i+j) == (i2 + j2) | ((Math.Abs(i+j) - Math.Abs(i2+j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+    switch (piece)
     {
-        Console.WriteLine("Le mouvement du Fou de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    } else
-    {
-        Console.WriteLine("Le mouvement du Fou de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+        case 0:
+            Cavalier(i,j,i2,j2,piece);
+            break;
+        case 1:
+            Tour(i, j, i2, j2,piece);
+            break;
+        case 2:
+            Fou(i, j, i2, j2,piece);
+            break;
+        case 3:
+            Dame(i, j, i2, j2,piece);
+            break;
+        case 4:
+            Roi(i, j, i2, j2,piece);
+            break;
     }
 
 
-    //Movement du roi
-    //if (Math.Abs(i2-i) <= 1 & Math.Abs(j2-j) <= 1)
-    //{
-    //    Console.WriteLine("Le mouvement du Roi de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    //} else
-    //{
-    //    Console.WriteLine("Le mouvement du Roi " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
-    //}
-
-
 }
+
+static void Cavalier(int i,int j,int i2,int j2, int piece)
+{
+
+    //Mouvement de cavalier
+    if (Math.Abs(i2 - i) == 2 & Math.Abs(j2 - j) == 1 ^ Math.Abs(i2 - i) == 1 & Math.Abs(j2 - j) == 2)
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    }
+    else
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+    }
+}
+
+static void Tour(int i, int j, int i2, int j2, int piece)
+{
+    //Mouvement de tour
+    if ((i2 == i) | (j2 == j))
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    }
+    else
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible" );
+    }
+}
+
+static void Fou(int i, int j, int i2, int j2, int piece)
+{
+    //Mouvement de fou
+    if ((i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    }
+    else
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+    }
+}
+
+static void Roi(int i, int j, int i2, int j2, int piece)
+{
+    //Movement du roi
+    if (Math.Abs(i2 - i) <= 1 & Math.Abs(j2 - j) <= 1)
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    }
+    else
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + ", " + j + ")" + " a " + "(" + i2 + ", " + j2 + ")" + "n'est pas possible");
+    }
+}
+
+static void Dame(int i, int j, int i2, int j2, int piece)
+{
+    // Fou + Tour ;
+}
+
+
 Echec();
 
 
