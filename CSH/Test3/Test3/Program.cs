@@ -231,20 +231,25 @@
 
 
 //3.6
-// Trouvez le plus petit
+//Trouvez le plus petit
 
-//Double valeur1, valeur2, valeur3, valeurmin;
+//String valeur;
+//Double valeur1, valeurmin;
+//List <double> listevaleur = new List<double>();
 
-//for (int i = 1; i < 4; i++)
+//for (int i = 0; i < 3; i++)
 //{
-//    Console.WriteLine("Valeur " + i + " ?");
+//    Console.WriteLine("Valeur "  + (i+1));
+//    do
+//    {
+//        valeur = Console.ReadLine();
+//    } while (!double.TryParse(valeur, out valeur1));
+//    listevaleur.Add(valeur1);
 //}
-
-//valeur1 = Convert.ToDouble(Console.ReadLine());
-//valeur2 = Convert.ToDouble(Console.ReadLine());
-//valeur3 = Convert.ToDouble(Console.ReadLine());
-//valeurmin = Math.Min(valeur1, Math.Min(valeur2, valeur3));
+//valeurmin = listevaleur.Min();
+////valeurmin = Math.Min(valeur1, Math.Min(valeur2, valeur3));
 //Console.WriteLine("Le Plus petit nombre est : " + valeurmin);
+
 
 
 //3.7
@@ -257,30 +262,42 @@
 //char op;
 //resultat = 0;
 
+//do
+//{
 //    Console.WriteLine("Valeur de a ?");
-//    a = Convert.ToDouble(Console.ReadLine());
+//} while (!double.TryParse(Console.ReadLine(), out a));
+
+//do
+//{
 //    Console.WriteLine("Valeur de b ?");
-//    b = Convert.ToDouble(Console.ReadLine());
-//    Console.WriteLine("Signe ?");
-//    op = Console.ReadLine()[0];
-//    switch (op)
-//    {
-//        case '+':
-//            resultat = (a + b);
-//            break;
-//        case '-':
-//            resultat = (a - b);
-//            break;
-//        case '*':
-//            resultat = (a * b);
-//            break;
-//        case '/':
+//} while (!double.TryParse(Console.ReadLine(), out b));
+
+//Console.WriteLine("Signe ?");
+//op = Console.ReadLine()[0];
+//switch (op)
+//{
+//    case '+':
+//        resultat = (a + b);
+//        break;
+//    case '-':
+//        resultat = (a - b);
+//        break;
+//    case '*':
+//        resultat = (a * b);
+//        break;
+//    case '/' :
+//        if (b != 0)
+//        {
 //            resultat = (a / b);
-//            break;
-//        default:
-//            Console.WriteLine("Non");
-//            break;
-//    }
+//        } else
+//        {
+//            Console.WriteLine("Impossible de diviser par 0");
+//        }
+//        break;
+//    default:
+//        Console.WriteLine("Pas de Signe valable selectionné");
+//        break;
+//}
 //Console.WriteLine(resultat);
 
 
@@ -292,10 +309,14 @@
 
 //do
 //{
-//    Console.WriteLine("Coordonnées de i ?");
-//    i = Convert.ToInt32(Console.ReadLine());
-//    Console.WriteLine("Coordonnées de j ?");
-//    j = Convert.ToInt32(Console.ReadLine());
+//    do
+//    {
+//        Console.WriteLine("Coordonnées de i ?");
+//    } while (!int.TryParse(Console.ReadLine(), out i));
+//    do
+//    {
+//        Console.WriteLine("Coordonnées de j ?");
+//    } while ((!int.TryParse(Console.ReadLine(), out j)));
 //} while (i >= 9 | j >= 9);
 
 //if ((i + j) % 2 == 0)
@@ -309,20 +330,20 @@
 
 
 //3.9
-// Movement de Cavalier
+
 using System.ComponentModel.Design.Serialization;
+using System.Runtime.InteropServices;
 
 static void Echec()
 {
-    //Char piece;
     int i, j, i2, j2, piece;
     do
     {
         Console.WriteLine("0 = cavalier\r\n1 = Tour\r\n2 = Fou\r\n3 = Dame\r\n4 = Roi \r\n" +
             "Quelle pièce souhaitez-vous deplacer ?");
 
-        piece = Convert.ToInt32(Console.ReadLine());
-    } while (piece > 4);
+
+    } while (!int.TryParse(Console.ReadLine(), out piece));
 
 
     //Demande des valeurs 
@@ -345,26 +366,28 @@ static void Echec()
     switch (piece)
     {
         case 0:
-            Cavalier(i,j,i2,j2,piece);
+            Cavalier(i, j, i2, j2);
             break;
         case 1:
-            Tour(i, j, i2, j2,piece);
+            Tour(i, j, i2, j2);
             break;
         case 2:
-            Fou(i, j, i2, j2,piece);
+            Fou(i, j, i2, j2);
             break;
         case 3:
-            Dame(i, j, i2, j2,piece);
+            Dame(i, j, i2, j2);
             break;
         case 4:
-            Roi(i, j, i2, j2,piece);
+            Roi(i, j, i2, j2);
+            break;
+        default:
+            Console.WriteLine("Vous avez Selectionné un chiffre invalide");
             break;
     }
 
-
 }
 
-static void Cavalier(int i,int j,int i2,int j2, int piece)
+static void Cavalier(int i, int j, int i2, int j2)
 {
 
     //Mouvement de cavalier
@@ -378,7 +401,8 @@ static void Cavalier(int i,int j,int i2,int j2, int piece)
     }
 }
 
-static void Tour(int i, int j, int i2, int j2, int piece)
+
+static void Tour(int i, int j, int i2, int j2)
 {
     //Mouvement de tour
     if ((i2 == i) | (j2 == j))
@@ -387,11 +411,11 @@ static void Tour(int i, int j, int i2, int j2, int piece)
     }
     else
     {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible" );
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
     }
 }
 
-static void Fou(int i, int j, int i2, int j2, int piece)
+static void Fou(int i, int j, int i2, int j2)
 {
     //Mouvement de fou
     if ((i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
@@ -404,7 +428,7 @@ static void Fou(int i, int j, int i2, int j2, int piece)
     }
 }
 
-static void Roi(int i, int j, int i2, int j2, int piece)
+static void Roi(int i, int j, int i2, int j2)
 {
     //Movement du roi
     if (Math.Abs(i2 - i) <= 1 & Math.Abs(j2 - j) <= 1)
@@ -417,79 +441,16 @@ static void Roi(int i, int j, int i2, int j2, int piece)
     }
 }
 
-static void Dame(int i, int j, int i2, int j2, int piece)
+static void Dame(int i, int j, int i2, int j2)
 {
-    // Fou + Tour ;
+    if (((i2 == i) | (j2 == j)) | (i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    }
+    else
+    {
+        Console.WriteLine("Le mouvement de " + "(" + i + ", " + j + ")" + " a " + "(" + i2 + ", " + j2 + ")" + "n'est pas possible");
+    }
 }
 
-
 Echec();
-
-
-// CORRECTION
-
-//1.2 TryParse est meilleur
-
-//1.3 Rajouter une condition : Si c'est pas un int 
-
-
-
-// Moyenne Arithmétique
-
-//int max = 3;
-//Console.WriteLine("Entrez " + max + " nombres");
-//float[] tableau = new float[max];
-//for (int i = 0; i < max; i++)
-//{
-//    tableau[i] = Convert.ToDouble(Console.ReadLine());
-//}
-//double moyenne = Queryable.Average(tableau.AsQueryable());
-
-//Console.WriteLine("Moyenne : " + moyenne);
-
-
-//1.8
-
-//Char caractere;
-//Console.WriteLine("Entrez un caratère : ");
-//caractere = Console.ReadLine()[0];
-//Console.WriteLine("Caractère en majuscule : " + caractere.ToString().ToUpper());
-
-
-//2.3
-//Double poidsCarton = 0;
-//Double poidsMaxCam = 0;
-//int nbrCarton = 0;
-
-//Console.WriteLine("Entrer le poids des cartons : ");
-//poidsCarton = Convert.ToDouble(Console.ReadLine());
-//Console.WriteLine("Entrer le poids max du camion : ");
-//poidsMaxCam = Convert.ToDouble(Console.ReadLine());
-//nbrCarton = (int)(poidsMaxCam / poidsCarton);
-//Console.WriteLine("le camion peut transporte " + nbrCarton + " carton");
-
-//2.4
-
-//Double somme;
-//List<Double> tabMonnaies = new List<Double> { 0.5, 0.2, 0.1, 0.05, 0.02, 0.01 };
-//do
-//{
-//    Console.Write("Saisir une valeur entre 0 et 0.99 ? ");
-//    String S = Console.ReadLine();
-//    somme = Convert.ToDouble(S);
-//} while (somme < 0 || somme > 0.99);
-
-//int i = 0;
-//while (somme > 0)
-//{
-//    if (Math.Round(somme, 2) >= tabMonnaies[i])
-//    {
-//        Console.WriteLine("1 pièce de" + tabMonnaies[i]);
-//        somme -= Math.Round(tabMonnaies[i], 2);
-//        i = -1;
-//    }
-//    i++;
-//    Console.WriteLine(somme);
-//    Console.WriteLine(i);
-//}
-
