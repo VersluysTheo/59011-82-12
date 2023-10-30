@@ -329,128 +329,159 @@
 //}
 
 
-//3.9
+//3.9 et 3.10
 
-using System.ComponentModel.Design.Serialization;
-using System.Runtime.InteropServices;
+//using System.ComponentModel.Design.Serialization;
+//using System.Runtime.InteropServices;
 
-static void Echec()
-{
-    int i, j, i2, j2, piece;
-    do
-    {
-        Console.WriteLine("0 = cavalier\r\n1 = Tour\r\n2 = Fou\r\n3 = Dame\r\n4 = Roi \r\n" +
-            "Quelle pièce souhaitez-vous deplacer ?");
-
-
-    } while (!int.TryParse(Console.ReadLine(), out piece));
+//static void Echec()
+//{
+//    int i, j, i2, j2, piece;
+//    do
+//    {
+//        Console.WriteLine("0 = cavalier\r\n1 = Tour\r\n2 = Fou\r\n3 = Dame\r\n4 = Roi \r\n" +
+//            "Quelle pièce souhaitez-vous deplacer ?");
 
 
-    //Demande des valeurs 
-    do
-    {
-        Console.WriteLine("Coordonnée de i ?");
-        i = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Coordonnée de j ?");
-        j = Convert.ToInt32(Console.ReadLine());
-    } while (i >= 9 | j >= 9);
-
-    do
-    {
-        Console.WriteLine("Quelle Coordonnée voulez-vous atteindre en i ?");
-        i2 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Quelle Coordonnée voulez-vous atteindre en j ?");
-        j2 = Convert.ToInt32(Console.ReadLine());
-    } while (i2 >= 9 | j2 >= 9);
-
-    switch (piece)
-    {
-        case 0:
-            Cavalier(i, j, i2, j2);
-            break;
-        case 1:
-            Tour(i, j, i2, j2);
-            break;
-        case 2:
-            Fou(i, j, i2, j2);
-            break;
-        case 3:
-            Dame(i, j, i2, j2);
-            break;
-        case 4:
-            Roi(i, j, i2, j2);
-            break;
-        default:
-            Console.WriteLine("Vous avez Selectionné un chiffre invalide");
-            break;
-    }
-
-}
-
-static void Cavalier(int i, int j, int i2, int j2)
-{
-
-    //Mouvement de cavalier
-    if (Math.Abs(i2 - i) == 2 & Math.Abs(j2 - j) == 1 ^ Math.Abs(i2 - i) == 1 & Math.Abs(j2 - j) == 2)
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    }
-    else
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
-    }
-}
+//    } while (!int.TryParse(Console.ReadLine(), out piece));
 
 
-static void Tour(int i, int j, int i2, int j2)
-{
-    //Mouvement de tour
-    if ((i2 == i) | (j2 == j))
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    }
-    else
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
-    }
-}
+//    //Demande des valeurs 
+//    do
+//    {
+//        Console.WriteLine("Coordonnée de i ?");
+//        i = Convert.ToInt32(Console.ReadLine());
+//        Console.WriteLine("Coordonnée de j ?");
+//        j = Convert.ToInt32(Console.ReadLine());
+//    } while (i >= 9 | j >= 9);
 
-static void Fou(int i, int j, int i2, int j2)
-{
-    //Mouvement de fou
-    if ((i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    }
-    else
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
-    }
-}
+//    do
+//    {
+//        Console.WriteLine("Quelle Coordonnée voulez-vous atteindre en i ?");
+//        i2 = Convert.ToInt32(Console.ReadLine());
+//        Console.WriteLine("Quelle Coordonnée voulez-vous atteindre en j ?");
+//        j2 = Convert.ToInt32(Console.ReadLine());
+//    } while (i2 >= 9 | j2 >= 9);
 
-static void Roi(int i, int j, int i2, int j2)
-{
-    //Movement du roi
-    if (Math.Abs(i2 - i) <= 1 & Math.Abs(j2 - j) <= 1)
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    }
-    else
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + ", " + j + ")" + " a " + "(" + i2 + ", " + j2 + ")" + "n'est pas possible");
-    }
-}
+//    switch (piece)
+//    {
+//        case 0:
+//            Cavalier(i, j, i2, j2);
+//            break;
+//        case 1:
+//            Tour(i, j, i2, j2);
+//            break;
+//        case 2:
+//            Fou(i, j, i2, j2);
+//            break;
+//        case 3:
+//            Dame(i, j, i2, j2);
+//            break;
+//        case 4:
+//            Roi(i, j, i2, j2);
+//            break;
+//        default:
+//            Console.WriteLine("Vous avez Selectionné un chiffre invalide");
+//            break;
+//    }
 
-static void Dame(int i, int j, int i2, int j2)
-{
-    if (((i2 == i) | (j2 == j)) | (i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
-    }
-    else
-    {
-        Console.WriteLine("Le mouvement de " + "(" + i + ", " + j + ")" + " a " + "(" + i2 + ", " + j2 + ")" + "n'est pas possible");
-    }
-}
+//}
 
-Echec();
+//static void Cavalier(int i, int j, int i2, int j2)
+//{
+
+//    //Mouvement de cavalier
+//    if (Math.Abs(i2 - i) == 2 & Math.Abs(j2 - j) == 1 ^ Math.Abs(i2 - i) == 1 & Math.Abs(j2 - j) == 2)
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+//    }
+//}
+
+
+//static void Tour(int i, int j, int i2, int j2)
+//{
+//    //Mouvement de tour
+//    if ((i2 == i) | (j2 == j))
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+//    }
+//}
+
+//static void Fou(int i, int j, int i2, int j2)
+//{
+//    //Mouvement de fou
+//    if ((i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+//    }
+//}
+
+//static void Roi(int i, int j, int i2, int j2)
+//{
+//    //Movement du roi
+//    if (Math.Abs(i2 - i) <= 1 & Math.Abs(j2 - j) <= 1)
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + ", " + j + ")" + " a " + "(" + i2 + ", " + j2 + ")" + "n'est pas possible");
+//    }
+//}
+
+//static void Dame(int i, int j, int i2, int j2)
+//{
+//    if (((i2 == i) | (j2 == j)) | (i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Le mouvement de " + "(" + i + ", " + j + ")" + " a " + "(" + i2 + ", " + j2 + ")" + "n'est pas possible");
+//    }
+//}
+
+//Echec();
+
+
+//3.11
+
+//Double heure, heure2, minute, minute2;
+//List<double> listevaleur = new List<double>();
+//listevaleur.Add(1,2);
+
+//do
+//{
+//    Console.WriteLine("Heure de Début ?");
+
+//} while (!double.TryParse(Console.ReadLine(),out heure));
+
+//do
+//{
+//    Console.WriteLine("Combien de Minutes ?");
+
+//} while (!double.TryParse(Console.ReadLine(),out minute));
+
+//do
+//{
+//    Console.WriteLine("Heure de Fin ?");
+
+//} while (!double.TryParse(Console.ReadLine(), out heure2));
+
+//do
+//{
+//    Console.WriteLine("Combien de Minutes à la fin ?");
+
+//} while (!double.TryParse(Console.ReadLine(), out minute2));
