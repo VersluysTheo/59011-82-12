@@ -1,11 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //1.1
 // Exo1
+//Affichage texte
+
 //Console.WriteLine("Votre Nom ?");
 //String s = Console.ReadLine();
 //Console.WriteLine("Bonjour " + s);
 
 //Exo 2
+//Affichage valeur numerique
+
 //Console.Write("Votre Age ?");
 //String valeur = Console.ReadLine();
 //Int convert = Convert.ToInt32(valeur);
@@ -13,6 +17,7 @@
 
 //1.2
 // Exo 3
+// Calcul Somme et Quotient de deux valeurs
 
 //int a, b;
 //Console.WriteLine("a = ?");
@@ -25,16 +30,20 @@
 //}
 //else
 //{
-//    Console.WriteLine("Imposssible");
+//    Console.WriteLine("Impossible");
 //}
 
 //1.3
-//Exo4 
+//Exo4
+//Converti en decimal
+
 //Console.Write("Ecrit une valeur flottante : ");
 //Decimal convert = Convert.ToDecimal(Console.ReadLine());
 //Console.WriteLine(convert);
 
 //Exo5
+//Moyenne de 3 valeurs
+
 //decimal convert, convert2, convert3;
 //Console.Write("Valeur 1 ? ");
 //convert = Convert.ToDecimal(Console.ReadLine());
@@ -46,6 +55,8 @@
 
 
 //Exo6
+// Calcul d'une aire
+
 //double longueur, largeur;
 //Console.Write("Longueur du Rectangle ? ");
 //longueur = Convert.ToDouble(Console.ReadLine());
@@ -61,12 +72,16 @@
 
 //1.4
 //Exo 7
+//Converti  a en Unicode
+
 //Char var = 'a';
 //int Al = Convert.ToUInt16(var);
 //Console.WriteLine(Al);
 
 
 //Exo 8 
+//Texte en Majuscules
+
 //Console.WriteLine("Ecrivez un texte : ");
 //Console.WriteLine(Console.ReadLine().ToUpper());
 
@@ -74,6 +89,8 @@
 //2
 
 //Exo 1
+//Unicode
+
 //Char successeur, convert;
 //int unicode, unisucc;
 //Console.WriteLine("lettre ?");
@@ -85,6 +102,8 @@
 
 
 //Exo 2
+// Convert Unicode dans une liste
+
 //List<int> nombre = new List<int>()
 // {'1','2','3','4','5','6','7','8','9'};
 //foreach (var item in nombre)
@@ -93,6 +112,8 @@
 //    Console.WriteLine(uni);
 
 //Exo 3
+// Marchandise et Carton 
+
 //Double carton, camion, marchandise;
 //Console.WriteLine("Masse de la Marchandise ?");
 //marchandise = Convert.ToDouble(Console.ReadLine());
@@ -128,6 +149,7 @@
 
 
 //3.1 ( Manque une verif si c'est pas un Int )
+// Verification Majeur / Mineur
 
 //int age;
 //Console.WriteLine("Quelle est ton âge ? ");
@@ -144,6 +166,8 @@
 
 
 //3.2 
+//Valeur Absolue
+
 //Double convert, absolute;
 //Console.Write("Valeur ?");
 //convert = Convert.ToDouble(Console.ReadLine());
@@ -152,6 +176,7 @@
 
 
 //3.3
+//Note
 
 //Double note;
 //String resultat;
@@ -172,6 +197,7 @@
 
 
 //3.4
+//Franchise
 
 //using System.ComponentModel.DataAnnotations;
 
@@ -188,6 +214,8 @@
 
 
 //3.5
+//Valeurs Distinctes
+
 //Double valeur1, valeur2;
 //Console.WriteLine("Valeur 1 ?");
 //valeur1 = Convert.ToDouble(Console.ReadLine());
@@ -261,19 +289,87 @@
 //3.8
 
 //Demande de couleur de la Case 
-int i, j;
-Console.WriteLine("Coordonnées de i ?");
-i = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Coordonnées de j ?");
-j = Convert.ToInt32(Console.ReadLine());
-if ((i + j) % 2 == 0)
-{
-    Console.WriteLine("La case " + "(" + i + "," + j + ") " + "une case Noire");
-} else
-{
-    Console.WriteLine("La case " + "(" + i + "," + j + ") " + "une case Blanche");
-}
+//int i, j;
 
+//do
+//{
+//    Console.WriteLine("Coordonnées de i ?");
+//    i = Convert.ToInt32(Console.ReadLine());
+//    Console.WriteLine("Coordonnées de j ?");
+//    j = Convert.ToInt32(Console.ReadLine());
+//} while (i >= 9 | j >= 9);
+
+//if ((i + j) % 2 == 0)
+//{
+//    Console.WriteLine("La case " + "(" + i + "," + j + ") " + "une case Noire");
+//}
+//else
+//{
+//    Console.WriteLine("La case " + "(" + i + "," + j + ") " + "une case Blanche");
+//}
+
+
+//3.9
+// Movement de Cavalier
+static void Echec()
+{
+    int i, j, i2, j2;
+
+    //Demande des valeurs 
+    do
+    {
+        Console.WriteLine("Coordonnée de i ?");
+        i = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Coordonnée de j ?");
+        j = Convert.ToInt32(Console.ReadLine());
+    } while (i >= 9 | j >= 9);
+
+    do
+    {
+        Console.WriteLine("Quelle Coordonnée voulez-vous atteindre en i ?");
+        i2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Quelle Coordonnée voulez-vous atteindre en j ?");
+        j2 = Convert.ToInt32(Console.ReadLine());
+    } while (i2 >= 9 | j2 >= 9);
+
+    //Mouvement de cavalier
+    //if (Math.Abs(i2 - i) == 2 & Math.Abs(j2 - j) == 1 ^ Math.Abs(i2 - i) == 1 & Math.Abs(j2 - j) == 2)
+    //{
+    //    Console.WriteLine("Le mouvement du Cavalier de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    //}
+    //else
+    //{
+    //    Console.WriteLine("Le mouvement du Cavalier de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+    //}
+    //Mouvement de tour
+    //if ((i2 == i) | (j2 == j)){
+    //    Console.WriteLine("Le mouvement de la Tour de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    //} else
+    //{
+    //    Console.WriteLine("Le mouvement de la Tour " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+    //}
+    // Mouvement de fou
+    if ((i+j) == (i2 + j2) | ((Math.Abs(i+j) - Math.Abs(i2+j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+    {
+        Console.WriteLine("Le mouvement du Fou de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    } else
+    {
+        Console.WriteLine("Le mouvement du Fou de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+    }
+
+
+    //Movement du roi
+    //if (Math.Abs(i2-i) <= 1 & Math.Abs(j2-j) <= 1)
+    //{
+    //    Console.WriteLine("Le mouvement du Roi de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
+    //} else
+    //{
+    //    Console.WriteLine("Le mouvement du Roi " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "n'est pas possible");
+    //}
+
+
+}
+Echec();
 
 
 // CORRECTION
