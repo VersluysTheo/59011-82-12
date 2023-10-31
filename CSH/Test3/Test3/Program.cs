@@ -668,7 +668,7 @@
 //        Console.WriteLine("Saisissez une valeur : ");
 //    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
 
-      // Boucle for
+// Boucle for
 //    for (a = 0; a <= (x-1); a++)
 //    {
 //        Console.Write(a + ",");
@@ -752,26 +752,64 @@
 //Factoriellefor();
 
 //BOUCLE WHILE
-static void Factoriellewhile()
+//static void Factoriellewhile()
+//{
+//    Double x,a,y ;
+//    a = 0;
+//    y = 1;
+//    do
+//    {
+//        Console.WriteLine("Saisissez une valeur : ");
+//    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
+
+//    while (a < 2)
+//    {
+//        Console.WriteLine(a + "! = 1");
+//        a++;
+//    }
+//    while (a <= x)
+//    {
+//        y *= a;
+//        Console.WriteLine(a + "! = " + y);
+//        a++;
+//    }
+//}
+//Factoriellewhile();
+
+
+//Boucle Foreach
+
+
+
+// PAS FAIT
+//static void FactoriseForeach()
+//{
+//    Double x;
+//    do
+//    {
+//        Console.WriteLine("Valeur de x :");
+//    } while (!Double.TryParse(Console.ReadLine(), out x));
+
+//    foreach ()
+//}
+
+//FactoriseForeach();
+
+
+static void TabMul()
 {
-    Double x,a,y ;
+    Double x,a, result;
     a = 0;
-    y = 1;
     do
     {
-        Console.WriteLine("Saisissez une valeur : ");
-    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
+        Console.WriteLine("Saisissez une valeur");
+    } while (!Double.TryParse(Console.ReadLine(), out x));  
 
-    while (a < 2)
+    while (a <= 10)
     {
-        Console.WriteLine(a + "! = 1");
-        a++;
-    }
-    while (a <= x)
-    {
-        y *= a;
-        Console.WriteLine(a + "! = " + y);
+        result = a * x;
+        Console.WriteLine(a + " x " + x + " = " + result);
         a++;
     }
 }
-Factoriellewhile();
+TabMul();
