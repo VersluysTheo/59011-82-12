@@ -658,12 +658,77 @@
 //}
 //Rectangles();
 
-static void Oclock()
+
+//4.4
+//static void Comptefor()
+//{
+//    Double x, a;
+//    do
+//    {
+//        Console.WriteLine("Saisissez une valeur : ");
+//    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
+
+      // Boucle for
+//    for (a = 0; a <= (x-1); a++)
+//    {
+//        Console.Write(a + ",");
+//    }
+//    for ( a = x; a <= x; a++)
+//    {
+//        Console.Write(a + ".");
+//    }
+//}
+//Comptefor();
+
+
+//static void Comptewhile()
+//{
+//    Double x, a;
+//    a = 0;
+//    do
+//    {
+//        Console.WriteLine("Saisissez une valeur : ");
+//    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
+
+//    //Boucle While
+//    while (a < x)
+//    {
+//        Console.Write(a + ",");
+//        a++;
+//    }
+//    while (a == x)
+//    {
+//        Console.Write(a + ".");
+//        a++;
+//    }
+//}
+//Comptewhile();
+
+// PAS BON
+//static void Compteforeach()
+//{
+//    int x;
+//    List<int> valeurs = new List<int>();
+//    do
+//    {
+//        Console.WriteLine("Saisissez une valeur : ");
+//    } while (!int.TryParse(Console.ReadLine(), out x) | (x < 0));
+
+//    foreach (int y in valeurs)
+//    {
+//        valeurs.Add(y);
+//        Console.Write(valeurs[y]);
+//    }
+//}
+//Compteforeach();
+
+
+
+//4.5 
+
+static void Factoriellefor()
 {
-    Double x;
-    do
-    {
-        Console.WriteLine("Sai");
-    }
+    Console.Write("Salut");
 }
-Oclock();
+
+Factoriellefor();
