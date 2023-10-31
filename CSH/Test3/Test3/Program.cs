@@ -458,30 +458,56 @@
 
 //3.11
 
-//Double heure, heure2, minute, minute2;
-//List<double> listevaleur = new List<double>();
-//listevaleur.Add(1,2);
-
-//do
+//static void Heuremin()
 //{
-//    Console.WriteLine("Heure de Début ?");
+//    Double heure, heure2, minute, minute2, calcdebut, calcfin, temps, heurecalc, mincalc;
 
-//} while (!double.TryParse(Console.ReadLine(),out heure));
+//    do
+//    {
+//        Console.WriteLine("Heure de Début ?");
 
-//do
-//{
-//    Console.WriteLine("Combien de Minutes ?");
+//    } while (!double.TryParse(Console.ReadLine(), out heure));
 
-//} while (!double.TryParse(Console.ReadLine(),out minute));
+//    do
+//    {
+//        Console.WriteLine("Combien de Minutes ?");
 
-//do
-//{
-//    Console.WriteLine("Heure de Fin ?");
+//    } while (!double.TryParse(Console.ReadLine(), out minute));
 
-//} while (!double.TryParse(Console.ReadLine(), out heure2));
+//    do
+//    {
+//        Console.WriteLine("Heure de Fin ?");
 
-//do
-//{
-//    Console.WriteLine("Combien de Minutes à la fin ?");
+//    } while (!double.TryParse(Console.ReadLine(), out heure2));
 
-//} while (!double.TryParse(Console.ReadLine(), out minute2));
+//    do
+//    {
+//        Console.WriteLine("Combien de Minutes à la fin ?");
+
+//    } while (!double.TryParse(Console.ReadLine(), out minute2));
+
+//    if ( heure < heure2)
+//    {
+//        calcdebut = (heure * 60) + minute;
+//        calcfin = (heure2 * 60) + minute2;
+//        temps = (calcfin - calcdebut);
+//        heurecalc = Math.Round(temps / 60 , 0);
+//        mincalc = (temps % 60);
+//        Console.WriteLine("Le temps écoulé est de " + heurecalc + " heure(s)" + " et " + mincalc + " minute(s)");
+//    } else
+//    {
+//        Console.WriteLine("L'heure de depart est plus élevé que l'heure de fin");
+//    }
+//}
+
+//Heuremin();
+
+
+//3.12
+
+static void datesuivant()
+{
+    Console.WriteLine("vhjg vjhgvjhgvytcyteszteryuitnbcuytrcnb");
+}
+
+datesuivant();
