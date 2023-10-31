@@ -726,9 +726,52 @@
 
 //4.5 
 
-static void Factoriellefor()
-{
-    Console.Write("Salut");
-}
+//BOUCLE FOR
 
-Factoriellefor();
+//static void Factoriellefor()
+//{
+//    Double x, a, y ;
+//    y = 1;
+//    // Ajout des Valeurs et verification 
+//    do
+//    {
+//        Console.WriteLine("Saisissez une valeur : ");
+//    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
+
+//        for (a = 0; a < 2; a++)
+//        {
+//        Console.WriteLine(a + "! = 1");
+//        }
+//        for ( a = 2; a <= x; a++)
+//    {
+//        y *= a ;
+//        Console.WriteLine(a + "! = " + y);
+//    }
+//}
+
+//Factoriellefor();
+
+//BOUCLE WHILE
+static void Factoriellewhile()
+{
+    Double x,a,y ;
+    a = 0;
+    y = 1;
+    do
+    {
+        Console.WriteLine("Saisissez une valeur : ");
+    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
+
+    while (a < 2)
+    {
+        Console.WriteLine(a + "! = 1");
+        a++;
+    }
+    while (a <= x)
+    {
+        y *= a;
+        Console.WriteLine(a + "! = " + y);
+        a++;
+    }
+}
+Factoriellewhile();
