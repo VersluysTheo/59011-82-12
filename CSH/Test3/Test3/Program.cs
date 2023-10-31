@@ -317,7 +317,7 @@
 //    {
 //        Console.WriteLine("Coordonnées de j ?");
 //    } while ((!int.TryParse(Console.ReadLine(), out j)));
-//} while (i >= 9 | j >= 9);
+//} while (i >= 9 |||| j >= 9);
 
 //if ((i + j) % 2 == 0)
 //{
@@ -353,7 +353,7 @@
 //        i = Convert.ToInt32(Console.ReadLine());
 //        Console.WriteLine("Coordonnée de j ?");
 //        j = Convert.ToInt32(Console.ReadLine());
-//    } while (i >= 9 | j >= 9);
+//    } while (i >= 9 || j >= 9);
 
 //    do
 //    {
@@ -361,7 +361,7 @@
 //        i2 = Convert.ToInt32(Console.ReadLine());
 //        Console.WriteLine("Quelle Coordonnée voulez-vous atteindre en j ?");
 //        j2 = Convert.ToInt32(Console.ReadLine());
-//    } while (i2 >= 9 | j2 >= 9);
+//    } while (i2 >= 9 || j2 >= 9);
 
 //    switch (piece)
 //    {
@@ -405,7 +405,7 @@
 //static void Tour(int i, int j, int i2, int j2)
 //{
 //    //Mouvement de tour
-//    if ((i2 == i) | (j2 == j))
+//    if ((i2 == i) || (j2 == j))
 //    {
 //        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
 //    }
@@ -418,7 +418,7 @@
 //static void Fou(int i, int j, int i2, int j2)
 //{
 //    //Mouvement de fou
-//    if ((i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+//    if ((i + j) == (i2 + j2) || ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
 //    {
 //        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
 //    }
@@ -443,7 +443,7 @@
 
 //static void Dame(int i, int j, int i2, int j2)
 //{
-//    if (((i2 == i) | (j2 == j)) | (i + j) == (i2 + j2) | ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
+//    if (((i2 == i) || (j2 == j)) || (i + j) == (i2 + j2) || ((Math.Abs(i + j) - Math.Abs(i2 + j2)) % 2 == 0) & Math.Abs(i2 - i) == Math.Abs(j2 - j))
 //    {
 //        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
 //    }
@@ -520,12 +520,12 @@
 //    {
 //        Console.WriteLine("Jour ?");
 
-//    } while (!double.TryParse(Console.ReadLine(), out jour) | (jour > jourmax) | (jour < 0));
+//    } while (!double.TryParse(Console.ReadLine(), out jour) || (jour > jourmax) || (jour < 0));
 
 //    do
 //    {
 //        Console.WriteLine("Mois ? (en Chiffres)");
-//    } while (!double.TryParse(Console.ReadLine(),out mois) | (mois > moismax) | (mois < 0));
+//    } while (!double.TryParse(Console.ReadLine(),out mois) || (mois > moismax) || (mois < 0));
 
 //    do
 //    {
@@ -536,7 +536,7 @@
 //    moissui = mois;
 
 //    // Sommes-nous en Fevrier ( Années bissextiles )
-//    if ((mois == 2) & (annee % 4 == 0) | (annee % 400 == 0))
+//    if ((mois == 2) & (annee % 4 == 0) || (annee % 400 == 0))
 //    {
 //        jourmax = 29;
 //    } else // Annees non bissextiles
@@ -545,7 +545,7 @@
 //    }
 
 //    // Mois a 30 jours ?
-//    if (mois == 4 | mois == 6 | mois == 9 | mois == 11){
+//    if (mois == 4 || mois == 6 || mois == 9 |||| mois == 11){
 //        jourmax = 30;
 //    }
 
@@ -575,13 +575,95 @@
 //datesuivant();
 
 
-//3.13
+//3.13 et 3.14
 
-Double a, b;
+//static void Intervalles()
+//{
+//    Double a, b, x;
+//    //Controle de Saisie des valeurs a, b et x
 
-do
+//    do
+//    {
+//        Console.WriteLine("valeur de a ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out a));
+
+//    do
+//    {
+//        Console.WriteLine("valeur de b ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out b) || (b < a));
+
+//    do
+//    {
+//        Console.WriteLine("valeur de x ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out x));
+
+//    if (x >= a && x <= b)
+//    {
+//        Console.WriteLine("La valeur" + x + " Appartient à l'intervalle " + "[" + a + "," + b + "]");
+//    } else
+//    {
+//        Console.WriteLine("La valeur " + x + " n'appartient pas à l'intervalle " + "[" + a + "," + b + "]");
+//    }
+
+//}
+
+//Intervalles();
+
+//3.15 et 3.16
+
+//static void Rectangles()
+//{
+
+//    Double xHautGauche, yHautGauche, xBasDroite, yBasDroite, x, y;
+
+//    do
+//    {
+//        Console.WriteLine("Valeur de xHautGauche ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out xHautGauche));
+
+//    do
+//    {
+//        Console.WriteLine("Valeur de yHautGauche ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out yHautGauche));
+
+//    do
+//    {
+//        Console.WriteLine("Valeur de xBasDroite ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out xBasDroite) || (xBasDroite < xHautGauche));
+
+//    do
+//    {
+//        Console.WriteLine("Valeur de yBasDroite ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out yBasDroite) || (yBasDroite > yHautGauche));
+
+//    do
+//    {
+//        Console.WriteLine("Valeur x ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out x));
+
+//    do
+//    {
+//        Console.WriteLine("Valeur de y ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out y));
+
+//    if ((x >= xHautGauche && x <= xBasDroite) && (y >= yBasDroite && y <= yHautGauche))
+//    {
+//        Console.WriteLine("Le Point (" + x + "," + y + ")" + " se Trouve dans le Rectangle de Coordonnées " + "(" + xHautGauche + "," + yHautGauche + ")" + "(" + xHautGauche + "," + yBasDroite + ")" + "(" + xBasDroite + "," + yBasDroite + ")" + "(" + xBasDroite + "," + yHautGauche + ")");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Le Point ne se trouve pas dans le rectangle nik toi t'a pas les coordonnées");
+//    }
+
+//}
+//Rectangles();
+
+static void Oclock()
 {
-    Console.WriteLine("valeur de a ?");
-} while (!Double.TryParse(Console.ReadLine(), out a));
-
-Console.WriteLine(a);
+    Double x;
+    do
+    {
+        Console.WriteLine("Sai");
+    }
+}
+Oclock();
