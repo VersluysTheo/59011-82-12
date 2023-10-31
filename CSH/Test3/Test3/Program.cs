@@ -505,72 +505,83 @@
 
 //3.12
 
-using Microsoft.VisualBasic;
-using System.Runtime.Serialization;
+//using Microsoft.VisualBasic;
+//using System.Runtime.Serialization;
 
-static void datesuivant()
+//static void datesuivant()
+//{
+//    Double jour, mois, annee, jourmax, moismax, joursui, moissui, anneesui;
+//    //Double[] moisbis;
+//    //moisbis = new double[]{4, 6, 9, 11}; // Tentative de Liste
+//    jourmax = 31;
+//    moismax = 12;
+
+//    do
+//    {
+//        Console.WriteLine("Jour ?");
+
+//    } while (!double.TryParse(Console.ReadLine(), out jour) | (jour > jourmax) | (jour < 0));
+
+//    do
+//    {
+//        Console.WriteLine("Mois ? (en Chiffres)");
+//    } while (!double.TryParse(Console.ReadLine(),out mois) | (mois > moismax) | (mois < 0));
+
+//    do
+//    {
+//        Console.WriteLine("Annee ?");
+//    } while (!double.TryParse(Console.ReadLine(), out annee));
+
+//    joursui = (jour + 1);
+//    moissui = mois;
+
+//    // Sommes-nous en Fevrier ( Années bissextiles )
+//    if ((mois == 2) & (annee % 4 == 0) | (annee % 400 == 0))
+//    {
+//        jourmax = 29;
+//    } else // Annees non bissextiles
+//    { 
+//        jourmax = 28;
+//    }
+
+//    // Mois a 30 jours ?
+//    if (mois == 4 | mois == 6 | mois == 9 | mois == 11){
+//        jourmax = 30;
+//    }
+
+
+//    //Si on est le 31 Decembre
+//    if ((joursui >= jourmax) & (moissui >= moismax))
+//    {
+//        joursui = 01;
+//        moissui = 01;
+//        anneesui = (annee + 1);
+//    } 
+//    else if ((joursui >= jourmax) & (moissui <= moismax)) // Si on est le 31 de n'importe quelle mois
+//    {
+//        joursui = 01;
+//        moissui = (mois+1);
+//        anneesui = annee;
+//    }
+//    else // Cas restants
+//    {
+//        moissui = mois;
+//        anneesui = annee;
+//    }
+
+//    Console.WriteLine(joursui + "/" + moissui + "/" + anneesui);
+//}
+
+//datesuivant();
+
+
+//3.13
+
+Double a, b;
+
+do
 {
-    Double jour, mois, annee, jourmax, moismax, joursui, moissui, anneesui;
-    Double[] moisbis;
-    moisbis = new double[]{ 1, 3, 5, 7, 8, 10, 12 };
-    jourmax = 31;
-    moismax = 12;
+    Console.WriteLine("valeur de a ?");
+} while (!Double.TryParse(Console.ReadLine(), out a));
 
-    do
-    {
-        Console.WriteLine("Jour ?");
-
-    } while (!double.TryParse(Console.ReadLine(), out jour) | (jour > jourmax) | (jour < 0));
-
-    do
-    {
-        Console.WriteLine("Mois ? (en Chiffres)");
-    } while (!double.TryParse(Console.ReadLine(),out mois) | (mois > moismax) | (mois < 0));
-
-    do
-    {
-        Console.WriteLine("Annee ?");
-    } while (!double.TryParse(Console.ReadLine(), out annee));
-
-    joursui = (jour + 1);
-    moissui = mois;
-    anneesui = annee;
-
-    // Sommes-nous en Fevrier ( Années bissextiles )
-    if ((mois == 2) & (annee % 4 == 0) | (annee % 400 == 0))
-    {
-        jourmax = 29;
-    } else // Annees non bissextiles
-    { 
-        jourmax = 28;
-    }
-
-    // Mois a 30 jours ?
-    if (moisbis.Contains(3)){
-        Console.WriteLine("oui");
-    }
-
-
-    //Si on est le 31 Decembre
-    if ((joursui >= jourmax) & (moissui >= moismax))
-    {
-        joursui = 01;
-        moissui = 01;
-        anneesui = (annee + 1);
-    } 
-    else if ((joursui >= jourmax) & (moissui <= moismax)) // Si on est le 31 de n'importe quelle mois
-    {
-        joursui = 01;
-        moissui = (mois+1);
-        anneesui = annee;
-    }
-    else // Cas restants
-    {
-        moissui = mois;
-        anneesui = annee;
-    }
-
-    Console.WriteLine(joursui + "/" + moissui + "/" + anneesui);
-}
-
-datesuivant();
+Console.WriteLine(a);
