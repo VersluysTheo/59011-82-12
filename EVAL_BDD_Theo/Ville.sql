@@ -1,6 +1,6 @@
 /* 1 */
 
-SELECT `ville_departement`,`ville_nom` AS "Nom de la Ville" FROM `villes_france` WHERE LENGTH(`ville_nom`) > 40 ;
+SELECT `ville_departement`,`ville_nom` AS "Nom de la Ville" FROM `villes_france` WHERE LENGTH(`ville_nom`) >= 40 ;
 
 /* 2 */ 
 
