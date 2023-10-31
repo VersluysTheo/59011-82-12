@@ -796,20 +796,31 @@
 //FactoriseForeach();
 
 
-static void TabMul()
-{
-    Double x,a, result;
-    a = 0;
-    do
-    {
-        Console.WriteLine("Saisissez une valeur");
-    } while (!Double.TryParse(Console.ReadLine(), out x));  
+//4.6
 
-    while (a <= 10)
-    {
-        result = a * x;
-        Console.WriteLine(a + " x " + x + " = " + result);
-        a++;
-    }
+//static void TabMul()
+//{
+//    Double x,a, result;
+//    a = 0;
+//    do
+//    {
+//        Console.WriteLine("Saisissez une valeur");
+//    } while (!Double.TryParse(Console.ReadLine(), out x));  
+
+//    while (a <= 10)
+//    {
+//        result = a * x;
+//        Console.WriteLine(a + " x " + x + " = " + result);
+//        a++;
+//    }
+//}
+//TabMul();
+
+//4.7
+
+static void TabMul2()
+{
+    Double[,] tableauMultiplication = new Double[1,5]; // Tableau a deux dimensions
 }
-TabMul();
+
+TabMul2();
