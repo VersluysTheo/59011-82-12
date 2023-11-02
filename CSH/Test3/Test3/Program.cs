@@ -902,8 +902,8 @@ static void Calculette()
     {
         Console.WriteLine("Valeur initial ?");
     } while (!Double.TryParse(Console.ReadLine(), out resultat));
-    
-// Switch pour les operations
+
+    // Switch pour les operations
 
     //Boucles pour continuer le calcul tant que '=' n'est pas saisi
     while (operateur != '=')
