@@ -890,59 +890,121 @@
 
 //Calculatrice le Retour
 
-static void Calculette()
+//static void Calculette()
+//{
+//    String operation;
+//    Double resultat, operande, a, init;
+//    Char operateur;
+//    operande = 0;
+//    operateur = ' ';
+//    // Valeur Initiale
+//    do
+//    {
+//        Console.WriteLine("Valeur initial ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out resultat));
+
+//    // Switch pour les operations
+
+//    //Boucles pour continuer le calcul tant que '=' n'est pas saisi
+//    while (operateur != '=')
+//    {
+//        init = resultat;
+//        Console.WriteLine("Que faisons-nous ? $ pour faire une puissance \n V0 pour faire la racine carré \n !0 pour faire la factorielle \n (= +Chiffres pour arreter )");
+//        operation = Console.ReadLine();
+//        operateur = operation[0];
+//        operande = Convert.ToInt32(operation.Substring(1));
+//        switch (operateur)
+//        {
+//            case '+':
+//                resultat += operande;
+//                break;
+//            case '-':
+//                resultat -= operande;
+//                break;
+//            case '*':
+//                resultat *= operande;
+//                break;
+//            case '/':
+//                if (operateur != 0)
+//                {
+//                    resultat /= operande;
+//                }
+//                else
+//                {
+//                    Console.WriteLine("Impossible de diviser par 0");
+//                }
+//                break;
+//            case '$':
+//                resultat = Math.Pow(resultat, operande);
+//                break;
+//            default:
+//                Console.WriteLine("");
+//                break;
+//        }
+
+//        if (operation == "V0")
+//        {
+//            resultat = Math.Sqrt(resultat);
+//        }
+//        else if (operation == "!0")
+//        {
+//            a = 1;
+//            while (a < init )
+//            {
+//                resultat *= a;
+//                a++;
+//            }
+//        }
+
+//        Console.WriteLine(resultat);
+
+//    }
+
+
+//}
+
+//Calculette();
+
+
+//5.1
+//static void Stringg()
+//{
+
+//    String chaine;
+//    chaine = "Les Framboises sont perchées sur le tabouret de mon grand-père";
+//    foreach (char c in chaine)
+//    {
+//        Console.WriteLine(c);
+//    }
+//}
+//Stringg();
+
+
+//5.2
+
+static void leString()
 {
-    String operation;
-    Double resultat, operande;
-    Char operateur;
-    operateur = ' ';
-    operande = 0;
-    // Valeur Initiale
+    String t;
+    int i, j;
+    t = "Plouplop";
+    char[] b = new char[t.Length];
     do
     {
-        Console.WriteLine("Valeur initial ?");
-    } while (!Double.TryParse(Console.ReadLine(), out resultat));
+        Console.WriteLine("Valeur de i ?");
+    } while (!int.TryParse(Console.ReadLine(), out i));
 
-    // Switch pour les operations
-
-    //Boucles pour continuer le calcul tant que '=' n'est pas saisi
-    while (operateur != '=')
+    do
     {
-        Console.WriteLine("Que faisons-nous ?");
-        operation = Console.ReadLine();
-        operateur = operation[0];
-        operande = operation[1];
-        switch (operateur)
-        {
-            case '+':
-                resultat += operande;
-                break;
-            case '-':
-                resultat -= operande;
-                break;
-            case '*':
-                resultat *= operande;
-                break;
-            case '/':
-                if (operateur != 0)
-                {
-                    resultat /= operande;
-                }
-                else
-                {
-                    Console.WriteLine("Impossible de diviser par 0");
-                }
-                break;
-            default:
-                Console.WriteLine("");
-                break;
-        }
-        Console.WriteLine(resultat);
+        Console.WriteLine("Valeur de j ?");
+    } while (!int.TryParse(Console.ReadLine(), out j));
 
+    using (StringReader sr = new(t))
+    {
+        sr.Read(b, 0, j);
+        Console.WriteLine(b);
+        sr.Read(b, j, t.Length-8);
+        Console.WriteLine(b);
     }
-
-
 }
-
-Calculette();
+leString();
 
