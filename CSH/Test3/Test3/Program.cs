@@ -982,29 +982,64 @@
 
 //5.2
 
-static void leString()
+//static void leString()
+//{
+//    String t;
+//    int i, j;
+
+//    t = "Je suis une phrase très longue pour faire des tests qui sont vraiment très cool (non)";
+//    do
+//    {
+//        Console.WriteLine("Position de caractère de départ ?");
+//    } while (!int.TryParse(Console.ReadLine(), out i));
+
+//    do
+//    {
+//        Console.WriteLine("Position du caractère de fin ?");
+//    } while (!int.TryParse(Console.ReadLine(), out j) || (j < i));
+
+
+//    foreach (char c in t)
+//    {
+//        while (i <= j)
+//        {
+//            Console.Write(t[i-1]);
+//            i++;
+//        }
+//    }
+
+//}
+//leString();
+
+
+//5.3
+
+using System.Text;
+
+static void Elstring()
 {
-    String t;
+    String t, init;
     int i, j;
-    t = "Plouplop";
-    char[] b = new char[t.Length];
+    StringBuilder sb = new();
+    init = "                             ";
+
+    t = "Je suis un test";
     do
     {
-        Console.WriteLine("Valeur de i ?");
+        Console.WriteLine("Position de caractère de départ ?");
     } while (!int.TryParse(Console.ReadLine(), out i));
 
     do
     {
-        Console.WriteLine("Valeur de j ?");
-    } while (!int.TryParse(Console.ReadLine(), out j));
+        Console.WriteLine("Position du caractère de fin ?");
+    } while (!int.TryParse(Console.ReadLine(), out j) || (j < i));
 
-    using (StringReader sr = new(t))
+    while (i <= j)
     {
-        sr.Read(b, 0, j);
-        Console.WriteLine(b);
-        sr.Read(b, j, t.Length-8);
-        Console.WriteLine(b);
+        sb.Insert(i, t, 1);
+        Console.WriteLine(sb);
+        i++;
     }
 }
-leString();
 
+Elstring();
