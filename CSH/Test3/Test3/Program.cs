@@ -1021,9 +1021,13 @@ static void Elstring()
     String t, init;
     int i, j;
     StringBuilder sb = new();
-    init = "                             ";
+    init = " ";
 
-    t = "Je suis un test";
+    do
+    {
+        Console.WriteLine("Chaines de Carctères ? ");
+    } while (!String.TryParse(Console.ReadLine(), out t));
+
     do
     {
         Console.WriteLine("Position de caractère de départ ?");
