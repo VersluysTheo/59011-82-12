@@ -1,7 +1,9 @@
 /* Creation DB */
 
 DROP DATABASE IF EXISTS `noel`;
-CREATE DATABASE IF NOT EXISTS `noel` ; /* Fonctionne uniquement que lorsque la DB existe déja */
+CREATE DATABASE IF NOT EXISTS `noel` ; 
+
+Use `noel`;
 
 /* Creation Table */
 
@@ -65,7 +67,7 @@ CREATE TABLE grande_tournee(
    Id_Traineau INT,
    Id_Tournee INT,
    Id_Renne INT,
-   PRIMARY KEY(Id_Lutin, Id_Traineau, Id_Tournee, Id_Renne)
+   PRIMARY KEY(Id_Lutin, Id_Traineau, Id_Tournee, Id_Renne) /* Eviter les clés primaire Doubles / Triples / Quadruples et mettre un ID sur ta table associative */
 );
 
 CREATE TABLE distribution(
