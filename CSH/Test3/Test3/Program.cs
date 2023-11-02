@@ -879,8 +879,8 @@ static void Jolicarre()
         Console.Write("\n");
         while (y < n)
         {
-            Console.Write("x");
-            x++;
+            Console.Write(" x ");
+            y++;
         }
         x++;
     }
