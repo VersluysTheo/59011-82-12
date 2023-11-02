@@ -863,26 +863,86 @@
 
 // Joli Carré
 
-static void Jolicarre()
+//static void Jolicarre()
+//{
+//    int n,x,y;
+//    x = 0;
+
+
+//    do
+//    {
+//        Console.WriteLine("Valeur de n");
+//    } while (!int.TryParse(Console.ReadLine(), out n) || (n < 0) );
+//    while (x < n)
+//    {
+//        y = 0;
+//        Console.Write("\n");
+//        while (y < n)
+//        {
+//            Console.Write(" x ");
+//            y++;
+//        }
+//        x++;
+//    }
+//}
+//Jolicarre();
+
+
+//Calculatrice le Retour
+
+static void Calculette()
 {
-    int n,x,y;
-    x = 0;
-
-
+    String operation;
+    Double resultat, operande;
+    Char operateur;
+    operateur = ' ';
+    operande = 0;
+    // Valeur Initiale
     do
     {
-        Console.WriteLine("Valeur de n");
-    } while (!int.TryParse(Console.ReadLine(), out n) || (n < 0) );
-    while (x < n)
+        Console.WriteLine("Valeur initial ?");
+    } while (!Double.TryParse(Console.ReadLine(), out resultat));
+    
+// Switch pour les operations
+
+    //Boucles pour continuer le calcul tant que '=' n'est pas saisi
+    while (operateur != '=')
     {
-        y = 0;
-        Console.Write("\n");
-        while (y < n)
+        Console.WriteLine("Que faisons-nous ?");
+        operation = Console.ReadLine();
+        operateur = operation[0];
+        operande = operation[1];
+        switch (operateur)
         {
-            Console.Write(" x ");
-            y++;
+            case '+':
+                resultat += operande;
+                break;
+            case '-':
+                resultat -= operande;
+                break;
+            case '*':
+                resultat *= operande;
+                break;
+            case '/':
+                if (operateur != 0)
+                {
+                    resultat /= operande;
+                }
+                else
+                {
+                    Console.WriteLine("Impossible de diviser par 0");
+                }
+                break;
+            default:
+                Console.WriteLine("");
+                break;
         }
-        x++;
+        Console.WriteLine(resultat);
+
     }
+
+
 }
-Jolicarre();
+
+Calculette();
+
