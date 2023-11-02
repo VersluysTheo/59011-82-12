@@ -334,7 +334,8 @@
 //using System.ComponentModel.Design.Serialization;
 //using System.Runtime.InteropServices;
 
-//static void Echec()
+// Eco-conception a Revoir avec un booléen qui renvoie vrai ou faux
+//static void Echec() 
 //{
 //    int i, j, i2, j2, piece;
 //    do
@@ -343,7 +344,7 @@
 //            "Quelle pièce souhaitez-vous deplacer ?");
 
 
-//    } while (!int.TryParse(Console.ReadLine(), out piece));
+//    } while (!int.TryParse(Console.ReadLine(), out piece) && (piece > 4));
 
 
 //    //Demande des valeurs 
@@ -391,7 +392,7 @@
 //{
 
 //    //Mouvement de cavalier
-//    if (Math.Abs(i2 - i) == 2 & Math.Abs(j2 - j) == 1 ^ Math.Abs(i2 - i) == 1 & Math.Abs(j2 - j) == 2)
+//    if (Math.Abs(i2 - i) == 2 & Math.Abs(j2 - j) == 1 || Math.Abs(i2 - i) == 1 & Math.Abs(j2 - j) == 2)
 //    {
 //        Console.WriteLine("Le mouvement de " + "(" + i + "," + j + ")" + " a " + "(" + i2 + "," + j2 + ")" + "est possible");
 //    }
@@ -532,17 +533,19 @@
 //        Console.WriteLine("Annee ?");
 //    } while (!double.TryParse(Console.ReadLine(), out annee));
 
-//    joursui = (jour + 1);
+//    joursui = jour++;
 //    moissui = mois;
+//    anneesui = annee;
 
-//    // Sommes-nous en Fevrier ( Années bissextiles )
-//    if ((mois == 2) & (annee % 4 == 0) || (annee % 400 == 0))
-//    {
-//        jourmax = 29;
-//    } else // Annees non bissextiles
-//    { 
-//        jourmax = 28;
-//    }
+//// Sommes-nous en Fevrier ( Années bissextiles )
+//if ((mois == 2) & (annee % 4 == 0) || (annee % 400 == 0) && (annee % 100 != 0))
+//{
+//    jourmax = 29;
+//}
+//else // Annees non bissextiles
+//{
+//    jourmax = 28;
+//}
 
 //    // Mois a 30 jours ?
 //    if (mois == 4 || mois == 6 || mois == 9 |||| mois == 11){
@@ -560,13 +563,12 @@
 //    else if ((joursui >= jourmax) & (moissui <= moismax)) // Si on est le 31 de n'importe quelle mois
 //    {
 //        joursui = 01;
-//        moissui = (mois+1);
+//        moissui = mois++;
 //        anneesui = annee;
 //    }
 //    else // Cas restants
 //    {
-//        moissui = mois;
-//        anneesui = annee;
+//        moissui = mois; 
 //    }
 
 //    Console.WriteLine(joursui + "/" + moissui + "/" + anneesui);
@@ -599,8 +601,9 @@
 
 //    if (x >= a && x <= b)
 //    {
-//        Console.WriteLine("La valeur" + x + " Appartient à l'intervalle " + "[" + a + "," + b + "]");
-//    } else
+//        Console.WriteLine("La valeur " + x + " Appartient à l'intervalle " + "[" + a + "," + b + "]");
+//    }
+//    else
 //    {
 //        Console.WriteLine("La valeur " + x + " n'appartient pas à l'intervalle " + "[" + a + "," + b + "]");
 //    }
@@ -652,7 +655,7 @@
 //    }
 //    else
 //    {
-//        Console.WriteLine("Le Point ne se trouve pas dans le rectangle nik toi t'a pas les coordonnées");
+//        Console.WriteLine("Le Point ne se trouve pas dans le rectangle et tu n'auras pas les coordonnées");
 //    }
 
 //}
@@ -668,12 +671,12 @@
 //        Console.WriteLine("Saisissez une valeur : ");
 //    } while (!Double.TryParse(Console.ReadLine(), out x) | (x < 0));
 
-// Boucle for
-//    for (a = 0; a <= (x-1); a++)
-//    {
-//        Console.Write(a + ",");
-//    }
-//    for ( a = x; a <= x; a++)
+//    //Boucle for
+//       for (a = 0; a <= 1; a--)
+//        {
+//            Console.Write(a + ",");
+//        }
+//    for (a = 0; a <= x; a--)
 //    {
 //        Console.Write(a + ".");
 //    }
@@ -818,9 +821,68 @@
 
 //4.7
 
-static void TabMul2()
-{
-    Double[,] tableauMultiplication = new Double[1,5]; // Tableau a deux dimensions
-}
+//static void TabMul2()
+//{
 
-TabMul2();
+//    int[,] tables = new int[10, 10];
+//    for (int i = 1; i < 11; i++)
+//    {
+//        for (int j = 1; j < 11; j++)
+//        {
+//            tables[i - 1, j - 1] = i * j;
+//            Console.Write("|" + i * j + "|");
+//        }
+//        Console.WriteLine();
+//    }
+//}
+
+//TabMul2();
+
+
+//4.8
+
+//static void Puissance()
+//{
+//    Double b, n, resultat;
+//    do
+//    {
+//        Console.WriteLine("Valeur de b ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out b));
+
+//    do
+//    {
+//        Console.WriteLine("Valeur de n ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out n) || (n < 0));
+
+//    resultat = Math.Pow(b, n);
+//    Console.WriteLine(b + "^" + n + " = " + resultat );
+//}
+
+//Puissance();
+
+
+// Joli Carré
+
+static void Jolicarre()
+{
+    int n,x,y;
+    x = 0;
+
+
+    do
+    {
+        Console.WriteLine("Valeur de n");
+    } while (!int.TryParse(Console.ReadLine(), out n) || (n < 0) );
+    while (x < n)
+    {
+        y = 0;
+        Console.Write("\n");
+        while (y < n)
+        {
+            Console.Write("x");
+            x++;
+        }
+        x++;
+    }
+}
+Jolicarre();
