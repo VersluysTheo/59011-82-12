@@ -1,0 +1,23 @@
+Endturn : 
+
+Si :
+banque == joueur
+
+Egalité
+
+Si :
+
+banque < joueur
+
+Win
+
+Si 
+banque > joueur
+
+Loose
+
+Si quelqu'un > 21 => Loose
+
+
+Sum(cartesCroupier)
+Sum(cartesJoueur) 
