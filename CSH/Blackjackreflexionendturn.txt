@@ -21,3 +21,22 @@ Si quelqu'un > 21 => Loose
 
 Sum(cartesCroupier)
 Sum(cartesJoueur) 
+
+
+if ( (cartesJoueurs > 21 || (cartesJoueurs < cartesCroupier)){
+
+	pognonjoueur -= nbPognon;
+	Console.WriteLine("Vous avez Perdu vous êtes à " + pognonjoueur + "Pognon");
+
+} else if (( cartesJoueurs > cartesCroupier) || ( cartesCroupier > 21)) {
+
+	pognonjoueur = pognonjoueur + ( nbpognon * 2 );
+	Console.WriteLine("Vous avez Gagné vous êtes à " + pognonjoueur + "Pognon");
+
+} else{
+
+	Console.WriteLine("Égalité");
+	pognonjoueur += nbpognon;
+	Console.WriteLine("Vous êtes toujours à " + pognonjoueur + "Pognon");
+
+} 
