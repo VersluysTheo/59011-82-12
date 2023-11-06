@@ -890,80 +890,80 @@
 
 //Calculatrice le Retour
 
-static void Calculette()
-{
-    String operation;
-    Double resultat, operande, a, init;
-    Char operateur;
-    operande = 0;
-    operateur = ' ';
-    // Valeur Initiale
-    do
-    {
-        Console.WriteLine("Valeur initial ?");
-    } while (!Double.TryParse(Console.ReadLine(), out resultat));
+//static void Calculette()
+//{
+//    String operation;
+//    Double resultat, operande, a, init;
+//    Char operateur;
+//    operande = 0;
+//    operateur = ' ';
+//    // Valeur Initiale
+//    do
+//    {
+//        Console.WriteLine("Valeur initial ?");
+//    } while (!Double.TryParse(Console.ReadLine(), out resultat));
 
-    // Switch pour les operations
+//    // Switch pour les operations
 
-    //Boucles pour continuer le calcul tant que '=' n'est pas saisi
-    while (operateur != '=')
-    {
-        init = resultat;
-        Console.WriteLine("Que faisons-nous ?\n  $ pour faire une puissance \n V0 pour faire la racine carré \n !0 pour faire la factorielle \n (= +Chiffres pour arreter )");
-        operation = Console.ReadLine();
-        operateur = operation[0];
-        operande = Convert.ToInt32(operation.Substring(1));
-        switch (operateur)
-        {
-            case '+':
-                resultat += operande;
-                break;
-            case '-':
-                resultat -= operande;
-                break;
-            case '*':
-                resultat *= operande;
-                break;
-            case '/':
-                if (operateur != 0)
-                {
-                    resultat /= operande;
-                }
-                else
-                {
-                    Console.WriteLine("Impossible de diviser par 0");
-                }
-                break;
-            case '$':
-                resultat = Math.Pow(resultat, operande);
-                break;
-            default:
-                Console.WriteLine("");
-                break;
-        }
+//    //Boucles pour continuer le calcul tant que '=' n'est pas saisi
+//    while (operateur != '=')
+//    {
+//        init = resultat;
+//        Console.WriteLine("Que faisons-nous ?\n  $ pour faire une puissance \n V0 pour faire la racine carré \n !0 pour faire la factorielle \n (= +Chiffres pour arreter )");
+//        operation = Console.ReadLine();
+//        operateur = operation[0];
+//        operande = Convert.ToInt32(operation.Substring(1));
+//        switch (operateur)
+//        {
+//            case '+':
+//                resultat += operande;
+//                break;
+//            case '-':
+//                resultat -= operande;
+//                break;
+//            case '*':
+//                resultat *= operande;
+//                break;
+//            case '/':
+//                if (operateur != 0)
+//                {
+//                    resultat /= operande;
+//                }
+//                else
+//                {
+//                    Console.WriteLine("Impossible de diviser par 0");
+//                }
+//                break;
+//            case '$':
+//                resultat = Math.Pow(resultat, operande);
+//                break;
+//            default:
+//                Console.WriteLine("");
+//                break;
+//        }
 
-        if (operation == "V0")
-        {
-            resultat = Math.Sqrt(resultat);
-        }
-        else if (operation == "!0")
-        {
-            a = 1;
-            while (a < init)
-            {
-                resultat *= a;
-                a++;
-            }
-        }
+//        if (operation == "V0")
+//        {
+//            resultat = Math.Sqrt(resultat);
+//        }
+//        else if (operation == "!0")
+//        {
+//            a = 1;
+//            while (a < init)
+//            {
+//                resultat *= a;
+//                a++;
+//            }
+//        }
 
-        Console.WriteLine(resultat);
+//        Console.WriteLine(resultat);
 
-    }
+//    }
 
 
-}
+//}
 
-Calculette();
+//Calculette();
 
 
 //5.1
@@ -1072,6 +1072,62 @@ Calculette();
 
 //Replace();
 
+//6.4 
+
+//static void Tab()
+//{
+//    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+//    foreach (int i in T)
+//        Console.Write(i);
+//}
+//Tab();
 
 
-//5.5
+//6.5 //6.6
+//static void Tab2()
+//{
+//    int[] T;
+//    int somme;
+//    somme = 0;
+//    T = new int[10];
+//    for (int i = 0; i < T.Length; i++)
+//    {
+//        T[i] = i + 1;
+//    }
+//    foreach (int k in T)
+//    {
+//        Console.WriteLine(k);
+//    }
+
+//    for (int j = 0; j < T.Length; j++)
+//    {
+//        somme += T[j];
+//    }
+//    Console.Write("Somme du Tableau : " + somme);
+
+//}
+//Tab2();
+
+
+//6.7
+
+static void Tabask()
+{
+    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    int p;
+
+    do
+    {
+        Console.WriteLine("Valeur ?");
+    } while (!int.TryParse(Console.ReadLine(), out p));
+
+    foreach (int i in T)
+    {
+        if (p == i)
+        {
+            Console.WriteLine("Oui");
+        }
+    }
+}
+Tabask();
