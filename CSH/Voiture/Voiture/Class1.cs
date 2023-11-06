@@ -10,21 +10,21 @@ namespace Voiture
     {
 
         // Propriétés
-        public string Couleur { get; set; }
-        public string Marque { get; set; }
-        public string Modele { get; set; }
-        public int Nb_de_kilometre { get; set; }
-        public string Motorisation { get; set; }
+        private string Couleur { get; set; }
+        private string Marque { get; set; }
+        private string Modele { get; set; }
+        private int Nb_de_kilometre { get; set; }
+        private string Motorisation { get; set; }
 
         //Differents Constructeurs
 
         public Voiture(string couleur, string marque, string modele, int nb_de_kilometre, string motorisation)
         {
-            this.Couleur = couleur;
-            this.Marque = marque;
-            this.Modele = modele;
-            this.Nb_de_kilometre = nb_de_kilometre;
-            this.Motorisation = motorisation;
+            Couleur = couleur;
+            Marque = marque;
+            Modele = modele;
+            Nb_de_kilometre = nb_de_kilometre;
+            Motorisation = motorisation;
         }
 
 
