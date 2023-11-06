@@ -1112,22 +1112,50 @@
 
 //6.7
 
-static void Tabask()
+//static void Tabask()
+//{
+//    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//    int p;
+
+//    do
+//    {
+//        Console.WriteLine("Valeur ?");
+//    } while (!int.TryParse(Console.ReadLine(), out p));
+
+//    foreach (int i in T)
+//    {
+//        if (p == i)
+//        {
+//            Console.WriteLine("La Valeur se trouve dans le Tableau");
+//        }
+//    }
+//}
+//Tabask();
+
+//6.8
+
+static void permutab()
 {
     int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    int p;
-
-    do
+    int[] T2;
+    T2 = new int[10];
+    T2[0] = T[T.Length - 1];
+    for (int i = 1; i < T2.Length; i++)
     {
-        Console.WriteLine("Valeur ?");
-    } while (!int.TryParse(Console.ReadLine(), out p));
-
-    foreach (int i in T)
-    {
-        if (p == i)
-        {
-            Console.WriteLine("Oui");
-        }
+        T2[i] = T[i - 1];
     }
+    foreach (int j in T2)
+    {
+        Console.WriteLine(j);
+    }
+
 }
-Tabask();
+permutab();
+
+
+//6.9 
+
+static void permutab2()
+{
+    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+}
