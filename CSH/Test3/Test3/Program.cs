@@ -855,7 +855,7 @@
 //    } while (!Double.TryParse(Console.ReadLine(), out n) || (n < 0));
 
 //    resultat = Math.Pow(b, n);
-//    Console.WriteLine(b + "^" + n + " = " + resultat );
+//    Console.WriteLine(b + "^" + n + " = " + resultat);
 //}
 
 //Puissance();
@@ -1012,40 +1012,66 @@
 //leString();
 
 
-//5.3
+//5.3 ( pas réussi )
 
-using System.Text;
+//using System.Text;
 
-static void Elstring()
-{
-    String t;
-    int i, j;
-    StringBuilder sb = new StringBuilder(" ", 50);
+//static void Elstring()
+//{
+//    String t;
+//    int i, j;
+//    StringBuilder sb = new(" ");
 
-    Console.WriteLine("Texte ?");
-    t = NewMethod();
+//    Console.WriteLine("Texte ?");
+//    t = Console.ReadLine();
+//    sb.Insert(0, t);
 
-    do
-    {
-        Console.WriteLine("Position de caractère de départ ?");
-    } while (!int.TryParse(Console.ReadLine(), out i));
+//    do
+//    {
+//        Console.WriteLine("Position de caractère de départ ?");
+//    } while (!int.TryParse(Console.ReadLine(), out i));
 
-    do
-    {
-        Console.WriteLine("Position du caractère de fin ?");
-    } while (!int.TryParse(Console.ReadLine(), out j) || (j < i));
+//    do
+//    {
+//        Console.WriteLine("Position du caractère de fin ?");
+//    } while (!int.TryParse(Console.ReadLine(), out j) || (j < i));
 
-    while (i <= j)
-    {
-        sb.Insert(i, t, 1);
-        Console.WriteLine(sb);
-        i++;
-    }
-}
 
-Elstring();
+//}
 
-static string? NewMethod()
-{
-    return Console.ReadLine();
-}
+//Elstring();
+
+
+// 5.4
+
+//using System.Text;
+
+//static void Replace()
+//{
+//    String t;
+//    Char a, b;
+//    StringBuilder sb = new(" ");
+
+//    Console.WriteLine("Texte ?");
+//    t = Console.ReadLine();
+//    sb.Insert(0, t);
+
+//    do
+//    {
+//        Console.WriteLine("Lettre a remplacé ?");
+//    } while (!Char.TryParse(Console.ReadLine(), out a));
+
+//    do
+//    {
+//        Console.WriteLine("Remplacé par quelle lettre ?");
+//    } while (!Char.TryParse(Console.ReadLine(), out b));
+
+//    sb.Replace(a, b);
+//    Console.WriteLine(sb);
+//}
+
+//Replace();
+
+
+
+//5.5

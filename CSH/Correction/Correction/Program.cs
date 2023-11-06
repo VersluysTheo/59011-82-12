@@ -154,7 +154,7 @@
 //}
 
 
-// Compte a Rebours
+///////////////////////////////////////////////////////////////// Compte a Rebours
 
 //int n;
 
@@ -199,7 +199,7 @@
 //}
 
 
-// Table de Multiplication ( en For car on connait le nombre d'itérations 
+//////////////////////////////////////////////////////////////  Table de Multiplication ( en For car on connait le nombre d'itérations  )
 
 //int nbChoisi;
 
@@ -214,7 +214,7 @@
 //}
 
 
-// Tableaux a double entreé
+//////////////////////////////////////////////////////////////  Tableaux a double entreé
 
 //static void Multiplication2d()
 //{
