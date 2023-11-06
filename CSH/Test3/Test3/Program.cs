@@ -1134,30 +1134,30 @@
 
 //6.8
 
-static void permutab()
-{
-    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    int[] T2;
-    T2 = new int[10];
-    T2[0] = T[T.Length - 1];
-    for (int i = 1; i < T2.Length; i++)
-    {
-        T2[i] = T[i - 1];
-    }
-    foreach (int j in T2)
-    {
-        Console.WriteLine(j);
-    }
+//static void permutab()
+//{
+//    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//    int[] T2;
+//    T2 = new int[10];
+//    T2[0] = T[T.Length - 1];
+//    for (int i = 1; i < T2.Length; i++)
+//    {
+//        T2[i] = T[i - 1];
+//    }
+//    foreach (int j in T2)
+//    {
+//        Console.WriteLine(j);
+//    }
 
-}
-permutab();
+//}
+//permutab();
 
 
 //6.9 
 
-//static void permutab2()
-//{
-//    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-//}
+static void permutab2()
+{
+    int[] T = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+}
 
-//permutab2();
+permutab2();
