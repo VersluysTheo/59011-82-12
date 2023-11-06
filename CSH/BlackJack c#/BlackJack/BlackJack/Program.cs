@@ -89,6 +89,29 @@ static List<int> bankTurn(List<int> carteCroupier, List<int> carteJoueur)
  */
 static void endTurn(List<int> cartesCroupier, List<int> cartesJoueur)
 {
+    var sommeJoueur = cartesJoueur.Sum();
+    var sommeCroupier = cartesCroupier.Sum();
 
+    if ((sommeJoueur > 21) || (sommeJoueur < sommeCroupier))
+    {
+
+        pognonjoueur -= nbPognon;
+        Console.WriteLine("Vous avez Perdu vous êtes à " + pognonjoueur + "Pognon");
+
+    }
+    else if ((sommeJoueur > sommeCroupier) || (sommeCroupier > 21))
+    {
+
+        pognonjoueur = pognonjoueur + (nbPognon * 2);
+        Console.WriteLine("Vous avez Gagné vous êtes à " + pognonjoueur + "Pognon");
+
+    }
+    else
+    {
+        Console.WriteLine("Égalité");
+        pognonjoueur += nbPognon;
+        Console.WriteLine("Vous êtes toujours à " + pognonjoueur + "Pognon");
+
+    }
 }
 

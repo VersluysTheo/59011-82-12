@@ -1018,15 +1018,12 @@ using System.Text;
 
 static void Elstring()
 {
-    String t, init;
+    String t;
     int i, j;
-    StringBuilder sb = new();
-    init = " ";
+    StringBuilder sb = new StringBuilder(" ", 50);
 
-    do
-    {
-        Console.WriteLine("Chaines de Carctères ? ");
-    } while (!String.TryParse(Console.ReadLine(), out t));
+    Console.WriteLine("Texte ?");
+    t = NewMethod();
 
     do
     {
@@ -1047,3 +1044,8 @@ static void Elstring()
 }
 
 Elstring();
+
+static string? NewMethod()
+{
+    return Console.ReadLine();
+}
