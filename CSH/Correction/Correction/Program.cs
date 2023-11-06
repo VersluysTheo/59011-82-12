@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 // Correction 
-// ECHEC
+//////////////////////////////////////////////////////////////  ECHEC
 
 
 //private static void Chess()
@@ -107,7 +107,7 @@
 
 
 
-// HEURES
+////////////////////////////////////////////////////////////// HEURES
 
 //int heureDep;
 //int minDep;
@@ -180,7 +180,7 @@
 //    Console.WriteLine("\n" + i);
 //}
 
-//FACTORIELLE
+////////////////////////////////////////////////////////////// FACTORIELLE
 
 //int nbr;
 
@@ -230,3 +230,307 @@
 //        Console.WriteLine();
 //    }
 //}
+
+
+///////////////////////////////////////////////// Joli Carré
+
+//static void Carre()
+//{
+//    int n = SaisirVal(); // une methode ou tu saisi une valeur
+
+//    Console.WriteLine("n = " + n);
+//    string ligne = "";
+
+//    for (int j = 0; j < n; j++) // fonction de ligne pour éviter de boucler deux fois 
+//    {
+//        ligne += "X\t";
+//    }
+
+//    for (int i = 0; i < n; i++)
+//    {
+//        Console.WriteLine(ligne + "\n");
+//    }
+//}
+
+
+/////////////////////////////////////////////////////// Calculette le retour
+
+//using System.Collections.Generic;
+//using System;
+
+//double Calculer(double nombre1, char operateur, double nombre2 = 1)
+//{
+//    double resultat = 0;
+
+//    switch (operateur)
+//    {
+//        case '+':
+//            resultat = nombre1 + nombre2;
+//            break;
+
+//        case '-':
+//            resultat = nombre1 - nombre2;
+//            break;
+
+//        case '*':
+//            resultat = nombre1 * nombre2;
+//            break;
+
+//        case '/':
+//            {
+//                Console.WriteLine(nombre2);
+//                if (nombre2 != 0)
+//                    resultat = nombre1 / nombre2;
+//                else
+//                {
+//                    Console.ForegroundColor = ConsoleColor.Red;
+//                    Console.WriteLine("Erreur : Tentative de division par zéro");
+//                    Console.ResetColor();
+//                }
+//            }
+//            break;
+
+//        case '^':
+//            resultat = Math.Pow(nombre1, nombre2);
+//            break;
+
+//        case 's':
+//            resultat = Math.Sqrt(nombre1);
+//            break;
+
+
+//        case '!':
+//            resultat = Factorielle((int)nombre1);
+//            break;
+
+//        default:
+//            Console.ForegroundColor = ConsoleColor.Red;
+//            Console.WriteLine("Erreur : Operateur '" + operateur + "' incorrecte");
+//            Console.ResetColor();
+//            break;
+//    }
+
+//    return resultat;
+//}
+
+//int Factorielle(int nombre)
+//{
+//    if (nombre >= 2) return nombre * Factorielle(nombre - 1);
+//    return 1;
+//}
+
+//void AfficherResultat(double nombre1, char operateur, double resultat, double nombre2 = 1)
+//{
+//    if (operateur == 's')
+//        Console.WriteLine($"La racine carrée de {nombre1} = {resultat}");
+
+//    else if (operateur == '!')
+//        Console.WriteLine($"La factorielle de {nombre1} = {resultat}");
+
+//    else
+//        Console.WriteLine($"{nombre1} {operateur} {nombre2} = {resultat}");
+//}
+
+//List<int> listOp = new List<int> { '+', '-', '*', '/', '=', '^', 's', '!' };
+//bool stopCalcul = false;
+//double a, b = 0, resultat;
+//char op;
+
+//do
+//{
+//    Console.WriteLine("Saisir la 1ere valeur");
+
+//} while (!double.TryParse(Console.ReadLine(), out a));
+//do
+//{
+//    Console.WriteLine("Saisir l'opérateur");
+
+//} while (!char.TryParse(Console.ReadLine(), out op) || op == '=' || !listOp.Contains(op));
+
+//if (op is not ('s' or '!'))
+//    do
+//    {
+//        Console.WriteLine("Saisir la 2nde valeur");
+
+//    } while (!double.TryParse(Console.ReadLine(), out b) || (op == '/' && b == 0));
+
+//if (op == '^')
+//{
+//    b = Math.Abs(b);
+//    b = Math.Floor(b);
+//}
+//if (op == '!')
+//{
+//    a = Math.Abs(a);
+//    a = Math.Floor(a);
+//}
+
+//resultat = Calculer(a, op, b);
+//AfficherResultat(a, op, resultat, b);
+
+//while (!stopCalcul)
+//{
+//    a = resultat;
+
+//    do
+//    {
+//        Console.WriteLine("Saisir l'opérateur");
+
+//    } while (!char.TryParse(Console.ReadLine(), out op) || !listOp.Contains(op));
+
+//    if (op == '=')
+//    {
+//        stopCalcul = true;
+//    }
+//    else
+//    {
+//        if (op is not ('s' or '!'))
+//        {
+//            do
+//            {
+//                Console.WriteLine("Saisir la 2nde valeur");
+
+//            } while (!double.TryParse(Console.ReadLine(), out b) || (op == '/' && b == 0));
+//        }
+//        if (op == '^')
+//        {
+//            b = Math.Abs(b);
+//            b = Math.Floor(b);
+//        }
+//        else if (op == '!')
+//        {
+//            a = Math.Abs(a);
+//            a = Math.Floor(a);
+//        }
+
+//        resultat = Calculer(a, op, b);
+//        AfficherResultat(a, op, resultat, b);
+//    }
+//}
+
+/////////////////////////////////////////////////////// Extraction de chaine de caracteres
+
+//string t;
+//int k, j;
+
+//t = "Les framboises sont perchées sur le tabouret de mon grand-père.";
+//int nombreLettre = t.Count();
+//do
+//{
+//    do
+//    {
+//        Console.Write("Saisir un positif ");
+//    } while (!int.TryParse(Console.ReadLine(), out k) || k > nombreLettre);
+//    do
+//    {
+//        Console.Write("Saisir un positif ");
+//    } while (!int.TryParse(Console.ReadLine(), out j) || j > nombreLettre);
+//} while (k > j);
+
+//for (int i = k; i < j; i++)
+//{
+//    c += t[i];
+//}
+//Console.WriteLine(c);
+
+///////////////////////////////////////////////////// Extraction Sans Concatenation de chaines de caractères
+
+//using System.Text;
+
+//static void ExtractionBis()
+//{
+
+//    string t;
+
+//    Console.WriteLine("quelle est votre phrase ? ");
+//    t = Console.ReadLine();
+
+//    string u;
+//    int index_1;
+//    int index_2;
+//    StringBuilder sb;
+
+
+//    do
+//    {
+//        Console.WriteLine("index 1 ?");
+//    } while (!int.TryParse(Console.ReadLine(), out index_1));
+
+//    do
+//    {
+//        Console.WriteLine("index 2 ?");
+//    } while (!int.TryParse(Console.ReadLine(), out index_2));
+
+
+//    sb = new StringBuilder("", index_2);
+
+//    for (int i = index_1; i < index_2; i++)
+//    {
+//        sb.Insert(i - index_1, t[i]);
+//    }
+
+
+//    Console.WriteLine(sb);
+
+//}
+
+
+
+//////////////////////////////////////////////// Substitution sans Replace
+
+//private static void SubSelect(out String chaine, out char i, out char j)
+//{
+//    Console.WriteLine("\nPhrase: ");
+//    chaine = Console.ReadLine();
+
+//    do
+//    {
+//        Console.WriteLine("\nPremière indice : ");
+//    } while (!Char.TryParse(Console.ReadLine(), out i));
+
+//    do
+//    {
+//        Console.WriteLine("\nSecond indice : ");
+//    } while (!Char.TryParse(Console.ReadLine(), out j));
+//}
+
+//private static void SubWithoutReplace()
+//{
+//    String res = "";
+//    SubSelect(out String chaine, out char i, out char j);
+
+//    foreach (var x in chaine)
+//    {
+///res += ( x == i ? j : x );
+//        if (x == i)
+//        {
+//            res += j;
+//        }
+//        else res += x;
+//    }
+//    Console.WriteLine(res);
+//}
+
+
+///////////////////////////////////////////// Extension ( avec un Split qui sépare une chaine de caractère en deux ( et supprime ici le point ) et utilise un tableau )
+
+//String phrase, extention = ".";
+//do
+//{
+//    Console.Write("Entrez un nom de fichier : ");
+//    phrase = Console.ReadLine();
+//} while (!phrase.Contains('.'));
+
+//String[] div = phrase.Split('.');
+//extention += div.Last();
+//Console.WriteLine(extention);
+
+
+/////////////////////////////////////////////////////// Si on veut le nom du fichier
+
+//string fichier = "test.tg.tre.exe";
+//Console.WriteLine(fichier.Substring(0, fichier.LastIndexOf('.')));
+//Console.WriteLine(fichier.Substring(fichier.LastIndexOf('.')));
+
+
+///////////////////////////////////////////// Expression Arithmétique

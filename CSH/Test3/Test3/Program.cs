@@ -890,80 +890,80 @@
 
 //Calculatrice le Retour
 
-//static void Calculette()
-//{
-//    String operation;
-//    Double resultat, operande, a, init;
-//    Char operateur;
-//    operande = 0;
-//    operateur = ' ';
-//    // Valeur Initiale
-//    do
-//    {
-//        Console.WriteLine("Valeur initial ?");
-//    } while (!Double.TryParse(Console.ReadLine(), out resultat));
+static void Calculette()
+{
+    String operation;
+    Double resultat, operande, a, init;
+    Char operateur;
+    operande = 0;
+    operateur = ' ';
+    // Valeur Initiale
+    do
+    {
+        Console.WriteLine("Valeur initial ?");
+    } while (!Double.TryParse(Console.ReadLine(), out resultat));
 
-//    // Switch pour les operations
+    // Switch pour les operations
 
-//    //Boucles pour continuer le calcul tant que '=' n'est pas saisi
-//    while (operateur != '=')
-//    {
-//        init = resultat;
-//        Console.WriteLine("Que faisons-nous ? $ pour faire une puissance \n V0 pour faire la racine carré \n !0 pour faire la factorielle \n (= +Chiffres pour arreter )");
-//        operation = Console.ReadLine();
-//        operateur = operation[0];
-//        operande = Convert.ToInt32(operation.Substring(1));
-//        switch (operateur)
-//        {
-//            case '+':
-//                resultat += operande;
-//                break;
-//            case '-':
-//                resultat -= operande;
-//                break;
-//            case '*':
-//                resultat *= operande;
-//                break;
-//            case '/':
-//                if (operateur != 0)
-//                {
-//                    resultat /= operande;
-//                }
-//                else
-//                {
-//                    Console.WriteLine("Impossible de diviser par 0");
-//                }
-//                break;
-//            case '$':
-//                resultat = Math.Pow(resultat, operande);
-//                break;
-//            default:
-//                Console.WriteLine("");
-//                break;
-//        }
+    //Boucles pour continuer le calcul tant que '=' n'est pas saisi
+    while (operateur != '=')
+    {
+        init = resultat;
+        Console.WriteLine("Que faisons-nous ?\n  $ pour faire une puissance \n V0 pour faire la racine carré \n !0 pour faire la factorielle \n (= +Chiffres pour arreter )");
+        operation = Console.ReadLine();
+        operateur = operation[0];
+        operande = Convert.ToInt32(operation.Substring(1));
+        switch (operateur)
+        {
+            case '+':
+                resultat += operande;
+                break;
+            case '-':
+                resultat -= operande;
+                break;
+            case '*':
+                resultat *= operande;
+                break;
+            case '/':
+                if (operateur != 0)
+                {
+                    resultat /= operande;
+                }
+                else
+                {
+                    Console.WriteLine("Impossible de diviser par 0");
+                }
+                break;
+            case '$':
+                resultat = Math.Pow(resultat, operande);
+                break;
+            default:
+                Console.WriteLine("");
+                break;
+        }
 
-//        if (operation == "V0")
-//        {
-//            resultat = Math.Sqrt(resultat);
-//        }
-//        else if (operation == "!0")
-//        {
-//            a = 1;
-//            while (a < init )
-//            {
-//                resultat *= a;
-//                a++;
-//            }
-//        }
+        if (operation == "V0")
+        {
+            resultat = Math.Sqrt(resultat);
+        }
+        else if (operation == "!0")
+        {
+            a = 1;
+            while (a < init)
+            {
+                resultat *= a;
+                a++;
+            }
+        }
 
-//        Console.WriteLine(resultat);
+        Console.WriteLine(resultat);
 
-//    }
+    }
 
 
-//}
+}
 
-//Calculette();
+Calculette();
 
 
 //5.1
