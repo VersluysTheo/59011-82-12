@@ -28,6 +28,7 @@ namespace Compte
 
         public void Afficher()
         {
+            Console.WriteLine("**********************************");
             Console.WriteLine("Numéro CIN : " + CIN);
             Console.WriteLine("Nom : " + Nom);
             Console.WriteLine("Prénom : " + Prenom);
@@ -50,55 +51,33 @@ namespace Compte
             }
 
             // Fonctions
-
+            
             public void Crediter(double montant)
             {
                 Solde += montant;
-                Console.WriteLine("Opération Bien effectuée");
+                Console.WriteLine("**********************************");
+                Console.WriteLine("Donner le Montant à ajouter : " + montant);
+                Console.WriteLine("Opération bien effectuée");
             }
 
             public void Debiter(double montant)
             {
                 Solde -= montant;
-                Console.WriteLine("Opération Bien effectuée");
+                Console.WriteLine("**********************************");
+                Console.WriteLine("Donner le Montant à retirer : " + montant);
+                Console.WriteLine("Opération bien effectuée");
             }
 
-            // Fonctions Abandonnées
 
-            // Fonction Crediter sans paramètres
-
-            //public void Crediter()
-            //{
-            //    Double montant;
-            //    Console.WriteLine("*********************************");
-            //    do
-            //    {
-            //        Console.WriteLine("Montant à créditer ?");
-            //    } while (!double.TryParse(Console.ReadLine(), out montant));
-            //    Solde += montant;
-            //    Console.WriteLine("Opération Bien effectuée");
-            //}
-
-            // Fonction Debiter sans paramètres
-
-            //public void Debiter()
-            //{
-            //    Double montant;
-            //    Console.WriteLine("*********************************");
-            //    do
-            //    {
-            //        Console.WriteLine("Montant à débiter ?");
-            //    } while (!double.TryParse(Console.ReadLine(), out montant));
-            //    Solde -= montant;
-            //    Console.WriteLine("Opération Bien effectuée");
-            //}
-
-            public void Afficher()
+            public void AfficherCompte()
             {
+                Console.WriteLine("**********************************");
                 Console.WriteLine("Numéro de compte : " + Code);
                 Console.WriteLine("Solde du Compte : " + Solde);
-                Console.WriteLine("Propriétaire du Compte : " + Titulaire);
+                Console.WriteLine("Propriétaire du Compte : ") ;
+                Titulaire.Afficher();
             }
+
         }
     }
 }
