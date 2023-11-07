@@ -49,28 +49,49 @@ namespace Compte
                 Code = code;
             }
 
-            // Fonctions 
+            // Fonctions
+
             public void Crediter(double montant)
             {
-                Console.WriteLine("*********************************");
-                do
-                {
-                    Console.WriteLine("Montant à créditer ?");
-                } while (!double.TryParse(Console.ReadLine(), out montant));
                 Solde += montant;
                 Console.WriteLine("Opération Bien effectuée");
             }
 
             public void Debiter(double montant)
             {
-                Console.WriteLine("*********************************");
-                do
-                {
-                    Console.WriteLine("Montant à débiter ?");
-                } while (!double.TryParse(Console.ReadLine(), out montant));
                 Solde -= montant;
                 Console.WriteLine("Opération Bien effectuée");
             }
+
+            // Fonctions Abandonnées
+
+            // Fonction Crediter sans paramètres
+
+            //public void Crediter()
+            //{
+            //    Double montant;
+            //    Console.WriteLine("*********************************");
+            //    do
+            //    {
+            //        Console.WriteLine("Montant à créditer ?");
+            //    } while (!double.TryParse(Console.ReadLine(), out montant));
+            //    Solde += montant;
+            //    Console.WriteLine("Opération Bien effectuée");
+            //}
+
+            // Fonction Debiter sans paramètres
+
+            //public void Debiter()
+            //{
+            //    Double montant;
+            //    Console.WriteLine("*********************************");
+            //    do
+            //    {
+            //        Console.WriteLine("Montant à débiter ?");
+            //    } while (!double.TryParse(Console.ReadLine(), out montant));
+            //    Solde -= montant;
+            //    Console.WriteLine("Opération Bien effectuée");
+            //}
 
             public void Afficher()
             {

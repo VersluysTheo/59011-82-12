@@ -17,6 +17,12 @@ namespace Compte
             Compteb cb1 = new(c1, 500, 1);
             Compteb cb2 = new(c2, 2222, 1);
             cb1.Afficher();
+            cb2.Afficher();
+
+            // Fonction Compte Bancaire 
+
+            //cb2.Debiter(150);
+            //cb2.Afficher();
         }
     }
 }
