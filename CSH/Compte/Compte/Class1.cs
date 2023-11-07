@@ -54,11 +54,15 @@ namespace Compte
 
             private static int compteCounter = 0;
 
+
+            //Construct 
+
             public Compteb(Client titulaire, double solde, int code)
             {
                 Titulaire = titulaire;
                 Solde = solde;
                 Code = code;
+                ++compteCounter;
             }
 
             // Fonctions

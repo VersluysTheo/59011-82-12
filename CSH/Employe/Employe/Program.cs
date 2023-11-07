@@ -4,7 +4,10 @@
     {
         static void Main()
         {
-            Console.WriteLine("Alors oui");
+            Employee e1 = new("Nolk", "Paul", new DateTime(2021,11,14), "Assistant Réseau", 28, "Informatique");
+            e1.Afficher();
+            e1.Recruterdepuis();
+            e1.Prime(2);
         }
     }
 }
