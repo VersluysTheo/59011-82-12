@@ -8,7 +8,7 @@ namespace Compte
 {
     internal class Client
     {
-        // Attrbuts
+        // Propriétés
 
         private string CIN { get; set; }
         private string Nom { get; set; }
@@ -23,6 +23,8 @@ namespace Compte
             Prenom = prenom;
             Telephone = telephone;
         }
+        
+        // Fonctions
 
         public void Afficher()
         {
@@ -32,16 +34,49 @@ namespace Compte
             Console.WriteLine("Téléphone : " + Telephone);
         }
 
-        public class Compte
+        public class Compteb
         {
             // Propriétés de la classe Compte
-            private int Solde { get; set; }
+
+            private Client Titulaire { get; set; } 
+            private Double Solde { get; set; }
             private int Code { get; set; }
 
-            public Compte(int solde, int code)
+            public Compteb(Client titulaire, double solde, int code)
             {
+                Titulaire = titulaire;
                 Solde = solde;
                 Code = code;
+            }
+
+            // Fonctions 
+            public void Crediter(double montant)
+            {
+                Console.WriteLine("*********************************");
+                do
+                {
+                    Console.WriteLine("Montant à créditer ?");
+                } while (!double.TryParse(Console.ReadLine(), out montant));
+                Solde += montant;
+                Console.WriteLine("Opération Bien effectuée");
+            }
+
+            public void Debiter(double montant)
+            {
+                Console.WriteLine("*********************************");
+                do
+                {
+                    Console.WriteLine("Montant à débiter ?");
+                } while (!double.TryParse(Console.ReadLine(), out montant));
+                Solde -= montant;
+                Console.WriteLine("Opération Bien effectuée");
+            }
+
+            public void Afficher()
+            {
+                Console.WriteLine("Numéro de compte : " + Code);
+                Console.WriteLine("Solde du Compte : " + Solde);
+                Console.WriteLine("Propriétaire du Compte : " + Titulaire);
             }
         }
     }
