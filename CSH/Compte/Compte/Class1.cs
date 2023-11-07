@@ -25,8 +25,9 @@ namespace Compte
             Telephone = telephone;
             Lescomptes = new List<Compteb>();
         }
-        
+
         // Fonctions
+
 
         public void Afficher()
         {
@@ -51,6 +52,8 @@ namespace Compte
             private Double Solde { get; set; }
             private int Code { get; set ; }
 
+            private static int compteCounter = 0;
+
             public Compteb(Client titulaire, double solde, int code)
             {
                 Titulaire = titulaire;
@@ -60,6 +63,10 @@ namespace Compte
 
             // Fonctions
 
+            public static int GetNombreComptesCrees()
+            {
+                return compteCounter;
+            }
 
             public void Crediter(double montant)
             {
