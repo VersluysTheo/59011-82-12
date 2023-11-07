@@ -10,19 +10,25 @@ namespace Employe
     {
         // Propriétés
         private string Nom { get; set; }
-        private string Prenom { get; set; }
         private string Adresse { get; set; }
         private string Code_Postal { get; set; }
         private string Ville { get; set; }
 
         // Constructeur
-        public Agence(string nom, string prenom, string adresse, string code_Postal, string ville)
+        public Agence(string nom, string adresse, string code_Postal, string ville)
         {
             Nom = nom;
-            Prenom = prenom;
             Adresse = adresse;
             Code_Postal = code_Postal;
             Ville = ville;
+        }
+
+        // Fonctions 
+
+        public void Afficher()
+        {
+            Console.WriteLine("Il travaille chez " + Nom);
+            Console.WriteLine("Adresse : " +  Adresse + "\n" + "Code Postal : " + Code_Postal + "\n se trouvant à " + Ville);
         }
     }
 }

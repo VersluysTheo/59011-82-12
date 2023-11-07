@@ -11,16 +11,21 @@ namespace Employe
     {
 
         //Propriétés
-        private string Nom { get; set; }
-        private string Prenom { get; set; }
-        private DateTime Date_Embauche { get; set; }
-        private string Fonction { get; set; }
-        private double Salaire { get; set; } // en K euros par an
-        private string Service { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public DateTime Date_Embauche { get; set; }
+        public string Fonction { get; set; }
+        public double Salaire { get; set; } // en K euros par an
+        public string Service { get; set; }
+        public Agence Agence { get; set; }
+
+        //public static List<Employee>Employees { get; }
 
         private static int Nbremployes = 0;
         
-        public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service)
+        // Constructeur
+
+        public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service, Agence agence)
         {
             Nom = nom;
             Prenom = prenom;
@@ -28,6 +33,8 @@ namespace Employe
             Fonction = fonction;
             Salaire = salaire;
             Service = service;
+            Agence = agence;
+            //Employees = new List<Employee>();
             Nbremployes++;
         }
 
@@ -80,6 +87,7 @@ namespace Employe
             Console.WriteLine("Date d'embauche : " + Date_Embauche);
             Console.WriteLine("Employe en tant que " + Fonction + " dans le service " + Service);
             Console.WriteLine("Salaire : " + Salaire + "k euros brut par an \n");
+            Agence.Afficher();
         }
     }
 }
