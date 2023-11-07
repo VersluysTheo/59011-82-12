@@ -14,6 +14,7 @@ namespace Compte
         private string Nom { get; set; }
         private string Prenom { get; set; } 
         private string Telephone {  get; set; }
+        public List<Compteb> Lescomptes { get; set; }
 
         // Constructeur
         public Client(string cIN, string nom, string prenom, string telephone)
@@ -22,6 +23,7 @@ namespace Compte
             Nom = nom;
             Prenom = prenom;
             Telephone = telephone;
+            Lescomptes = new List<Compteb>();
         }
         
         // Fonctions
@@ -33,6 +35,12 @@ namespace Compte
             Console.WriteLine("Nom : " + Nom);
             Console.WriteLine("Prénom : " + Prenom);
             Console.WriteLine("Téléphone : " + Telephone);
+
+            // Essai d'affichage des valeurs de la liste -> sans succes
+            //foreach (int j in Lescomptes)
+            //{
+            //    Console.WriteLine(j);
+            //}
         }
 
         public class Compteb
@@ -41,7 +49,7 @@ namespace Compte
 
             private Client Titulaire { get; set; } 
             private Double Solde { get; set; }
-            private int Code { get; set; }
+            private int Code { get; set ; }
 
             public Compteb(Client titulaire, double solde, int code)
             {
@@ -51,7 +59,8 @@ namespace Compte
             }
 
             // Fonctions
-            
+
+
             public void Crediter(double montant)
             {
                 Solde += montant;
@@ -59,6 +68,16 @@ namespace Compte
                 Console.WriteLine("Donner le Montant à ajouter : " + montant);
                 Console.WriteLine("Opération bien effectuée");
             }
+
+
+            // Incorrect
+            //public void Creditercompte(int compte, double montant)
+            //{
+            //    Code = compte;
+            //    Solde += montant;
+            //    Console.WriteLine("**********************************");
+            //    Console.WriteLine("N° de Compte voulu : " + Code);
+            //}
 
             public void Debiter(double montant)
             {
