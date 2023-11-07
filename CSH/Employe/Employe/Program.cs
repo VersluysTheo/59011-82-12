@@ -18,7 +18,8 @@
             e4.Prime(29);
             e5.Prime(33);
             e6.Prime(27);
-            e1.CheckPrime();
+            Employe.Employee.CheckPrime();
+            Employe.Employee.CompteurEmployes(); 
         }
     }
 }

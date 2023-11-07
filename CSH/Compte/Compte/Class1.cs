@@ -72,6 +72,7 @@ namespace Compte
                 return compteCounter;
             }
 
+
             public void Crediter(double montant)
             {
                 Solde += montant;

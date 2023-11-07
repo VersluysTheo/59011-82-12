@@ -17,6 +17,8 @@ namespace Employe
         private string Fonction { get; set; }
         private double Salaire { get; set; } // en K euros par an
         private string Service { get; set; }
+
+        private static int Nbremployes = 0;
         
         public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service)
         {
@@ -26,11 +28,24 @@ namespace Employe
             Fonction = fonction;
             Salaire = salaire;
             Service = service;
+            Nbremployes++;
         }
 
+        public static int GetNbrEmploye()
+        {
+            return Nbremployes;
+        }
+
+        public static void CompteurEmployes()
+        {
+            // Recuperation du nombre d'instanciation
+            int Nbremplo = GetNbrEmploye();
+            Console.WriteLine("Il y a " + Nbremplo + " Employés");
+        }
 
         public void Recruterdepuis()
         {
+            // Comparaison de la date d'aujourd'hui et de celle de recrutement
             int embauche = DateTime.Now.Year - Date_Embauche.Year;
             if (Date_Embauche.Month > DateTime.Now.Month)
             {
@@ -45,7 +60,7 @@ namespace Employe
             Console.WriteLine("Pour ses " + annee + " années d'ancienneté il touchera " + montant + " k euros de prime \n");
         }
 
-        public void CheckPrime()
+        public static void CheckPrime()
         {
             DateTime today = DateTime.Now;
             DateTime jourprime = new DateTime(2023, 11, 08);
