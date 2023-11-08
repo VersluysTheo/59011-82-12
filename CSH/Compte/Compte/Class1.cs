@@ -61,8 +61,7 @@ namespace Compte
             {
                 Titulaire = titulaire;
                 Solde = solde;
-                Code = code;
-                ++compteCounter;
+                Code = ++compteCounter; 
             }
 
             // Fonctions

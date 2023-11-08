@@ -19,7 +19,6 @@ namespace Employe
         public string Service { get; set; }
         public Agence Agence { get; set; }
 
-        //public static List<Employee>Employees { get; }
 
         private static int Nbremployes = 0;
         
@@ -34,7 +33,6 @@ namespace Employe
             Salaire = salaire;
             Service = service;
             Agence = agence;
-            //Employees = new List<Employee>();
             Nbremployes++;
         }
 
