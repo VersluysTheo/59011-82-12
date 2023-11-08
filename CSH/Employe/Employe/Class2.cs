@@ -27,12 +27,12 @@ namespace Employe
 
         public override string ToString()
         {
-            return "Il travaille chez " + Nom + " \n Adresse : " + Adresse + "\n Code Postal : " + Code_Postal + "\n se trouvant à " + Ville;
+            return "Il travaille chez " + Nom + " \n Adresse : " + Adresse + "\n Code Postal : " + Code_Postal + "\n se trouvant à " + Ville + "\n";
         }
 
         public void Afficher()
         {
-            ToString();
+            Console.WriteLine(ToString());
         }
     }
 }

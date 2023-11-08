@@ -22,14 +22,14 @@
             Employee e5 = new("Evrard", "Marjorie", new DateTime(1989, 05, 26), "Chargée de Recrutement", 32, "Ressources Humaines", a1);
             Employee e6 = new("Brio", "Maxime", new DateTime(1995, 02, 13), "Chargé de Projet", 30, "Informatique", a1);
             e1.Afficher();
-            e6.Recruterdepuis();
-            e1.Prime(2);
-            e2.Prime(42);
-            e3.Prime(4);
-            e4.Prime(29);
-            e5.Prime(33);
-            e6.Prime(27);
-            Employee.CheckPrime();
+            e6.RecruterDepuis();
+            e1.Prime();
+            e2.Prime();
+            e3.Prime();
+            e4.Prime();
+            e5.Prime();
+            e6.Prime();
+            //Employee.CheckPrime();
             Employee.CompteurEmployes();
 
 

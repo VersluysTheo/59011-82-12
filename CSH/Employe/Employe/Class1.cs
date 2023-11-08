@@ -46,7 +46,7 @@ namespace Employe
             Console.WriteLine("Il y a " + Nbremployes + " Employés");
         }
 
-        public void Recruterdepuis()
+        public int EmbaucheAnnee()
         {
             // Comparaison de la date d'aujourd'hui et de celle de recrutement
             int embauche = DateTime.Now.Year - Date_Embauche.Year;
@@ -54,13 +54,18 @@ namespace Employe
             {
                 embauche--;
             }
-            Console.WriteLine(Prenom + " " + Nom + " a été recruté il y a " + embauche + " ans \n");
+            return embauche;
         }
 
-        public void Prime(double annee)
+        public void RecruterDepuis()
         {
-            double montant = Math.Round(Salaire * (0.05+(0.02*annee)),2 );
-            Console.WriteLine("Pour ses " + annee + " années d'ancienneté il touchera " + montant + " k euros de prime \n");
+            Console.WriteLine(Prenom + " " + Nom + " a été recruté il y a " + EmbaucheAnnee() + " ans \n");
+        }
+
+        public void Prime()
+        {
+            double montant = Math.Round(Salaire * (0.05+(0.02*EmbaucheAnnee())),2 );
+            Console.WriteLine("Pour ses " + EmbaucheAnnee() + " années d'ancienneté il touchera " + montant + " k euros de prime \n");
         }
 
         public static void CheckPrime()
@@ -79,12 +84,12 @@ namespace Employe
 
         public override string ToString()
         {
-            return "Employe : " + Nom + " " + Prenom + "\n Date d'embauche : " + Date_Embauche + " \n Employe en tant que " + Fonction + " dans le service " + Service + " \n Salaire : " + Salaire + "k euros brut par an";
+            return "Employe : " + Nom + " " + Prenom + "\n Date d'embauche : " + Date_Embauche + " \n Employe en tant que " + Fonction + " dans le service " + Service + " \n Salaire : " + Salaire + "k euros brut par an \n";
         }
 
         public void Afficher()
         {
-            ToString();
+            Console.WriteLine(ToString());
             Agence.Afficher();
         }
     }
