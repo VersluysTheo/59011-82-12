@@ -1,0 +1,14 @@
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\Rectangle.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\Rectangle.AssemblyInfoInputs.cache
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\Rectangle.AssemblyInfo.cs
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\Rectangle.csproj.CoreCompileInputs.cache
+U:\59011-82-12\CSH\Rectangle\Rectangle\bin\Debug\net6.0\Rectangle.exe
+U:\59011-82-12\CSH\Rectangle\Rectangle\bin\Debug\net6.0\Rectangle.deps.json
+U:\59011-82-12\CSH\Rectangle\Rectangle\bin\Debug\net6.0\Rectangle.runtimeconfig.json
+U:\59011-82-12\CSH\Rectangle\Rectangle\bin\Debug\net6.0\Rectangle.dll
+U:\59011-82-12\CSH\Rectangle\Rectangle\bin\Debug\net6.0\Rectangle.pdb
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\Rectangle.dll
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\refint\Rectangle.dll
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\Rectangle.pdb
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\Rectangle.genruntimeconfig.cache
+U:\59011-82-12\CSH\Rectangle\Rectangle\obj\Debug\net6.0\ref\Rectangle.dll
