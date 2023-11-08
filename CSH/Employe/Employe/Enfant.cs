@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employe
 {
-    internal class Enfant
+    public class Enfant
     {
         // Propriétés
         public string Prenom {  get; set; }
@@ -20,13 +20,7 @@ namespace Employe
 
         public override string ToString()
         {
-            if (Prenom == "Sans enfant")
-            {
-                return "Il/Elle ne possède pas d'enfant";
-            } else
-            {
-                return "Il/Elle a un enfant qui s'appelle " + Prenom + " agé de " + Age + " ans \n";
-            }
+            return "Il/Elle a un enfant qui s'appelle " + Prenom + " agé de " + Age + " ans \n";
         }
 
         public void Afficher()

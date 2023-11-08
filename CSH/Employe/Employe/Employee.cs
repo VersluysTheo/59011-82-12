@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Employe
 {
-    internal class Employee
+    public class Employee
     {
 
         //Propriétés
@@ -19,14 +19,14 @@ namespace Employe
         public double Salaire { get; set; } // en K euros par an
         public string Service { get; set; }
         public Agence Agence { get; set; }
-        public Enfant Enfant { get; set; }
+        public Enfant? Enfants { get; set; } = null;
 
         private static double Sommesalaire = 0;
         private static int Nbremployes = 0;
         
         // Constructeur
 
-        public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service, Agence agence, Enfant enfant)
+        public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service, Agence agence, Enfant enfants)
         {
             Nom = nom;
             Prenom = prenom;
@@ -35,7 +35,20 @@ namespace Employe
             Salaire = salaire;
             Service = service;
             Agence = agence;
-            Enfant = enfant;
+            Enfants = enfants;
+            Nbremployes++;
+            Sommesalaire += salaire;
+        }
+
+        public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service, Agence agence)
+        {
+            Nom = nom;
+            Prenom = prenom;
+            Date_Embauche = date_Embauche;
+            Fonction = fonction;
+            Salaire = salaire;
+            Service = service;
+            Agence = agence;
             Nbremployes++;
             Sommesalaire += salaire;
         }
@@ -108,33 +121,46 @@ namespace Employe
             return "Employe : " + Nom + " " + Prenom + "\n Date d'embauche : " + Date_Embauche + " \n Employe en tant que " + Fonction + " dans le service " + Service + " \n Salaire : " + Salaire + "k euros brut par an \n";
         }
 
-        public int ChequeVacances(out int cheque)
+        public int ChequeVacances()
         {
-            if ((Enfant.Age >= 0) ||(Enfant.Age <= 10))
+            int cheque = 0;
+            if (Enfants != null)
             {
-                cheque = 20;
-            } else if ((Enfant.Age >= 11) || (Enfant.Age <= 15))
-            {
-                cheque = 30;
-            } else if ((Enfant.Age >= 16) || (Enfant.Age <= 18)){
-                cheque = 50;
-            } else
-            {
-                cheque = 0;
+                Enfants.Afficher();
+                if ((Enfants.Age >= 0) && (Enfants.Age <= 10))
+                {
+                    cheque = 20;
+                }
+                else if (Enfants.Age <= 15)
+                {
+                    cheque = 30;
+                }
+                else if (Enfants.Age <= 18)
+                {
+                    cheque = 50;
+                }
+                else
+                {
+                    cheque = 0;
+                }
             }
+
             return cheque;
         }
 
         public void AfficherCheque()
         {
-            Console.WriteLine("Il peut obtenir un cheque de " + ChequeVacances(out _) + " euros");
+                Console.WriteLine("Il/Elle peut obtenir un cheque de " + (ChequeVacances()) + " euros");
         }
 
         public void Afficher()
         {
             Console.WriteLine(ToString());
             Agence.Afficher();
-            Enfant.Afficher();
+            if (Enfants != null)
+            {
+                AfficherCheque();
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Employe
 {
-    internal class Agence
+    public class Agence
     {
         // Propriétés
         public string Nom { get; set; }
