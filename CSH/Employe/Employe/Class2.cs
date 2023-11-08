@@ -25,10 +25,14 @@ namespace Employe
 
         // Fonctions 
 
+        public override string ToString()
+        {
+            return "Il travaille chez " + Nom + " \n Adresse : " + Adresse + "\n Code Postal : " + Code_Postal + "\n se trouvant à " + Ville;
+        }
+
         public void Afficher()
         {
-            Console.WriteLine("Il travaille chez " + Nom);
-            Console.WriteLine("Adresse : " +  Adresse + "\n" + "Code Postal : " + Code_Postal + "\n se trouvant à " + Ville);
+            ToString();
         }
     }
 }

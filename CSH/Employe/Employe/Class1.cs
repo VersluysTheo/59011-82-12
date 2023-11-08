@@ -43,16 +43,14 @@ namespace Employe
 
         public static void CompteurEmployes()
         {
-            // Recuperation du nombre d'instanciation
-            int Nbremplo = GetNbrEmploye();
-            Console.WriteLine("Il y a " + Nbremplo + " Employés");
+            Console.WriteLine("Il y a " + Nbremployes + " Employés");
         }
 
         public void Recruterdepuis()
         {
             // Comparaison de la date d'aujourd'hui et de celle de recrutement
             int embauche = DateTime.Now.Year - Date_Embauche.Year;
-            if (Date_Embauche.Month > DateTime.Now.Month)
+            if (Date_Embauche.Month - DateTime.Now.Month < 0)
             {
                 embauche--;
             }
@@ -79,12 +77,14 @@ namespace Employe
 
         }
 
+        public override string ToString()
+        {
+            return "Employe : " + Nom + " " + Prenom + "\n Date d'embauche : " + Date_Embauche + " \n Employe en tant que " + Fonction + " dans le service " + Service + " \n Salaire : " + Salaire + "k euros brut par an";
+        }
+
         public void Afficher()
         {
-            Console.WriteLine("Employe : " + Nom + " " + Prenom );
-            Console.WriteLine("Date d'embauche : " + Date_Embauche);
-            Console.WriteLine("Employe en tant que " + Fonction + " dans le service " + Service);
-            Console.WriteLine("Salaire : " + Salaire + "k euros brut par an \n");
+            ToString();
             Agence.Afficher();
         }
     }
