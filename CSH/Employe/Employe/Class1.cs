@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace Employe
         public string Service { get; set; }
         public Agence Agence { get; set; }
 
-
+        private static double Sommesalaire = 0;
         private static int Nbremployes = 0;
         
         // Constructeur
@@ -34,6 +35,7 @@ namespace Employe
             Service = service;
             Agence = agence;
             Nbremployes++;
+            Sommesalaire += salaire;
         }
 
         public static int GetNbrEmploye()
@@ -62,10 +64,16 @@ namespace Employe
             Console.WriteLine(Prenom + " " + Nom + " a été recruté il y a " + EmbaucheAnnee() + " ans \n");
         }
 
-        public void Prime()
+        public double Prime()
         {
             double montant = Math.Round(Salaire * (0.05+(0.02*EmbaucheAnnee())),2 );
-            Console.WriteLine("Pour ses " + EmbaucheAnnee() + " années d'ancienneté il touchera " + montant + " k euros de prime \n");
+            return montant;
+        }
+
+        public void AffichePrime()
+        {
+            Console.WriteLine("Pour ses " + EmbaucheAnnee() + " années d'ancienneté il touchera " + Prime() + " k euros de prime \n");
+
         }
 
         public static void CheckPrime()
@@ -80,6 +88,17 @@ namespace Employe
                 Console.WriteLine("Le Versement est prévu pour tout les 7 Octobre de chaque année \n");
             }
 
+        }
+
+        public static double SommeSalaire()
+        {
+            return Sommesalaire;
+        }
+
+
+        public static void AfficherSommeSalaire()
+        {
+            Console.WriteLine("La Somme des Salaires de tout les employés s'èleve à : " + SommeSalaire() + " k Euros");
         }
 
         public override string ToString()

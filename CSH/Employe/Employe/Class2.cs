@@ -9,18 +9,21 @@ namespace Employe
     internal class Agence
     {
         // Propriétés
-        private string Nom { get; set; }
-        private string Adresse { get; set; }
-        private string Code_Postal { get; set; }
-        private string Ville { get; set; }
+        public string Nom { get; set; }
+        public string Adresse { get; set; }
+        public string Code_Postal { get; set; }
+        public string Ville { get; set; }
+        public RestaurationEnum Restauration { get; set; }
+
 
         // Constructeur
-        public Agence(string nom, string adresse, string code_Postal, string ville)
+        public Agence(string nom, string adresse, string code_Postal, string ville, RestaurationEnum restauration)
         {
             Nom = nom;
             Adresse = adresse;
             Code_Postal = code_Postal;
             Ville = ville;
+            Restauration = restauration;
         }
 
         // Fonctions 
