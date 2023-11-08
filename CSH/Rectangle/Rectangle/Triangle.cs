@@ -26,7 +26,7 @@ namespace Rectangle
 
         public void AfficherTriangle()
         {
-            Console.WriteLine($"{Perimetre()}");
+            Console.WriteLine($"Base : [{Base}] - Hauteur :[{Hauteur}] - Périmètre : [{Perimetre()}] -");
         }
     }
 }
