@@ -19,14 +19,14 @@ namespace Employe
         public double Salaire { get; set; } // en K euros par an
         public string Service { get; set; }
         public Agence Agence { get; set; }
-        public Enfant? Enfants { get; set; } = null;
+        public List <Enfant>? Enfants { get; set; } = null;
 
         private static double Sommesalaire = 0;
         private static int Nbremployes = 0;
         
         // Constructeur
 
-        public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service, Agence agence, Enfant enfants)
+        public Employee(string nom, string prenom, DateTime date_Embauche, string fonction, double salaire, string service, Agence agence, List<Enfant> enfants)
         {
             Nom = nom;
             Prenom = prenom;
@@ -94,7 +94,7 @@ namespace Employe
         public static void CheckPrime()
         {
             DateTime today = DateTime.Now;
-            DateTime jourprime = new DateTime(2023, 11, 08);
+            DateTime jourprime = new(2023, 11, 10);
             if ((today.Month == jourprime.Month) && (today.Day == jourprime.Day))
             {
                 Console.WriteLine("Le Versement de la prime a été effectué \n");
@@ -123,10 +123,10 @@ namespace Employe
 
         public int ChequeVacances()
         {
+            // Adapter pour la liste d'enfant
             int cheque = 0;
             if (Enfants != null)
             {
-                Enfants.Afficher();
                 if ((Enfants.Age >= 0) && (Enfants.Age <= 10))
                 {
                     cheque = 20;

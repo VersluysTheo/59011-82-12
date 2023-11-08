@@ -15,16 +15,23 @@ namespace Employe
             Agence a3 = new("Koulmi", "61 Boulevard Rompiche", "25640", "Dugiko", RestaurationEnum.Cantine);
 
             // Liste des enfants
-            //Enfant ef1 = new("Timothée", 10);
-            //Enfant ef2 = new("Marie", 9);
-            //Enfant ef3 = new("Kevin", 15);
-            //Enfant ef4 = new("Gunter", 13);
+            // Ajouter la liste d'enfant a l'employé
+            Enfant ef1 = new("Timothée", 10);
+            Enfant ef2 = new("Marie", 9);
+            Enfant ef3 = new("Kevin", 15);
+            Enfant ef4 = new("Gunter", 13);
 
             // Liste
-            Enfants.Add(new Enfant("Jinji", 12));
+            //Enfants.Add(new Enfant("Timothée", 10));
+            //Enfants.Add(new Enfant("Marie", 9));
+            //Enfants.Add(new Enfant("Kevin", 15));
+            //Enfants.Add(new Enfant("Gunter", 13));
+
 
             Employees.Add(new Employee("Nolk", "Paul", new DateTime(2021, 11, 14), "Assistant Réseau", 28, "Informatique", a1));
             Employees.Add(new Employee("Chirac", "Jacques", new DateTime(1980, 06, 21), "Directeur général", 55, "Ressources Humaines", a2)) ;
+            Employees.Add(new Employee("Jun", "Ling", new DateTime(1994, 10, 01), "Secretaire", 40, "Secrétariat", a3));
+
 
             //Console.WriteLine(Employees.Sum(e => e.Salaire));
 
