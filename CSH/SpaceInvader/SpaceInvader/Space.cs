@@ -9,25 +9,26 @@ namespace SpaceInvader
     public class Space
     {
         // Propriétés
-        public int nbLignes { get; set; }
-        public int nbColonnes { get; set; }
+        public int NbLignes { get; set; }
+        public int NbColonnes { get; set; }
         public char[,] Grille { get; set; }
 
         // Constructeur
 
         public Space(int nbLignes, int nbColonnes)
         {
-            this.nbLignes = nbLignes;
-            this.nbColonnes = nbColonnes;
+            this.NbLignes = nbLignes;
+            this.NbColonnes = nbColonnes;
             Grille = InitGrille();
         }
         
+        // Création de la grille 
         public char[,] InitGrille()
         {
-            char[,] Grille = new char[nbLignes,nbColonnes];
-            for (int i = 0; i < nbLignes; i++)
+            char[,] Grille = new char[NbLignes,NbColonnes]; // Creation d'un tableau a deux dimensions vide
+            for (int i = 0; i < NbLignes; i++) // Creation du nombre de Lignes
             {
-                for (int j = 0 ; j < nbColonnes; j++)
+                for (int j = 0 ; j < NbColonnes; j++) // Creation du nombre de Colonnes
                 {
                     Grille[i,j] = ' ';
                 }

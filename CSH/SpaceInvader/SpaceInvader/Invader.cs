@@ -8,13 +8,18 @@ namespace SpaceInvader
 {
     public class Invader
     {
+
+        // Propriétés
         public char Inv {  get; set; }
 
+
+        // Constructeur
         public Invader()
         {
             Inv = '#';
         }
 
+        // Affichage
         public override string ToString()
         {
             return $"{Inv}";
