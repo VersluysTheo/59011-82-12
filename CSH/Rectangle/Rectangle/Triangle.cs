@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rectangle
 {
-    internal class Triangle
+    public class Triangle
     {
         public double Base {  get; set; }
         public double Hauteur { get; set; }
@@ -24,9 +24,17 @@ namespace Rectangle
             return perimetre;
         }
 
+
+        public double Aire()
+        {
+            double aire;
+            aire = (Base * Hauteur)/2;
+            return aire;
+        }
+
         public void AfficherTriangle()
         {
-            Console.WriteLine($"Base : [{Base}] - Hauteur :[{Hauteur}] - Périmètre : [{Perimetre()}] -");
+            Console.WriteLine($"Base : [{Base}] - Hauteur :[{Hauteur}] - Périmètre : [{Perimetre()}] - Aire : [{Aire()}]");
         }
     }
 }

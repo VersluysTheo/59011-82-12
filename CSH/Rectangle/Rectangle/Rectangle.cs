@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rectangle
 {
-    internal class Rectangle
+    public class Rectangle
     {
         public int Longueur { get; set; }
         public int Largeur { get; set; }
