@@ -14,6 +14,8 @@
             para1.AfficherPara();
             Pyramide pyramide1 = new(8, 10);
             pyramide1.AfficherPyra();
+            Sphere sphere1 = new(10);
+            sphere1.AfficherSphere();
         }
     }
 }

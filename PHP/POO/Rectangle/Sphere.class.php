@@ -6,7 +6,7 @@ class Sphere extends Cercle
 
         function perimetre()
         {
-            return round((pi()*parent::getDiametre()),2);
+            return round((2*pi()*parent::getDiametre()/2),2);
         }
 
         function volume()

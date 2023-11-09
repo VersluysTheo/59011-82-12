@@ -8,10 +8,7 @@ namespace Rectangle
 {
     public class Pyramide : Triangle
     {
-        public Pyramide (double @base, double hauteur) : base (@base, hauteur)
-        {
-
-        }
+        public Pyramide (double @base, double hauteur) : base (@base, hauteur) { }
         public double PerimetrePyra()
         {
             double perimetre;
