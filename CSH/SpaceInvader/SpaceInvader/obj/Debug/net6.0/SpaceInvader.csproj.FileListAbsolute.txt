@@ -1,0 +1,14 @@
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\bin\Debug\net6.0\SpaceInvader.exe
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\bin\Debug\net6.0\SpaceInvader.deps.json
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\bin\Debug\net6.0\SpaceInvader.runtimeconfig.json
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\bin\Debug\net6.0\SpaceInvader.dll
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\bin\Debug\net6.0\SpaceInvader.pdb
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\SpaceInvader.GeneratedMSBuildEditorConfig.editorconfig
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\SpaceInvader.AssemblyInfoInputs.cache
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\SpaceInvader.AssemblyInfo.cs
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\SpaceInvader.csproj.CoreCompileInputs.cache
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\SpaceInvader.dll
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\refint\SpaceInvader.dll
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\SpaceInvader.pdb
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\SpaceInvader.genruntimeconfig.cache
+U:\59011-82-12\CSH\SpaceInvader\SpaceInvader\obj\Debug\net6.0\ref\SpaceInvader.dll
