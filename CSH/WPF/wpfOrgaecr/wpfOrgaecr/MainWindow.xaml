@@ -1,0 +1,33 @@
+﻿<Window x:Class="wpfOrgaecr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfOrgaecr"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" Height="95" Grid.Row="1" VerticalAlignment="Center" Width="800">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="1" Header="Navire" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Left" Height="53" Margin="10,0,0,0" VerticalAlignment="Center" Width="155"/>
+            </GroupBox>
+        </Grid>
+
+    </Grid>
+</Window>
