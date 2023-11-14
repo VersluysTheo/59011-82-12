@@ -6,5 +6,7 @@
     <Application.Resources>
          
         <SolidColorBrush x:Key="ButtonBackground1" Color="#FFE0DBDB"/>
+        <BitmapImage x:Key="fleche" UriSource="images/Fleche.png"/>
+        <BitmapImage x:Key="question" UriSource="images/questions.png"/>
     </Application.Resources>
 </Application>

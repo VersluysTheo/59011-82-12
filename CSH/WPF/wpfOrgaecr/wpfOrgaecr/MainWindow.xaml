@@ -95,7 +95,7 @@
                                         <RowDefinition Height="3*"/>
                                         <RowDefinition Height="10*"/>
                                     </Grid.RowDefinitions>
-                                    <WrapPanel HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="330">
+                                    <WrapPanel HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="354">
                                         <Label Content="Date et Heure:" Height="26" Width="90" HorizontalContentAlignment="Right"/>
                                         <DatePicker Height="26" Width="140"/>
                                         <ComboBox Height="26" Width="100">
@@ -132,10 +132,13 @@
                                             <ComboBoxItem Content="23h"/>
                                             <ComboBoxItem Content="23h30"/>
                                         </ComboBox>
-                                        <Label Content="Latitude:" Height="29" Width="90" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                                        <TextBox Height="20" TextWrapping="Wrap" Width="240" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-                                        <Label Content="Longitude:" Height="32" Width="89" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-                                        <TextBox Height="20" TextWrapping="Wrap" Width="241" VerticalContentAlignment="Center"/>
+                                        <Label Content="Latitude:" Height="29" Width="72" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                                        <TextBox Height="20" TextWrapping="Wrap" Width="236" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                                        <Image Width="20" Source="{DynamicResource fleche}"/>
+                                        <Label Content="Longitude:" Height="29" Width="72" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                        <TextBox Height="20" TextWrapping="Wrap" Width="236" VerticalContentAlignment="Center"/>
+                                        <Image Width="20" Source="{DynamicResource fleche}"/>
+                                        <Image Width="20" Source="{DynamicResource question}"/>
                                     </WrapPanel>
                                 </Grid>
                             </GroupBox>
