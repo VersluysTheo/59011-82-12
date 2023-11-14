@@ -13,12 +13,13 @@
             <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="33*"/>
-            <RowDefinition Height="109*"/>
-            <RowDefinition Height="191*"/>
-            <RowDefinition Height="352*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="84*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="216*"/>
+            <RowDefinition Height="403*"/>
         </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Center" Height="95" Grid.Row="1" VerticalAlignment="Center" Width="800" d:IsLocked="True" Grid.Column="1">
+        <Grid HorizontalAlignment="Center" Height="95" Grid.Row="1" VerticalAlignment="Center" Width="800" Grid.Column="1" d:IsLocked="True" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="5*"/>
@@ -70,17 +71,17 @@
             </GroupBox>
         </Grid>
         <Label Content="Opération de Pêche" HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="200" FontWeight="Bold" d:IsLocked="True" Grid.ColumnSpan="2"/>
-        <TabControl HorizontalAlignment="Center" Height="533" Margin="0,108,0,0" Grid.RowSpan="3" Grid.Row="1" VerticalAlignment="Top" Width="790" Grid.Column="1">
+        <TabControl HorizontalAlignment="Center" Height="628" Margin="0,1,0,0" Grid.RowSpan="3" Grid.Row="3" VerticalAlignment="Top" Width="790" Grid.Column="1">
             <TabItem Header="Opération">
-                <Grid>
-                    <Grid HorizontalAlignment="Center" Height="495" VerticalAlignment="Top" Width="784">
+                <Grid Height="604">
+                    <Grid HorizontalAlignment="Center" Height="611" VerticalAlignment="Top" Width="784" Background="White">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="7*"/>
-                            <RowDefinition Height="167*"/>
-                            <RowDefinition Height="9*"/>
-                            <RowDefinition Height="30*"/>
-                            <RowDefinition Height="162*"/>
-                            <RowDefinition Height="130*"/>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="202*"/>
+                            <RowDefinition Height="11*"/>
+                            <RowDefinition Height="36*"/>
+                            <RowDefinition Height="187*"/>
+                            <RowDefinition Height="252*"/>
                         </Grid.RowDefinitions>
                         <Grid HorizontalAlignment="Center" Height="150" Grid.Row="1" VerticalAlignment="Center" Width="784">
                             <Grid.ColumnDefinitions>
@@ -182,13 +183,13 @@
                                             <ComboBoxItem Content="23h30"/>
                                         </ComboBox>
                                         <Label Content="Latitude:" Height="29" Width="90" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                                        <TextBox Height="20" TextWrapping="Wrap" Width="256" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <TextBox Height="20" TextWrapping="WrapWithOverflow" Width="256" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
                                         <Label Content="Longitude:" Height="32" Width="89" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-                                        <TextBox Height="20" TextWrapping="Wrap" Width="257" VerticalContentAlignment="Center"/>
+                                        <TextBox Height="20" TextWrapping="WrapWithOverflow" Width="257" VerticalContentAlignment="Center"/>
                                     </WrapPanel>
                                     <WrapPanel HorizontalAlignment="Center" Height="28" VerticalAlignment="Center" Width="374">
                                         <Label Content="Durée (h):" Height="28" Width="76" HorizontalContentAlignment="Right"/>
-                                        <TextBox Height="20" TextWrapping="Wrap" Width="270" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
+                                        <TextBox Height="20" TextWrapping="WrapWithOverflow" Width="270" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
                                     </WrapPanel>
                                 </Grid>
                             </GroupBox>
@@ -201,7 +202,7 @@
                                 </Grid.ColumnDefinitions>
                             </Grid>
                         </Expander>
-                        <Expander HorizontalAlignment="Left" Height="150" Header="Autres caractéristiques de l'opération" Margin="0,3,0,0" Grid.Row="4" VerticalAlignment="Top" Width="774">
+                        <Expander HorizontalAlignment="Left" Height="174" Header="Autres caractéristiques de l'opération" Margin="0,3,0,0" Grid.Row="4" VerticalAlignment="Top" Width="774">
                             <Grid Height="83" Margin="0,22,0,0" VerticalAlignment="Top" Width="773">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="70*"/>
@@ -228,6 +229,53 @@
                                     <Button Grid.Row="1" Content="-" HorizontalAlignment="Center" Height="20" VerticalAlignment="Top" Width="25" FontFamily="Arial Black" Foreground="#FF69B341" FontSize="14"/>
                                 </Grid>
                             </Grid>
+                        </Expander>
+                        <Expander HorizontalAlignment="Center" Height="211" Header="Navire Associé" Grid.Row="5" VerticalAlignment="Top" Width="784">
+                            <Grid Background="White">
+                                <Grid HorizontalAlignment="Center" Height="188" VerticalAlignment="Center" Width="782">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30*"/>
+                                        <RowDefinition Height="90*"/>
+                                        <RowDefinition Height="70*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="782">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="50*"/>
+                                            <ColumnDefinition Width="342*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Grid.Column="0" Content="+" Foreground="#FF69B341" FontWeight="Bold" FontFamily="Arial Black" BorderBrush="Black" Background="#FFF5F4F4" HorizontalAlignment="Right" Width="45" FontSize="14" Height="25"/>
+                                        <Button Grid.Column="2" Content="-" Foreground="#FF69B341" FontWeight="Bold" FontFamily="Arial Black" BorderBrush="Black" Background="#FFF5F4F4" HorizontalAlignment="Left" Width="45" FontSize="14" Height="25"/>
+                                    </Grid>
+                                    <Grid HorizontalAlignment="Center" Height="89" Grid.Row="1" VerticalAlignment="Center" Width="782">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="379*"/>
+                                            <ColumnDefinition Width="403*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <WrapPanel HorizontalAlignment="Center" Height="89" VerticalAlignment="Center" Width="379">
+                                            <Label Content="Immatriculation :" Height="26" Width="200" HorizontalContentAlignment="Right"/>
+                                            <TextBox Height="20" TextWrapping="WrapWithOverflow" Text="" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                            <Label Content="Quartier d'immatriculation :" Height="26" Width="200" HorizontalContentAlignment="Right"/>
+                                            <TextBox Height="20" TextWrapping="WrapWithOverflow" Text="" Width="175" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                            <Label Content="Capture remontée sur le navire de l'observateur ?" Height="26" Width="210" HorizontalContentAlignment="Right" FontSize="9"/>
+                                            <ComboBox Height="20" Text="" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                                                <ComboBoxItem Content="Oui"/>
+                                                <ComboBoxItem Content="Non"/>
+                                            </ComboBox>
+                                        </WrapPanel>
+                                    </Grid>
+                                    <Grid HorizontalAlignment="Center" Height="69" Grid.Row="2" VerticalAlignment="Center" Width="782">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Content="Commentaires :" HorizontalAlignment="Center" Height="69" VerticalAlignment="Center" Width="196" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                        <TextBox Grid.Column="1" HorizontalAlignment="Center" Height="59" TextWrapping="WrapWithOverflow" Text="" VerticalAlignment="Center" Width="586"/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
                         </Expander>
                     </Grid>
                 </Grid>
