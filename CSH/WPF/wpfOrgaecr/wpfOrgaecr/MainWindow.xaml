@@ -74,7 +74,7 @@
         <TabControl HorizontalAlignment="Center" Height="628" Margin="0,1,0,0" Grid.RowSpan="3" Grid.Row="3" VerticalAlignment="Top" Width="790" Grid.Column="1">
             <TabItem Header="Opération">
                 <Grid Height="604">
-                    <Grid HorizontalAlignment="Center" Height="611" VerticalAlignment="Top" Width="784" Background="White">
+                    <Grid HorizontalAlignment="Center" Height="611" VerticalAlignment="Top" Width="784">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="8*"/>
                             <RowDefinition Height="202*"/>
@@ -134,11 +134,8 @@
                                         </ComboBox>
                                         <Label Content="Latitude:" Height="29" Width="72" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
                                         <TextBox Height="20" TextWrapping="Wrap" Width="236" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-                                        <Image Width="20" Source="{DynamicResource fleche}"/>
                                         <Label Content="Longitude:" Height="29" Width="72" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
                                         <TextBox Height="20" TextWrapping="Wrap" Width="236" VerticalContentAlignment="Center"/>
-                                        <Image Width="20" Source="{DynamicResource fleche}"/>
-                                        <Image Width="20" Source="{DynamicResource question}"/>
                                     </WrapPanel>
                                 </Grid>
                             </GroupBox>
@@ -185,10 +182,14 @@
                                             <ComboBoxItem Content="23h"/>
                                             <ComboBoxItem Content="23h30"/>
                                         </ComboBox>
-                                        <Label Content="Latitude:" Height="29" Width="90" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                                        <TextBox Height="20" TextWrapping="WrapWithOverflow" Width="256" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
-                                        <Label Content="Longitude:" Height="32" Width="89" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
-                                        <TextBox Height="20" TextWrapping="WrapWithOverflow" Width="257" VerticalContentAlignment="Center"/>
+                                        <Label Content="Latitude:" Height="29" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                                        <TextBox Height="20" TextWrapping="WrapWithOverflow" Width="200" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <Image Width="20" Source="{DynamicResource quest}"/>
+                                        <Image Width="20" Source="{DynamicResource fleche}"/>
+                                        <Label Content="Longitude:" Height="32" Width="80" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                        <TextBox Height="20" TextWrapping="WrapWithOverflow" Width="200" VerticalContentAlignment="Center"/>
+                                        <Image Width="20" Source="{DynamicResource quest}"/>
+                                        <Image Width="20" Source="{DynamicResource fleche}"/>
                                     </WrapPanel>
                                     <WrapPanel HorizontalAlignment="Center" Height="28" VerticalAlignment="Center" Width="374">
                                         <Label Content="Durée (h):" Height="28" Width="76" HorizontalContentAlignment="Right"/>
@@ -197,7 +198,13 @@
                                 </Grid>
                             </GroupBox>
                         </Grid>
-                        <Expander HorizontalAlignment="Left" Height="26" Header="Zone d'activité  : 27E8" Grid.Row="3" VerticalAlignment="Center" Width="774" d:IsLocked="True">
+                        <Expander HorizontalAlignment="Left" Height="26" Header="Zone d'activité  : 27E8" Grid.Row="3" VerticalAlignment="Center" Width="774">
+                            <Expander.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFC4E5FF"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Expander.Background>
                             <Grid Background="#FFE5E5E5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="3*"/>
@@ -206,12 +213,18 @@
                             </Grid>
                         </Expander>
                         <Expander HorizontalAlignment="Left" Height="174" Header="Autres caractéristiques de l'opération" Margin="0,3,0,0" Grid.Row="4" VerticalAlignment="Top" Width="774">
+                            <Expander.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFC4E5FF"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Expander.Background>
                             <Grid Height="83" Margin="0,22,0,0" VerticalAlignment="Top" Width="773">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="70*"/>
                                     <ColumnDefinition Width="700*"/>
                                 </Grid.ColumnDefinitions>
-                                <DataGrid Grid.Column="1" HorizontalAlignment="Center" Height="83" VerticalAlignment="Center" Width="703">
+                                <DataGrid Grid.Column="1" HorizontalAlignment="Center" Height="83" VerticalAlignment="Center" Width="703" Background="White">
                                     <DataGrid.Columns>
                                         <DataGridCheckBoxColumn Header="" Width="0.5*" Binding="{Binding}"/>
                                         <DataGridTextColumn Header="Caractéristique" Width="3*" Binding="{Binding}"/>
@@ -234,6 +247,12 @@
                             </Grid>
                         </Expander>
                         <Expander HorizontalAlignment="Center" Height="211" Header="Navire Associé" Grid.Row="5" VerticalAlignment="Top" Width="784">
+                            <Expander.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFC4E5FF"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Expander.Background>
                             <Grid Background="White">
                                 <Grid HorizontalAlignment="Center" Height="188" VerticalAlignment="Center" Width="782">
                                     <Grid.RowDefinitions>

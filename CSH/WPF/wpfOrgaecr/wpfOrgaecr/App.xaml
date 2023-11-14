@@ -4,9 +4,10 @@
              xmlns:local="clr-namespace:wpfOrgaecr"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
         <SolidColorBrush x:Key="ButtonBackground1" Color="#FFE0DBDB"/>
-        <BitmapImage x:Key="fleche" UriSource="images/Fleche.png"/>
-        <BitmapImage x:Key="question" UriSource="images/questions.png"/>
+        <BitmapImage x:Key="fleche" UriSource="Images/Fleche.png"/>
+        <BitmapImage x:Key="quest" UriSource="Images/questions.png"/>
+        
     </Application.Resources>
 </Application>
