@@ -5,29 +5,198 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfOrgaecr"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="700" Width="800" MinHeight="700" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.2*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Center" Height="95" Grid.Row="1" VerticalAlignment="Center" Width="800">
+        <Grid HorizontalAlignment="Center" Height="95" Grid.Row="1" VerticalAlignment="Center" Width="800" d:IsLocked="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="7"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="7"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="7"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="7"/>
             </Grid.ColumnDefinitions>
-            <GroupBox Grid.Column="1" Header="Navire" VerticalAlignment="Center">
-                <StackPanel HorizontalAlignment="Left" Height="53" Margin="10,0,0,0" VerticalAlignment="Center" Width="155"/>
+            <GroupBox Grid.Column="1" Header="Navire" VerticalAlignment="Top" Height="85">
+                <WrapPanel HorizontalAlignment="Left" Height="59" Margin="10,0,0,0" VerticalAlignment="Top" Width="185">
+                    <Label Content="Immatriculation :" Height="30" Width="95" VerticalAlignment="Center" Padding="1,5,5,5" Grid.IsSharedSizeScope="True" UseLayoutRounding="False"/>
+                    <TextBox Height="25" TextWrapping="WrapWithOverflow" Width="75" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
+                    <Label Content="Nom :" Height="30" Width="95" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <TextBox Height="25" TextWrapping="WrapWithOverflow" Width="75" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
+                </WrapPanel>
+
+            </GroupBox>
+            <GroupBox Grid.Column="3" Header="Marée" VerticalAlignment="Top" Height="85">
+                <WrapPanel HorizontalAlignment="Left" Height="59" Margin="10,0,0,0" VerticalAlignment="Top" Width="150">
+                    <Label Content="Départ :" Height="30" Width="58" VerticalAlignment="Center"/>
+                    <TextBox Height="26" TextWrapping="WrapWithOverflow" Width="70" VerticalContentAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="#FFF1F0F0"/>
+                    <Label Content="Arrivée :" Height="30" Width="58" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+                    <TextBox Height="26" TextWrapping="WrapWithOverflow" Width="70" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
+                </WrapPanel>
+
+            </GroupBox>
+            <GroupBox Grid.Column="5" Header="Programme d'observation" VerticalAlignment="Top" Height="85">
+                <WrapPanel HorizontalAlignment="Left" Height="59" VerticalAlignment="Top" Width="182">
+                    <Label Content="Programme :" Height="30" Width="82" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Height="26" TextWrapping="WrapWithOverflow" Width="90" VerticalContentAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="#FFF1F0F0">
+                    </TextBox>
+                    <Label Content="Stratégie :" Height="30" Width="82" VerticalAlignment="Center"/>
+                    <TextBox Height="26" TextWrapping="WrapWithOverflow" Width="90" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
+                </WrapPanel>
+
+            </GroupBox>
+            <GroupBox Grid.Column="7" Header="Saississeur" VerticalAlignment="Top" Height="85">
+                <WrapPanel HorizontalAlignment="Left" Height="59" VerticalAlignment="Top" Width="220">
+                    <Label Content="Opérateur de Saisie :" Height="30" Width="126" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox Height="26" TextWrapping="WrapWithOverflow" Width="90" VerticalContentAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="#FFF1F0F0">
+                    </TextBox>
+                    <Label Content="Dernière modification :" Height="30" Width="126" VerticalAlignment="Center"/>
+                    <TextBox Height="26" TextWrapping="WrapWithOverflow" Width="90" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
+                </WrapPanel>
+
             </GroupBox>
         </Grid>
-
+        <Label Content="Opération de Pêche" HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="200" FontWeight="Bold" d:IsLocked="True"/>
+        <TabControl HorizontalAlignment="Left" Height="533" Margin="0,108,0,0" Grid.RowSpan="2" Grid.Row="1" VerticalAlignment="Top" Width="790">
+            <TabItem Header="Opération">
+                <Grid>
+                    <Grid HorizontalAlignment="Left" Height="505" VerticalAlignment="Top" Width="784">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="7*"/>
+                            <RowDefinition Height="164*"/>
+                            <RowDefinition Height="9*"/>
+                            <RowDefinition Height="325*"/>
+                        </Grid.RowDefinitions>
+                        <Grid HorizontalAlignment="Center" Height="150" Grid.Row="1" VerticalAlignment="Center" Width="784">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="0.1*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <GroupBox Grid.Column="0" HorizontalAlignment="Left" Height="140" Header="Début de l'opération (Filage)" VerticalAlignment="Center" Width="386" BorderBrush="#FF767777">
+                                <Grid HorizontalAlignment="Center" Height="120" VerticalAlignment="Top" Width="374">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <WrapPanel HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="374">
+                                        <Label Content="Date et Heure:" Height="26" Width="90" HorizontalContentAlignment="Right"/>
+                                        <DatePicker Height="26" Width="156"/>
+                                        <ComboBox Height="26" Width="100">
+                                            <ComboBoxItem Content="8h"/>
+                                            <ComboBoxItem Content="8h30"/>
+                                            <ComboBoxItem Content="9h"/>
+                                            <ComboBoxItem Content="9h30"/>
+                                            <ComboBoxItem Content="10h"/>
+                                            <ComboBoxItem Content="10h30"/>
+                                            <ComboBoxItem Content="11h"/>
+                                            <ComboBoxItem Content="11h30"/>
+                                            <ComboBoxItem Content="12h"/>
+                                            <ComboBoxItem Content="12h30"/>
+                                            <ComboBoxItem Content="13h"/>
+                                            <ComboBoxItem Content="13h30"/>
+                                            <ComboBoxItem Content="14h"/>
+                                            <ComboBoxItem Content="14h30"/>
+                                            <ComboBoxItem Content="15h"/>
+                                            <ComboBoxItem Content="15h30"/>
+                                            <ComboBoxItem Content="16h"/>
+                                            <ComboBoxItem Content="16h30"/>
+                                            <ComboBoxItem Content="17h"/>
+                                            <ComboBoxItem Content="17h30"/>
+                                            <ComboBoxItem Content="18h"/>
+                                            <ComboBoxItem Content="18h30"/>
+                                            <ComboBoxItem Content="19h"/>
+                                            <ComboBoxItem Content="19h30"/>
+                                            <ComboBoxItem Content="20h"/>
+                                            <ComboBoxItem Content="20h30"/>
+                                            <ComboBoxItem Content="21h"/>
+                                            <ComboBoxItem Content="21h30"/>
+                                            <ComboBoxItem Content="22h"/>
+                                            <ComboBoxItem Content="22h30"/>
+                                            <ComboBoxItem Content="23h"/>
+                                            <ComboBoxItem Content="23h30"/>
+                                        </ComboBox>
+                                        <Label Content="Latitude:" Height="29" Width="90" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                                        <TextBox Height="20" TextWrapping="Wrap" Width="256" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <Label Content="Longitude:" Height="32" Width="89" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                        <TextBox Height="20" TextWrapping="Wrap" Width="257" VerticalContentAlignment="Center"/>
+                                    </WrapPanel>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Grid.Column="2" HorizontalAlignment="Left" Height="140" Header="Fin de l'opération (Virage)" VerticalAlignment="Center" Width="376" BorderBrush="#FF767777">
+                                <Grid HorizontalAlignment="Center" Height="120" VerticalAlignment="Top" Width="374">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <WrapPanel HorizontalAlignment="Center" Height="92" Grid.Row="1" VerticalAlignment="Center" Width="374">
+                                        <Label Content="Date et Heure:" Height="26" Width="90" HorizontalContentAlignment="Right"/>
+                                        <DatePicker Height="24" Width="156"/>
+                                        <ComboBox Height="24" Width="100">
+                                            <ComboBoxItem Content="8h"/>
+                                            <ComboBoxItem Content="8h30"/>
+                                            <ComboBoxItem Content="9h"/>
+                                            <ComboBoxItem Content="9h30"/>
+                                            <ComboBoxItem Content="10h"/>
+                                            <ComboBoxItem Content="10h30"/>
+                                            <ComboBoxItem Content="11h"/>
+                                            <ComboBoxItem Content="11h30"/>
+                                            <ComboBoxItem Content="12h"/>
+                                            <ComboBoxItem Content="12h30"/>
+                                            <ComboBoxItem Content="13h"/>
+                                            <ComboBoxItem Content="13h30"/>
+                                            <ComboBoxItem Content="14h"/>
+                                            <ComboBoxItem Content="14h30"/>
+                                            <ComboBoxItem Content="15h"/>
+                                            <ComboBoxItem Content="15h30"/>
+                                            <ComboBoxItem Content="16h"/>
+                                            <ComboBoxItem Content="16h30"/>
+                                            <ComboBoxItem Content="17h"/>
+                                            <ComboBoxItem Content="17h30"/>
+                                            <ComboBoxItem Content="18h"/>
+                                            <ComboBoxItem Content="18h30"/>
+                                            <ComboBoxItem Content="19h"/>
+                                            <ComboBoxItem Content="19h30"/>
+                                            <ComboBoxItem Content="20h"/>
+                                            <ComboBoxItem Content="20h30"/>
+                                            <ComboBoxItem Content="21h"/>
+                                            <ComboBoxItem Content="21h30"/>
+                                            <ComboBoxItem Content="22h"/>
+                                            <ComboBoxItem Content="22h30"/>
+                                            <ComboBoxItem Content="23h"/>
+                                            <ComboBoxItem Content="23h30"/>
+                                        </ComboBox>
+                                        <Label Content="Latitude:" Height="29" Width="90" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                                        <TextBox Height="20" TextWrapping="Wrap" Width="256" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                                        <Label Content="Longitude:" Height="32" Width="89" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                        <TextBox Height="20" TextWrapping="Wrap" Width="257" VerticalContentAlignment="Center"/>
+                                    </WrapPanel>
+                                    <WrapPanel HorizontalAlignment="Center" Height="28" VerticalAlignment="Center" Width="374">
+                                        <Label Content="Durée (h):" Height="28" Width="76" HorizontalContentAlignment="Right"/>
+                                        <TextBox Height="20" TextWrapping="Wrap" Width="270" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" Background="#FFF1F0F0"/>
+                                    </WrapPanel>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Engin">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Positions Géopraphiques">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Commentaires">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
