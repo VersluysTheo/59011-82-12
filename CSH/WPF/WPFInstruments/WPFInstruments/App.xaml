@@ -4,7 +4,11 @@
              xmlns:local="clr-namespace:WPFInstruments"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <BitmapImage x:Key="supprimer" UriSource="images/minus.png"/>
+        <BitmapImage x:Key="loupe" UriSource="images/loupe.png" />
+        <BitmapImage x:Key="print" UriSource="images/print.png" />
+
         <LinearGradientBrush x:Key="ARnaud" EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF969E9E"/>
             <GradientStop Color="#FF9AA0A0" Offset="1"/>

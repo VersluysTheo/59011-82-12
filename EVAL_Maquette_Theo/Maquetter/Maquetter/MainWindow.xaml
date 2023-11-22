@@ -1,0 +1,298 @@
+﻿<Window Background="{DynamicResource GradientBack2}" x:Class="Maquetter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Maquetter"
+        mc:Ignorable="d"
+        Title="Gestion Fiche de Paie" Height="1080" Width="1920" MinHeight="1080" MinWidth="1920">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="Gradientback" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF698EA2"/>
+            <GradientStop Color="#FFEBF4F9" Offset="1"/>
+            <GradientStop Color="#FFB9D0DC" Offset="0.498"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="ButtonGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF9098C3" Offset="0.155"/>
+            <GradientStop Color="#FFC0C8F3" Offset="1"/>
+            <GradientStop Color="#FF9596C3" Offset="0.477"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="GradientBack2" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF7FAAC1"/>
+            <GradientStop Color="#FFEBF4F9" Offset="1"/>
+            <GradientStop Color="#FF9FC4D8" Offset="0.498"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" HorizontalAlignment="Center" Height="1042" Grid.Row="1" VerticalAlignment="Center" Width="930">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <DataGrid HorizontalAlignment="Left" VerticalAlignment="Center" Width="920" Height="250">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Width="3*"/>
+                    <DataGridTextColumn Header="Prenom" Width="3*"/>
+                    <DataGridTextColumn Header="Genre" Width="1*"/>
+                    <DataGridTextColumn Header="Fonction" Width="3*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <GroupBox HorizontalAlignment="Center" Height="760" Header="Informations Employé" Grid.Row="1" VerticalAlignment="Center" Width="910" FontSize="16">
+                <Grid HorizontalAlignment="Center" Height="720" VerticalAlignment="Top" Width="880">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+
+                    </Grid.RowDefinitions>
+                    <WrapPanel Grid.Row="0" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="Nom : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="220" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                        <Label Content="Prenom : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="220" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="1" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="Genre : " Height="70" Width="100" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <ComboBox Height="30" Width="50">
+                            <ComboBoxItem Content="M"/>
+                            <ComboBoxItem Content="F"/>
+                        </ComboBox>
+                        <Label Content="Date de naissance : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <DatePicker Height="30" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Label Content="Date d'entrée : " Height="70" Width="120" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <DatePicker Height="30" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="2" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="Situation Familiale : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <ComboBox Height="30" Width="200">
+                            <ComboBoxItem Content="Marié(e)"/>
+                            <ComboBoxItem Content="Celibataire"/>
+                        </ComboBox>
+                        <Label Content="Nombre d'enfants : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="50" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                        <Label Content="Fonction : " Height="70" Width="120" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="150" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="3" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="CNSS : " Height="70" Width="180" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="180" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                        <Label Content="Fonction : " Height="70" Width="180" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="180" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="4" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="Departement : " Height="70" Width="180" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="180" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                        <Label Content="Service : " Height="70" Width="180" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <ComboBox Height="30" Width="200">
+                            <ComboBoxItem Content="Comptabilité"/>
+                            <ComboBoxItem Content="Administratif"/>
+                            <ComboBoxItem Content="Finance"/>
+                            <ComboBoxItem Content="Commercial"/>
+                        </ComboBox>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="5" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="CIMR : " Height="70" Width="100" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="150" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                        <Label Content="Mutuelle : " Height="70" Width="100" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="120" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                        <Label Content="Type de Paiement : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <ComboBox Height="30" Width="200">
+                            <ComboBoxItem Content="Mensuel"/>
+                            <ComboBoxItem Content="Trimestriel"/>
+                            <ComboBoxItem Content="Bimensuel"/>
+                        </ComboBox>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="6" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="Mode de Paiement : " Height="70" Width="250" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <ComboBox Height="30" Width="200">
+                            <ComboBoxItem Content="Virement"/>
+                            <ComboBoxItem Content="Cheque"/>
+                            <ComboBoxItem Content="Espece"/>
+                        </ComboBox>
+                        <Label Content="Salaire de base Horaire : " Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="100" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="7" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                        <Label Content="Prime : " Height="70" Width="100" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="150" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                        <Label Content="Adresse : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                        <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="400" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFEADEDE"/>
+                    </WrapPanel>
+                    <Grid HorizontalAlignment="Center" Height="75" Grid.Row="8" VerticalAlignment="Center" Width="880">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Height="75" VerticalAlignment="Center" Width="220">
+                            <Button Background="{DynamicResource ButtonGradient}" Content="Enregistrer les Modifications" Height="50" Width="220" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Opacity="0.6">
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <GroupBox Grid.Column="3" HorizontalAlignment="Left" Height="1030" Header="Simulation Fiche de Paie" Grid.Row="1" VerticalAlignment="Top" Width="920" Opacity="0.975" FontSize="14">
+            <Grid HorizontalAlignment="Center" Height="969" Margin="0,34,0,0" VerticalAlignment="Top" Width="887">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <WrapPanel Grid.Row="0" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="NOM Prenom : " Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <ComboBox Height="30" Width="200">
+                        <ComboBoxItem Content="TIKDAM Ahmed"/>
+                        <ComboBoxItem Content="SOKRAT Jamila"/>
+                        <ComboBoxItem Content="INCH Karim"/>
+                        <ComboBoxItem Content="ROBEN Widad"/>
+                    </ComboBox>
+                    <Label Content="Mois : " Height="70" Width="100" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <ComboBox Height="30" Width="150">
+                        <ComboBoxItem Content="Janvier"/>
+                        <ComboBoxItem Content="Fevrier"/>
+                        <ComboBoxItem Content="Mars"/>
+                        <ComboBoxItem Content="Avril"/>
+                        <ComboBoxItem Content="Mai"/>
+                        <ComboBoxItem Content="Juin"/>
+                        <ComboBoxItem Content="Juillet"/>
+                        <ComboBoxItem Content="Août"/>
+                        <ComboBoxItem Content="Septembre"/>
+                        <ComboBoxItem Content="Octobre"/>
+                        <ComboBoxItem Content="Novembre"/>
+                        <ComboBoxItem Content="Decembre"/>
+                    </ComboBox>
+                    <Label Content="H de Travail : " Height="70" Width="120" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" TextWrapping="WrapWithOverflow" Text="" Width="60" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="1" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <Label Content="Base" Height="70" Width="100" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <Label Content="Taux" Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <Label Content="A Payer" Height="70" Width="170" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                    <Label Content="A retenir" Height="70" Width="150" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="2" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="Salaire de Base" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="3" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="Prime d'ancienneté" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="4" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="Salaire Brut" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="5" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="Cotisation CNSS" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="6" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="AMO" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="7" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="IGR" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="8" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="Mutuelle" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA5A3A3"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="9" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="880">
+                    <Label Content="Net a Payer" Height="70" Width="200" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                    <Label Content="" Width="10"/>
+                    <TextBox Height="30" Width="150" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFC19393" Opacity="0.6"/>
+                </WrapPanel>
+                <Grid HorizontalAlignment="Center" Height="75" Grid.Row="10" VerticalAlignment="Center" Width="880" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Left" Height="75" VerticalAlignment="Center" Width="220">
+                        <Button Background="{DynamicResource ButtonGradient}" Content="Quitter" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="#FFDE2222">
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" Height="75" VerticalAlignment="Center" Width="220">
+                        <Button Background="{DynamicResource ButtonGradient}" Content="Sauvegarder la Simulation" Height="50" Width="220" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="#FF2F7F04">
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

@@ -7,4 +7,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="images\loupe.png" />
+    <None Remove="images\minus.png" />
+    <None Remove="images\print.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\loupe.png" />
+    <Resource Include="images\minus.png" />
+    <Resource Include="images\print.png" />
+  </ItemGroup>
+
 </Project>
