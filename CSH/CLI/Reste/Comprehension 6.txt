@@ -1,0 +1,50 @@
+6-1 : 
+
+ char[] c = new char[4];
+ c[0] = 'a';
+ c[3] = 'J';
+ c[2] = 'k';
+ c[1] = 'R';
+ for (int k = 0; k < 4; k++)
+ Console.WriteLine(c[k]); ( valeur du tableau )
+ for (int k = 0; k < 4; k++)
+ c[k]++; ( valeur suivant la valeur du tableau )
+ foreach (char i in c)
+ Console.WriteLine(i);
+
+aRkJaSlK ( ca affiche la valeur du tableau et celui qui suit après )
+
+
+
+6-2
+
+ int[] k;
+ k = new int[10]; ( 10 valeur dans ton tableau )
+ k[0] = 1; ( première valeur 1 )
+ for (int i = 1; i < 10; i++)
+ k[i] = 0; ( k[1 a 9] = 0 )
+ for (int j = 1; j <= 3; j++) de 1 a 3 
+ for (int i = 1; i < 10; i++) de 1 a 9
+ k[i] += k[i - 1]; k[1] = lui meme + son predecesseur
+ foreach (int i in k)
+ Console.WriteLine(i);
+
+c'est une liste des sommes de type n = n +( n+1) avec valeur initial a 1 et les 9 suivantes ?
+( 1 3 6 10 15 21 28 36 45 55) 
+
+
+
+int[] k;
+ k = new int[10]; ( tableau a 10 valeur )
+ k[0] = 1; ( premiere valeur a 1 )
+ k[1] = 1; ( deuxieme valeur a 1 )
+ for (int i = 2; i < 10; i++)
+ k[i] = 0;
+ for (int j = 1; j <= 3; j++)
+ for (int i = 1; i < 10; i++)
+ k[i] += k[i - 1];
+ foreach (int p in k)
+ Console.WriteLine(p);
+
+Multiplication de k[i] par i 
+( 1 4 9 16 25 36 49 64 81 100)
