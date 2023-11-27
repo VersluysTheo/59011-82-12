@@ -1,5 +1,7 @@
 
 
+using API_crud.Models.Services;
+
 namespace API_crud
 {
     public class Program
@@ -9,6 +11,8 @@ namespace API_crud
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddTransient<StudentsServices>();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
