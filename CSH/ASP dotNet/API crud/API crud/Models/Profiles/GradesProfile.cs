@@ -10,6 +10,8 @@ namespace API_crud.Models.Profiles
         {
             CreateMap<Grade, GradesDTO>();
             CreateMap<GradesDTO, Grade>();
+            CreateMap<GradesDTOavecStd, Grade>().ForMember(q=>q.Students,a=>a.MapFrom(m=>m.GradeId));
+            CreateMap<Grade,GradesDTOavecStd>();
         }
     }
 }
