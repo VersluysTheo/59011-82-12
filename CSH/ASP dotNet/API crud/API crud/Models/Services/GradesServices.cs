@@ -33,7 +33,7 @@ namespace API_crud.Models.Services
 
         public IEnumerable<Grade> GetAllGrades()
         {
-            return _context.Grades.ToList();
+            return _context.Grades.Include("Student").ToList();
         }
 
         public Grade GetGradeById(int id)
