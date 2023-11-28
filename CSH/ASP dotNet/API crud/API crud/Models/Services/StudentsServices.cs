@@ -1,4 +1,5 @@
 ﻿using API_crud.Models.Data;
+using Microsoft.EntityFrameworkCore;
 using MySql.EntityFrameworkCore.Infrastructure;
 
 namespace API_crud.Models.Services
