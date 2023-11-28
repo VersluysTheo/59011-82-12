@@ -1,4 +1,5 @@
-﻿using API_crud.Models.Services;
+﻿using API_crud.Models.Dtos;
+using API_crud.Models.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,14 @@ namespace API_crud.Controllers
         {
             _service = service;
             _mapper = mapper;
+        }
+
+        // GET 
+        [HttpGet]
+        public ActionResult<IEnumerable<StudentsDTO>> getAllStudents()
+        {
+            var listeStudents = _service.GetAllStudents();
+            return Ok(_mapper.Map<IEnumerable<StudentsDTO>>(listeStudents));
         }
 
     }
