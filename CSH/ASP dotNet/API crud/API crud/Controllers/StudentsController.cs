@@ -23,7 +23,7 @@ namespace API_crud.Controllers
 
         // GET 
         [HttpGet]
-        public ActionResult<IEnumerable<StudentsDTO>> getAllStudents()
+        public ActionResult<IEnumerable<StudentsDTO>> GetAllStudents()
         {
             var listeStudents = _service.GetAllStudents();
             return Ok(_mapper.Map<IEnumerable<StudentsDTO>>(listeStudents));
@@ -69,7 +69,7 @@ namespace API_crud.Controllers
 
         //PATCH api/students/{id}
         [HttpPatch("{id}")]
-        public ActionResult PartialStudentUpdate(int id, JsonPatchDocument<Student>
+        public ActionResult PartialStudentUpdate(int id, JsonPatchDocument<StudentsDTO>
        patchDoc)
         {
             var studentFromRepo = _service.GetStudentById(id);
@@ -77,7 +77,7 @@ namespace API_crud.Controllers
             {
                 return NotFound();
             }
-            var studentToPatch = _mapper.Map<Student>(studentFromRepo);
+            var studentToPatch = _mapper.Map<StudentsDTO>(studentFromRepo);
             patchDoc.ApplyTo(studentToPatch, ModelState);
             if (!TryValidateModel(studentToPatch))
             {

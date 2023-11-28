@@ -8,7 +8,8 @@ namespace API_crud.Models.Profiles
     {
         public StudentsProfile()
         {
-            CreateMap<Student, StudentsDTO>();
+            CreateMap<Student, StudentsDTO>().ForMember(stuDto => stuDto.GradeName, action
+            => action.MapFrom(stu => stu.CurrentGrade.GradeName));
             CreateMap<StudentsDTO, Student>();
         }
     }

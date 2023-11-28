@@ -2,9 +2,11 @@
 
 namespace API_crud.Models.Dtos
 {
-    public class StudentsDTO
+    public partial class StudentsDTO
     {
         public string Name { get; set; }
-        public virtual Grade CurrentGrade { get; set; } = null!;
+        public string GradeName { get; set; }
+
     }
+
 }

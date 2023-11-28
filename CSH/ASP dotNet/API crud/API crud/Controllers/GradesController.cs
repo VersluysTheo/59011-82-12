@@ -22,7 +22,7 @@ namespace API_crud.Controllers
 
         // GET 
         [HttpGet]
-        public ActionResult<IEnumerable<GradesDTO>> getAllGrades()
+        public ActionResult<IEnumerable<GradesDTO>> GetAllGrades()
         {
             var listeGrades = _service.GetAllGrades();
             return Ok(_mapper.Map<IEnumerable<GradesDTO>>(listeGrades));
