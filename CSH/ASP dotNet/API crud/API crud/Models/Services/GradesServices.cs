@@ -36,7 +36,7 @@ namespace API_crud.Models.Services
             return _context.Grades.ToList();
         }
 
-        public Grade GetGradeById(int id)
+        public Grade? GetGradeById(int id)
         {
             return _context.Grades.FirstOrDefault(g => g.GradeId == id);
         }

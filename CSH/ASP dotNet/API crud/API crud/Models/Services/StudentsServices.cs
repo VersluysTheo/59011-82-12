@@ -35,7 +35,7 @@ namespace API_crud.Models.Services
             return _context.Students.Include("CurrentGrade").ToList();
         }
 
-        public Student GetStudentById(int id)
+        public Student? GetStudentById(int id)
         {
             return _context.Students.Include("CurrentGrade").FirstOrDefault(s => s.Id == id);
         }
