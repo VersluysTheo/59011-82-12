@@ -1,10 +1,11 @@
 - bdd
 - creer le fichier 
+- enlever les fichier weathers
 - nuget
 - fichier appsetting.json avec le connectionstrings a remplir 
 - ajout du builder dans Program avec le connectionstring
 - scaffold
-- changer les noms a changer ( Liste / ICollection ) + ceux du Context
+- changer les variables ( Liste / ICollection ) + ceux du Context ( Poco + ctrl h )
 - creation des DTOS
 - creation des services ( avec verification des nom dans Data)
 - faire les includes
