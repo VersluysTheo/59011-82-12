@@ -100,8 +100,8 @@ CREATE TABLE IF NOT EXISTS `parent_enfant` (
 -- Contraintes pour la table `parent_enfant`
 --
 ALTER TABLE `parent_enfant`
-  ADD CONSTRAINT `parent_enfant_ibfk_1` FOREIGN KEY (`Id_Parent`) REFERENCES `parent` (`Id_Parent`),
-  ADD CONSTRAINT `parent_enfant_ibfk_2` FOREIGN KEY (`Id_Enfant`) REFERENCES `enfant` (`Id_Enfant`);
+  ADD CONSTRAINT `parent_enfant_ibfk_1` FOREIGN KEY (`Id_Parent`) REFERENCES `parent` (`Id_Parent`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `parent_enfant_ibfk_2` FOREIGN KEY (`Id_Enfant`) REFERENCES `enfant` (`Id_Enfant`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
