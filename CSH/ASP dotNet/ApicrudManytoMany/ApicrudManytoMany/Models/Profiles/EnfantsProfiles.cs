@@ -10,6 +10,8 @@ namespace ApicrudManytoMany.Models.Profiles
         {
             CreateMap<Enfant, EnfantsDTO>();
             CreateMap<EnfantsDTO,Enfant>();
+            CreateMap<EnfantsDTOAvecParent, Enfant>();
+            CreateMap<Enfant, EnfantsDTOAvecParent>();
         }
     }
 }

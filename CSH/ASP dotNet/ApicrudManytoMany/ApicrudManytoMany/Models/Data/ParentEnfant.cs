@@ -11,7 +11,7 @@ public partial class ParentEnfant
 
     public int? IdEnfant { get; set; }
 
-    public virtual Enfant? IdEnfantNavigation { get; set; }
+    public virtual Enfant? Enfant { get; set; }
 
-    public virtual Parent? IdParentNavigation { get; set; }
+    public virtual Parent? Parent { get; set; }
 }
