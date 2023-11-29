@@ -22,10 +22,10 @@ namespace ApicrudManytoMany.Controllers
 
             // GET 
             [HttpGet]
-            public ActionResult<IEnumerable<EnfantsDTO>> GetAllEnfants()
+            public ActionResult<IEnumerable<EnfantsDTOAvecParent>> GetAllEnfants()
             {
                 var listeEnfants = _service.GetAllEnfants();
-                return Ok(_mapper.Map<IEnumerable<EnfantsDTO>>(listeEnfants));
+                return Ok(_mapper.Map<IEnumerable<EnfantsDTOAvecParent>>(listeEnfants));
             }
 
 
@@ -43,10 +43,10 @@ namespace ApicrudManytoMany.Controllers
 
             //POST (Add)
             [HttpPost]
-            public ActionResult<EnfantsDTO> CreateEnfant(Enfant enfant)
+            public ActionResult<EnfantsDTO> CreateEnfant(EnfantsDTO enfant)
             {
                 //on ajoute l’objet à la base de données
-                _service.AddEnfant(enfant);
+                _service.AddEnfant(_mapper.Map<Enfant>(enfant));
                 //on retourne le chemin de findById avec l'objet créé
                 return CreatedAtRoute(nameof(GetEnfantById), new
                 {

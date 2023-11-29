@@ -1,5 +1,6 @@
 
 using ApicrudManytoMany.Data;
+using ApicrudManytoMany.Models.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApicrudManytoMany
@@ -11,9 +12,12 @@ namespace ApicrudManytoMany
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<ManytomanyContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("Default")));
+            builder.Services.AddTransient<EnfantsServices>();
+            builder.Services.AddTransient<ParentsServices>();
+            builder.Services.AddTransient<ParentsEnfantsServices>();
 
             // Add services to the container.
-
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

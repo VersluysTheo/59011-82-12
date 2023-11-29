@@ -34,7 +34,7 @@ namespace ApicrudManytoMany.Models.Services
         }
         public IEnumerable<Parent> GetAllParents()
         {
-            return _context.Parents.Include("ParentEnfants.Parent").ToList();
+            return _context.Parents.Include("ParentEnfants.Enfant").ToList();
         }
         public Parent? GetParentById(int id)
         {

@@ -3,6 +3,7 @@
     public class EnfantsDTO
     {
         // Sans relation
+        public int IdEnfant {  get; set; }
         public string Nom { get; set; }
 
         public string Prenom { get; set; }
