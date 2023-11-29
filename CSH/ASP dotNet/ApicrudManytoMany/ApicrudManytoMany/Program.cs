@@ -1,4 +1,7 @@
 
+using ApicrudManytoMany.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace ApicrudManytoMany
 {
     public class Program
@@ -6,6 +9,8 @@ namespace ApicrudManytoMany
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<ManytomanyContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("Default")));
 
             // Add services to the container.
 
