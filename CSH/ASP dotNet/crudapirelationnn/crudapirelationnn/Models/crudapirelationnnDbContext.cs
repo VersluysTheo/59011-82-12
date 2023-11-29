@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using ApicrudManytoMany.Data.Models;
+using crudapirelationnn.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApicrudManytoMany.Data;
+namespace crudapirelationnn.Models;
 
-public partial class ManytomanyContext : DbContext
+public partial class CrudapirelationnnDbContext : DbContext
 {
-    public ManytomanyContext()
+    public CrudapirelationnnDbContext()
     {
     }
 
-    public ManytomanyContext(DbContextOptions<ManytomanyContext> options)
+    public CrudapirelationnnDbContext(DbContextOptions<CrudapirelationnnDbContext> options)
         : base(options)
     {
     }
@@ -23,7 +23,8 @@ public partial class ManytomanyContext : DbContext
     public virtual DbSet<ParentEnfant> ParentEnfants { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySQL("Name=Default");
+
+        => optionsBuilder.UseMySQL("Server=localhost;Database=crudapirelationnn;user=root;password=");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -63,11 +64,11 @@ public partial class ManytomanyContext : DbContext
             entity.Property(e => e.IdEnfant).HasColumnName("Id_Enfant");
             entity.Property(e => e.IdParent).HasColumnName("Id_Parent");
 
-            entity.HasOne(d => d.Enfant).WithMany(p => p.ParentEnfants)
+            entity.HasOne(d => d.Enfant).WithMany(p => p.SonParent)
                 .HasForeignKey(d => d.IdEnfant)
                 .HasConstraintName("parent_enfant_ibfk_2");
 
-            entity.HasOne(d => d.Parent).WithMany(p => p.ParentEnfants)
+            entity.HasOne(d => d.Parent).WithMany(p => p.SonEnfant)
                 .HasForeignKey(d => d.IdParent)
                 .HasConstraintName("parent_enfant_ibfk_1");
         });

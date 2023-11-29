@@ -21,10 +21,10 @@ namespace ApicrudManytoMany.Controllers
 
         // GET 
         [HttpGet]
-        public ActionResult<IEnumerable<ParentsDTO>> GetAllParents()
+        public ActionResult<IEnumerable<ParentsDTOAvecEnfants>> GetAllParents()
         {
             var listeParents = _service.GetAllParents();
-            return Ok(_mapper.Map<IEnumerable<ParentsDTO>>(listeParents));
+            return Ok(_mapper.Map<IEnumerable<ParentsDTOAvecEnfants>>(listeParents));
         }
 
 

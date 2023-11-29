@@ -1,13 +1,13 @@
-﻿using ApicrudManytoMany.Data;
-using ApicrudManytoMany.Data.Models;
+﻿using crudapirelationnn.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApicrudManytoMany.Models.Services
+namespace crudapirelationnn.Models.Services
 {
-    public class EnfantsServices
+    public class EnfantService
     {
-        private readonly ManytomanyContext _context;
-        public EnfantsServices(ManytomanyContext context)
+        private readonly CrudapirelationnnDbContext _context;
+
+        public EnfantService(CrudapirelationnnDbContext context)
         {
             _context = context;
         }
@@ -21,30 +21,34 @@ namespace ApicrudManytoMany.Models.Services
             _context.Enfants.Add(e);
             _context.SaveChanges();
         }
+
         public void DeleteEnfant(Enfant e)
         {
-            //si l'objet personne est null, on renvoi une exception
             if (e == null)
             {
                 throw new ArgumentNullException(nameof(e));
             }
-            // on met à jour le context
             _context.Enfants.Remove(e);
             _context.SaveChanges();
         }
+
         public IEnumerable<Enfant> GetAllEnfants()
         {
-            return _context.Enfants.Include("ParentEnfants.Enfant").ToList();
-        }
-        public Enfant? GetEnfantById(int id)
-        {
-            return _context.Enfants.Include("ParentEnfants").FirstOrDefault(p => p.IdEnfant == id);
-        }
-        public void UpdateEnfant(Enfant e)
-        {
-            _context.Enfants.Update(e);
-            _context.SaveChanges();
+            return _context.Enfants.Include("SonParent.Parent").ToList();
         }
 
+        public Enfant GetEnfantById(int id)
+        {
+            return _context.Enfants.Include("SonParent").FirstOrDefault(e => e.IdEnfant == id)!;
+        }
+
+        public void UpdateEnfant(Enfant e)
+        {
+            if (e == null)
+            {
+                throw new ArgumentNullException(nameof(e));
+            }
+            _context.SaveChanges();
+        }
     }
 }

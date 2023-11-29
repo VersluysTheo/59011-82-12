@@ -1,13 +1,13 @@
-﻿using ApicrudManytoMany.Data;
-using ApicrudManytoMany.Data.Models;
+﻿using crudapirelationnn.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApicrudManytoMany.Models.Services
+namespace crudapirelationnn.Models.Services
 {
-    public class ParentsEnfantsServices
+    public class ParentEnfantService
     {
-        private readonly ManytomanyContext _context;
-        public ParentsEnfantsServices(ManytomanyContext context)
+        private readonly CrudapirelationnnDbContext _context;
+
+        public ParentEnfantService(CrudapirelationnnDbContext context)
         {
             _context = context;
         }
@@ -34,12 +34,12 @@ namespace ApicrudManytoMany.Models.Services
 
         public IEnumerable<ParentEnfant> GetAllParentEnfants()
         {
-            return _context.ParentEnfants.Include("ParentEnfants.Enfant").ToList();
+            return _context.ParentEnfants.Include("SonEnfant").ToList();
         }
 
         public ParentEnfant GetParentEnfantById(int id)
         {
-            return _context.ParentEnfants.Include("ParentEnfants.Enfant").FirstOrDefault(e => e.IdEnfant == id)!;
+            return _context.ParentEnfants.Include("SonEnfant").FirstOrDefault(p => p.IdParentEnfant == id)!;
         }
 
         public void UpdateParentEnfant(ParentEnfant p)

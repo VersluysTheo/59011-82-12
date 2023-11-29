@@ -10,11 +10,11 @@ namespace ApicrudManytoMany.Models.Dtos
     }
     public class ParentDTOParent
     {
-        public virtual Parent? Parent { get; set; }
+        public virtual ParentsDTO? Parent { get; set; }
     }
 
     public class EnfantDTOEnfant
     {
-        public virtual Enfant? Enfant { get; set; }
+        public virtual EnfantsDTO? Enfant { get; set; }
     }
 }

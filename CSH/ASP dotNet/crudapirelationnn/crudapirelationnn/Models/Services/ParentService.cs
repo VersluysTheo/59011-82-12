@@ -1,13 +1,13 @@
-﻿using ApicrudManytoMany.Data;
-using ApicrudManytoMany.Data.Models;
+﻿using crudapirelationnn.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApicrudManytoMany.Models.Services
+namespace crudapirelationnn.Models.Services
 {
-    public class ParentsServices
+    public class ParentService
     {
-        private readonly ManytomanyContext _context;
-        public ParentsServices(ManytomanyContext context)
+        private readonly CrudapirelationnnDbContext _context;
+
+        public ParentService(CrudapirelationnnDbContext context)
         {
             _context = context;
         }
@@ -21,28 +21,33 @@ namespace ApicrudManytoMany.Models.Services
             _context.Parents.Add(p);
             _context.SaveChanges();
         }
+
         public void DeleteParent(Parent p)
         {
-            //si l'objet personne est null, on renvoi une exception
             if (p == null)
             {
                 throw new ArgumentNullException(nameof(p));
             }
-            // on met à jour le context
             _context.Parents.Remove(p);
             _context.SaveChanges();
         }
+
         public IEnumerable<Parent> GetAllParents()
         {
-            return _context.Parents.Include("ParentEnfants.Parent").ToList();
+            return _context.Parents.Include("SonEnfant").ToList();
         }
-        public Parent? GetParentById(int id)
+
+        public Parent GetParentById(int id)
         {
-            return _context.Parents.Include("ParentEnfants").FirstOrDefault(p => p.IdParent == id);
+            return _context.Parents.Include("SonEnfant").FirstOrDefault(p => p.IdParent == id)!;
         }
+
         public void UpdateParent(Parent p)
         {
-            _context.Parents.Update(p);
+            if (p == null)
+            {
+                throw new ArgumentNullException(nameof(p));
+            }
             _context.SaveChanges();
         }
     }
