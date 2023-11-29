@@ -4,7 +4,7 @@
 - nuget
 - fichier appsetting.json avec le connectionstrings a remplir 
 - ajout du builder dans Program avec le connectionstring
-- scaffold
+- scaffold ( Scaffold-DbContext -Connection Name=Default -Provider MySql.EntityFrameworkCore -OutputDir Data/Models -Context ConsoleDbContext -ContextDir ./Models )
 - changer les variables ( Liste / ICollection ) + ceux du Context ( Poco + ctrl h )
 - creation des DTOS
 - creation des services ( avec verification des nom dans Data)
