@@ -1,4 +1,5 @@
 ﻿using CleDouble.Models.Data;
+using CleDouble.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleDouble.Models.Services

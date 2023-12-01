@@ -19,6 +19,6 @@
 
             public string Prenom { get; set; }
             public int Age { get; set; }
-            public virtual ICollection<EnfantsDTO> ParentEnfant { get; set; } = new List<EnfantsDTO>();
+            public virtual IEnumerable<EnfantsDTO> ParentEnfant { get; set; } = new List<EnfantsDTO>();
     }
 }
