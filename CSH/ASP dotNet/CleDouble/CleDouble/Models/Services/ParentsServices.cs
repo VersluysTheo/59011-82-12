@@ -34,7 +34,7 @@ namespace CleDouble.Models.Services
         }
         public IEnumerable<Parent> GetAllParents()
         {
-            return _context.Parents.Include("ListeEnfants.Enfant").ToList();
+            return _context.Parents.Include("ListeEnfants").ToList();
         }
         public Parent? GetParentById(int id)
         {

@@ -33,7 +33,7 @@ namespace CleDouble.Models.Services
         }
         public IEnumerable<Enfant> GetAllEnfants()
         {
-            return _context.Enfants.Include("ListeParents.Parent").ToList();
+            return _context.Enfants.Include("ListeParents").ToList();
         }
         public Enfant? GetEnfantById(int id)
         {

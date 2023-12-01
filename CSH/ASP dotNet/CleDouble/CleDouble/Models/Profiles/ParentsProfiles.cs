@@ -10,6 +10,8 @@ namespace CleDouble.Models.Profiles
         {
             CreateMap<Parent,ParentsDTO>();
             CreateMap<ParentsDTO,Parent>();
+            CreateMap<Parent, ParentsDTOAvecEnfants>().ForMember(pdto=>pdto.ParentEnfant,option=>option.MapFrom(p=>p.ListeEnfants));
+            CreateMap<ParentsDTOAvecEnfants,Parent>();
         }
     }
 }
