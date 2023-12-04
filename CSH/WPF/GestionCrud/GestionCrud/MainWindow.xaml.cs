@@ -1,4 +1,4 @@
-﻿using Grpc.Core;
+﻿using GestionCrud.Data;
 using MongoDB.Bson.IO;
 using Newtonsoft.Json;
 using System;
@@ -29,25 +29,61 @@ namespace GestionCrud
         public MainWindow()
         {
             InitializeComponent();
+            // Exemple d'utilisation avec une classe Produit
+            GestionnaireJson<Produit> gestionnaireJson = new GestionnaireJson<Produit>("U:\\59011-82-12\\CSH\\WPF\\GestionCrud\\GestionCrud\\Json\\produit.json");
+
+            // Uploader des données
+            Produit produit = new Produit { /* initialisez les propriétés de votre produit ici */ };
+            gestionnaireJson.UploadData(produit);
+
+            // Télécharger des données
+            Produit produitTelecharge = gestionnaireJson.DownloadData();
         }
 
-        public DataTable jsonDataDisplay()
-        {
-            StreamReader sr = new StreamReader(Server.MapPath("./Json/produit.json"));
-            string json = sr.ReadToEnd();
-            dynamic table = JsonConvert.DeserializeObject(json);
-            DataTable dt = new DataTable();
-            dt.Columns.Add("LibelleProduit",typeof(string));
-            dt.Columns.Add("Description",typeof(string));
-            dt.Columns.Add("Categorie",typeof(string));
-            dt.Columns.Add("Stock",typeof(string));
-            dt.Columns.Add("Prix",typeof(int));
 
-            foreach (var row in table.value.data)
+        public class GestionnaireJson<Produit>
+        {
+            private readonly string cheminFichier;
+
+            public GestionnaireJson(string cheminFichier)
             {
-                dt.Rows.Add(row.LibelleProduit, row.Description,row.Categorie,row.Stock,row.Prix);
+                this.cheminFichier = cheminFichier;
             }
-            return dt;
+
+            public void UploadData(Produit data)
+            {
+                try
+                {
+                    string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+                    File.WriteAllText(cheminFichier, jsonData);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erreur lors de l'upload des données");
+                }
+            }
+
+            public Produit DownloadData()
+            {
+                try
+                {
+                    if (File.Exists(cheminFichier))
+                    {
+                        string jsonData = File.ReadAllText(cheminFichier);
+                        return JsonConvert.DeserializeObject<Produit>(jsonData);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Le fichier n'existe pas.");
+                        return default(Produit);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erreur lors du téléchargement des données");
+                    return default(Produit);
+                }
+            }
         }
     }
 }
