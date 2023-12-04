@@ -91,7 +91,7 @@
                     <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14"/>
                 </StackPanel>
                 <StackPanel Grid.Column="4">
-                    <Label Content="Stock" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Content="Prix" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14"/>
                 </StackPanel>
             </Grid>

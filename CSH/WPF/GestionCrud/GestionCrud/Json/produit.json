@@ -1,0 +1,45 @@
+[
+    {
+      "LibelleProduit": "Ordinateur portable",
+      "Description": "Un ordinateur portable puissant et léger",
+      "Categorie": "Électronique",
+      "Stock": "10",
+      "Prix": 1200
+    },
+    {
+      "LibelleProduit": "Smartphone",
+      "Description": "Un smartphone avec une superbe caméra",
+      "Categorie": "Électronique",
+      "Stock": "20",
+      "Prix": 800
+    },
+    {
+      "LibelleProduit": "Livres",
+      "Description": "Une collection de livres passionnants",
+      "Categorie": "Littérature",
+      "Stock": "50",
+      "Prix": 30
+    },
+    {
+        "LibelleProduit": "Antenne",
+        "Description": "Une antenne television démodée",
+        "Categorie": "Électronique",
+        "Stock": "6000",
+        "Prix": 250
+      },
+    {
+        "LibelleProduit": "Commode",
+        "Description": "Une simple commode en bois",
+        "Categorie": "Mobilier",
+        "Stock": "125",
+        "Prix": 85
+      },
+      {
+          "LibelleProduit": "Un plat de sushi",
+          "Description": "Un plat délicieux de sushi",
+          "Categorie": "Alimentation",
+          "Stock": "75000",
+          "Prix": 12
+        }
+  ]
+  
