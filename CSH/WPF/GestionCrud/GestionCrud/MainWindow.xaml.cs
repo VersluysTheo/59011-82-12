@@ -30,7 +30,7 @@ namespace GestionCrud
             dtgProduit.ItemsSource = produitsList;
         }
 
-        private Produit selectedProduit;
+        private Produit selectedProduit; // Declaration de selectedProduit dans la classe afin de l'utiliser
 
         // Gestion Evenement Bouton Delete
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -162,7 +162,10 @@ namespace GestionCrud
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Delete");
+            if (selectedProduit != null)
+            {
+                produitsList.Remove(selectedProduit);
+            }
         }
 
         //Parse
