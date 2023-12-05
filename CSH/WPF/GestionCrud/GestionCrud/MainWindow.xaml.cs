@@ -33,10 +33,6 @@ namespace GestionCrud
         {
                 DeleteButton.IsEnabled = true;
         }
-        private void DataGrid_LostFocus(object sender, RoutedEventArgs e)
-        {
-            DeleteButton.IsEnabled = false;
-        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -46,17 +42,22 @@ namespace GestionCrud
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            string libelle = txtLibelle.Text;
+            string description = txtDescription.Text;
+            string categorie = txtCategorie.Text;
+            string stock = txtStock.Text;
+            decimal prix = Convert.ToDecimal(txtPrix.Text); // txtPrix => X name de la textbox concernée
+            MessageBox.Show("Add");
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Update");
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show("Delete");
         }
     }
 }
