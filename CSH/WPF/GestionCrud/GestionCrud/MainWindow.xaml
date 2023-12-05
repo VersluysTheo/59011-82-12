@@ -63,19 +63,19 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1">
                     <Label Content="Description" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <TextBox Height="169" TextWrapping="WrapWithOverflow" Text="" FontSize="14"/>
+                    <TextBox Height="169" TextWrapping="WrapWithOverflow" Text="" FontSize="14" TextChanged="TextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Grid.Column="2">
                     <Label Content="Categorie" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14"/>
+                    <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14" TextChanged="TextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Grid.Column="3">
                     <Label Content="Stock" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14"/>
+                    <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14" TextChanged="TextBox_TextChanged"/>
                 </StackPanel>
                 <StackPanel Grid.Column="4">
                     <Label Content="Prix" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                    <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14"/>
+                    <TextBox Height="50" TextWrapping="WrapWithOverflow" Text="" FontSize="14" TextChanged="TextBox_TextChanged"/>
                 </StackPanel>
             </Grid>
             <Grid HorizontalAlignment="Center" Height="65" Grid.Row="1" VerticalAlignment="Center" Width="799">
