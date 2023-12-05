@@ -11,7 +11,7 @@ namespace GestionCrud.Data
         public string? LibelleProduit {  get; set; }
         public string? Description { get; set; }
         public string? Categorie { get; set; }
-        public string? Stock { get; set; }
+        public int? Stock { get; set; }
         public int? Prix { get; set; }
     }
 }

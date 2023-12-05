@@ -59,13 +59,13 @@ namespace GestionCrud
             UpdateButton.IsEnabled = true;
         }
 
-        // Methode pour ajouter des donnees
+        ////////////////////////////////////////////////////////////////////////// Add /////////////////////////////////////////////////////////////////////
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             string libelle = txtLibelle.Text;
             string description = txtDescription.Text;
             string categorie = txtCategorie.Text;
-            string stock = txtStock.Text;
+            int stock = Convert.ToInt32(txtStock.Text);
             int prix = Convert.ToInt32(txtPrix.Text); // txtPrix => X name de la textbox concernée
 
             Produit nouveauProduit = new Produit
@@ -77,17 +77,13 @@ namespace GestionCrud
                 Prix = prix
             };
 
-            produitsList.Add(nouveauProduit);
-            // Vider les Textbox
-            txtLibelle.Text = "";
-            txtDescription.Text = "";
-            txtCategorie.Text = "";
-            txtStock.Text = "";
-            txtPrix.Text = "";
+            produitsController.SaveDataToFile();
 
-            MessageBox.Show("Nouveau Produit Ajouté");
+            produitsList.Add(nouveauProduit);
+            ClearTextBox();
         }
 
+        /////////////////////////////////////////////////////////////// UPDATE //////////////////////////////////////////////////////////
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
             //Verification pour le libelle Produit
@@ -119,7 +115,7 @@ namespace GestionCrud
             }
 
             //Verification pour la Categorie
-            if (TryParseString(txtDescription.Text, out string newCategorie))
+            if (TryParseString(txtCategorie.Text, out string newCategorie))
             {
                 if (selectedProduit != null)
                 {
@@ -133,7 +129,7 @@ namespace GestionCrud
             }
 
             // Verification pour le Stock
-            if (TryParseString(txtStock.Text, out string newStock))
+            if (TryParseInt(txtStock.Text, out int newStock))
             {
                 if (selectedProduit != null)
                 {
@@ -145,9 +141,23 @@ namespace GestionCrud
                 ConversionError("stock");
                 return;
             }
-            dtgProduit.Items.Refresh();
 
-            MessageBox.Show("Mise à jour des données");
+            // Verification pour le Prix
+            if (TryParseInt(txtPrix.Text, out int newPrix))
+            {
+                if (selectedProduit != null)
+                {
+                    selectedProduit.Prix = newPrix;
+                }
+            }
+            else
+            {
+                ConversionError("stock");
+                return;
+            }
+            produitsController.SaveDataToFile();
+            dtgProduit.Items.Refresh();
+            ClearTextBox();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -157,7 +167,12 @@ namespace GestionCrud
 
         //Parse
 
-        private bool TryParseString(string input,out string result)
+        private static bool TryParseInt(string input, out int result)
+        {
+            return int.TryParse(input, out result);
+        }
+
+        private static bool TryParseString(string input,out string result)
         {
             result = input;
             return true;
@@ -165,9 +180,19 @@ namespace GestionCrud
 
         // Erreur
 
-        private void ConversionError(string fieldname)
+        private static void ConversionError(string fieldname)
         {
             MessageBox.Show($"Valeur non valide pour le champ : {fieldname}");
+        }
+
+        //Vider les TextBox
+        private void ClearTextBox()
+        {
+            txtLibelle.Text = "";
+            txtDescription.Text = "";
+            txtCategorie.Text = "";
+            txtStock.Text = "";
+            txtPrix.Text = "";
         }
     }
 }
