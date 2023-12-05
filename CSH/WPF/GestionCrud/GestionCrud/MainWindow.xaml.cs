@@ -44,5 +44,19 @@ namespace GestionCrud
             UpdateButton.IsEnabled = true;
         }
 
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
