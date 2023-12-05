@@ -1,0 +1,38 @@
+﻿<Window x:Class="GestionCrudMultiFenetre.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionCrudMultiFenetre"
+        mc:Ignorable="d"
+        Title="SecondWindow" Height="600" Width="600" MinHeight="500" MinWidth="500" MaxWidth="1200" MaxHeight="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" Height="563" Grid.Row="1" VerticalAlignment="Center" Width="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Libelle Produit :" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Description :" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Categorie :" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Stock :" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Prix :" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="14"/>
+        </Grid>
+
+    </Grid>
+</Window>
