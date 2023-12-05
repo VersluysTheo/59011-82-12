@@ -1,45 +1,51 @@
 [
-    {
-      "LibelleProduit": "Ordinateur portable",
-      "Description": "Un ordinateur portable puissant et léger",
-      "Categorie": "Électronique",
-      "Stock": "10",
-      "Prix": 1200
-    },
-    {
-      "LibelleProduit": "Smartphone",
-      "Description": "Un smartphone avec une superbe caméra",
-      "Categorie": "Électronique",
-      "Stock": "20",
-      "Prix": 800
-    },
-    {
-      "LibelleProduit": "Livres",
-      "Description": "Une collection de livres passionnants",
-      "Categorie": "Littérature",
-      "Stock": "50",
-      "Prix": 30
-    },
-    {
-        "LibelleProduit": "Antenne",
-        "Description": "Une antenne television démodée",
-        "Categorie": "Électronique",
-        "Stock": "6000",
-        "Prix": 250
-      },
-    {
-        "LibelleProduit": "Commode",
-        "Description": "Une simple commode en bois",
-        "Categorie": "Mobilier",
-        "Stock": "125",
-        "Prix": 85
-      },
-      {
-          "LibelleProduit": "Un plat de sushi",
-          "Description": "Un plat délicieux de sushi",
-          "Categorie": "Alimentation",
-          "Stock": "75000",
-          "Prix": 12
-        }
-  ]
-  
+  {
+    "LibelleProduit": "Ordinateur portable",
+    "Description": "Un ordinateur portable puissant et léger",
+    "Categorie": "Électronique",
+    "Stock": "10",
+    "Prix": 1200
+  },
+  {
+    "LibelleProduit": "Smartphone",
+    "Description": "Un smartphone avec une superbe caméra",
+    "Categorie": "Électronique",
+    "Stock": "20",
+    "Prix": 800
+  },
+  {
+    "LibelleProduit": "Plat de Sushi",
+    "Description": "Un delicieux plat de sushi",
+    "Categorie": "Alimentation",
+    "Stock": "175000",
+    "Prix": 12
+  },
+  {
+    "LibelleProduit": "Antenne de télévision",
+    "Description": "Une simple antenne de télévision",
+    "Categorie": "Électronique",
+    "Stock": "100000000",
+    "Prix": 280
+  },
+  {
+    "LibelleProduit": "Table de Chevet",
+    "Description": "Une table de chevet en bois",
+    "Categorie": "Mobilier",
+    "Stock": "180",
+    "Prix": 75
+  },
+  {
+    "LibelleProduit": "Une Bouteille d'eau'",
+    "Description": "Une bouteille d'eau fraîche",
+    "Categorie": "Alimentation",
+    "Stock": "0",
+    "Prix": 2
+  },
+  {
+    "LibelleProduit": "Appareil a raclette",
+    "Description": "Kit pour faire une raclette avec les coupaings",
+    "Categorie": "Alimentation",
+    "Stock": "16",
+    "Prix": 42
+  }
+]
