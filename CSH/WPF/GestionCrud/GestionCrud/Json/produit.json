@@ -35,7 +35,7 @@
     "Prix": 75
   },
   {
-    "LibelleProduit": "Une Bouteille d'eau'",
+    "LibelleProduit": "Une Bouteille d'eau",
     "Description": "Une bouteille d'eau fraîche",
     "Categorie": "Alimentation",
     "Stock": "0",
