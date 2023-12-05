@@ -165,6 +165,7 @@ namespace GestionCrud
             if (selectedProduit != null)
             {
                 produitsList.Remove(selectedProduit);
+                produitsController.SaveDataToFile();
             }
         }
 
