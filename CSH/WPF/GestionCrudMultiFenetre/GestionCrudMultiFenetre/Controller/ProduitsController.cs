@@ -54,8 +54,6 @@ namespace GestionCrudMultiFenetre.Controller
                 string filePath = "U:\\59011-82-12\\CSH\\WPF\\GestionCrudMultiFenetre\\GestionCrudMultiFenetre\\Json\\produit.json";
                 string jsonContent = JsonConvert.SerializeObject(produitsList, Formatting.Indented);
                 File.WriteAllText(filePath, jsonContent);
-
-                MessageBox.Show("Données enregistrées avec succès !");
             }
             catch (Exception ex)
             {
