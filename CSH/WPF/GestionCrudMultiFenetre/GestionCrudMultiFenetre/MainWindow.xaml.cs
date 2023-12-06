@@ -36,17 +36,30 @@ namespace GestionCrudMultiFenetre
         private Produit selectedProduit; // Declaration de selectedProduit dans la classe afin de l'utiliser
 
 
+        //////////////////////////////////////////////////////////// Event //////////////////////////////////////////////////////////
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SecondWindow newWindow = new SecondWindow();
             newWindow.ShowDialog();
         }
 
-        private void dtgProduit_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DtgProduit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             btnDelete.IsEnabled = true;
             btnUpdate.IsEnabled = true;
+            selectedProduit = dtgProduit.SelectedItem as Produit;
+        }
 
+        //////////////////////////////////////////////////////////// Delete //////////////////////////////////////////////////////////
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (selectedProduit != null)
+            {
+                produitsList.Remove(selectedProduit);
+                produitsController.SaveDataToFile();
+                MessageBox.Show("Données Supprimées avec Succés !");
+            }
         }
     }
 }

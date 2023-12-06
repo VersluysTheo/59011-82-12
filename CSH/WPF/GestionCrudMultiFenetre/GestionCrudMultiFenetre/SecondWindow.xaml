@@ -53,6 +53,7 @@
                 <ComboBoxItem Content="Electromenager"/>
                 <ComboBoxItem Content="Mobilier"/>
                 <ComboBoxItem Content="Vestimentaire"/>
+                <ComboBoxItem Content="Autre"/>
             </ComboBox>
             <TextBox x:Name="txtStock" Grid.Column="1" Grid.Row="4" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
             <TextBox x:Name="txtPrix" Grid.Column="1" Grid.Row="5" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
