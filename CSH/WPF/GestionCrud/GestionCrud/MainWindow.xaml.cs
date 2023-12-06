@@ -160,6 +160,8 @@ namespace GestionCrud
             ClearTextBox();
         }
 
+        ///////////////////////////////////////// Delete ////////////////////////////////////
+
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             if (selectedProduit != null)
@@ -169,7 +171,7 @@ namespace GestionCrud
             }
         }
 
-        //Parse
+        ////////////////////////////////////////////////Parse /////////////////////////////////////////////////////////////////
 
         private static bool TryParseInt(string input, out int result)
         {
