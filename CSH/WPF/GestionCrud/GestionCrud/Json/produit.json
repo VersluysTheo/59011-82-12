@@ -61,5 +61,26 @@
     "Categorie": "Vestimentaire",
     "Stock": 1400,
     "Prix": 15
+  },
+  {
+    "LibelleProduit": "Je suis",
+    "Description": " Une Donnée a enlever",
+    "Categorie": "Autre",
+    "Stock": 1,
+    "Prix": 1
+  },
+  {
+    "LibelleProduit": "Je suis",
+    "Description": "Prêt",
+    "Categorie": "Autre",
+    "Stock": 1,
+    "Prix": 1
+  },
+  {
+    "LibelleProduit": "Je suis",
+    "Description": "a cours d'idée",
+    "Categorie": "Autre",
+    "Stock": 1,
+    "Prix": 1
   }
 ]
