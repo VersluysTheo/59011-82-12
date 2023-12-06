@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Crud_Json.Json;
 using Crud_Json.Models.Data;
 using Newtonsoft.Json;
 using System;
@@ -35,6 +36,5 @@ namespace Crud_Json.Profiles
             List<Object> objs = JsonConvert.DeserializeObject<List<Object>>(listeSerialize);
             return objs;
         }
-
     }
     }
