@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:GestionCrudMultiFenetre"
         mc:Ignorable="d"
         Title="SecondWindow" Height="600" Width="600" MinHeight="500" MinWidth="500" MaxWidth="1200" MaxHeight="1200">
+    <Window.Resources>
+        <Color x:Key="GradientBlueDataGFrid">#FFF3F7FF</Color>
+        <Color x:Key="GradientBackground">#FFB2B2B5</Color>
+        <Color x:Key="GradientColorButton">#FFCFE8F5</Color>
+    </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFCCD3D8"/>
+                <GradientStop Color="{DynamicResource GradientBackground}" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="500*"/>
@@ -20,7 +31,7 @@
                 <RowDefinition Height="20*"/>
                 <RowDefinition Height="20*"/>
                 <RowDefinition Height="20*"/>
-                <RowDefinition Height="50*"/>
+                <RowDefinition Height="30*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -31,8 +42,24 @@
             <Label Content="Description :" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="14"/>
             <Label Content="Categorie :" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="14"/>
             <Label Content="Stock :" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" FontSize="14"/>
-            <Label Content="Prix :" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Prix : (en €)" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="txtLibelle" Grid.Column="1" Grid.Row="1" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="200" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
+            <TextBox x:Name="txtDescription" Grid.Column="1" Grid.Row="2" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="250" Height="40" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
+            <ComboBox x:Name="cbxCategorie" Grid.Column="1" Grid.Row="3" Height="30" Width="200" VerticalContentAlignment="Center" SelectionChanged="cbxCategorie_SelectionChanged">
+                <ComboBoxItem Content="Alimentation"/>
+                <ComboBoxItem Content="Animalier"/>
+                <ComboBoxItem Content="Bureautique"/>
+                <ComboBoxItem Content="Electronique"/>
+                <ComboBoxItem Content="Electromenager"/>
+                <ComboBoxItem Content="Mobilier"/>
+                <ComboBoxItem Content="Vestimentaire"/>
+            </ComboBox>
+            <TextBox x:Name="txtStock" Grid.Column="1" Grid.Row="4" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
+            <TextBox x:Name="txtPrix" Grid.Column="1" Grid.Row="5" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
+            <Button x:Name="btnCancel" Background="{DynamicResource GradientButtonCancel}" Content="Annuler" Grid.Row="6" Height="40" Width="100" Foreground="Black">
+            </Button>
+            <Button x:Name="btnSave" Background="{DynamicResource GradientButtonSave}" Content="Enregistrer" Grid.Row="6" Grid.Column="2" Height="40" Width="100" Foreground="Black" IsEnabled="False">
+            </Button>
         </Grid>
-
     </Grid>
 </Window>

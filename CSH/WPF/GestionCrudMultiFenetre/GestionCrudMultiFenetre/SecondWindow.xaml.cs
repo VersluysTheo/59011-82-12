@@ -23,5 +23,17 @@ namespace GestionCrudMultiFenetre
         {
             InitializeComponent();
         }
+
+        private void SecondWindow_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            btnSave.IsEnabled = true;
+            btnCancel.IsEnabled = true;
+        }
+
+        private void cbxCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnSave.IsEnabled = true;
+            btnCancel.IsEnabled = true;
+        }
     }
 }
