@@ -45,7 +45,7 @@
             <Label Content="Prix : (en €)" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="14"/>
             <TextBox x:Name="txtLibelle" Grid.Column="1" Grid.Row="1" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="200" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
             <TextBox x:Name="txtDescription" Grid.Column="1" Grid.Row="2" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="250" Height="40" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
-            <ComboBox x:Name="cbxCategorie" Grid.Column="1" Grid.Row="3" Height="30" Width="200" VerticalContentAlignment="Center" SelectionChanged="cbxCategorie_SelectionChanged">
+            <ComboBox x:Name="cbxCategorie" Grid.Column="1" Grid.Row="3" Height="30" Width="200" VerticalContentAlignment="Center" SelectionChanged="CbxCategorie_SelectionChanged">
                 <ComboBoxItem Content="Alimentation"/>
                 <ComboBoxItem Content="Animalier"/>
                 <ComboBoxItem Content="Bureautique"/>
@@ -57,7 +57,7 @@
             </ComboBox>
             <TextBox x:Name="txtStock" Grid.Column="1" Grid.Row="4" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
             <TextBox x:Name="txtPrix" Grid.Column="1" Grid.Row="5" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="SecondWindow_TextChanged"/>
-            <Button x:Name="btnCancel" Background="{DynamicResource GradientButtonCancel}" Content="Annuler" Grid.Row="6" Height="40" Width="100" Foreground="Black">
+            <Button x:Name="btnCancel" Background="{DynamicResource GradientButtonCancel}" Content="Annuler" Grid.Row="6" Height="40" Width="100" Foreground="Black" Click="BtnCancel_Click">
             </Button>
             <Button x:Name="btnSave" Background="{DynamicResource GradientButtonSave}" Content="Enregistrer" Grid.Row="6" Grid.Column="2" Height="40" Width="100" Foreground="Black" IsEnabled="False">
             </Button>
