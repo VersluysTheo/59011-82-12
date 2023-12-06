@@ -16,6 +16,8 @@
             <ColumnDefinition Width="8*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
+        <TabControl>
+            <TabItem Header="Produits">
         <DataGrid x:Name="dtgProduit" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="Dtg_SelectionChanged">
             <DataGrid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -32,6 +34,22 @@
                 <DataGridTextColumn Header="Prix" Width="1*" Binding="{Binding Prix}"/>
             </DataGrid.Columns>
         </DataGrid>
+        </TabItem>
+            <TabItem Header="Categories">
+                <DataGrid x:Name="dtgCategorie" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="Dtg_SelectionChanged">
+                    <DataGrid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFCFD2DA"/>
+                            <GradientStop Color="{DynamicResource GradientBlueDataGFrid}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </DataGrid.Background>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="idCategorie" Width="2*" Binding="{Binding IdCategorie}"/>
+                        <DataGridTextColumn Header="Libelle Categorie" Width="6*" Binding="{Binding LibelleCategorie}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
         <Grid Grid.Column="1" HorizontalAlignment="Center" Height="784" VerticalAlignment="Center" Width="160">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
