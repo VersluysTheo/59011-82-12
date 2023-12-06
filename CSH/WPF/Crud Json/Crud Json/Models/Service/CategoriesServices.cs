@@ -1,4 +1,5 @@
-﻿using Crud_Json.Models.DAO;
+﻿using Crud_Json.Json;
+using Crud_Json.Models.DAO;
 using Crud_Json.Models.Data;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace Crud_Json.Models.Service
 
         static public List<Categories> GetAllCategories()
         {
-            List<Categories> liste = Profiles.Profiles.FromObjectToCategories(DAOJson.LireFichier(Path));
+            StructureJson sj = DAOJson.LireFichier(Path);
+            List<Categories> liste = Profiles.Profiles.FromObjectToCategories(sj.Liste);
 
             return liste;
         }
