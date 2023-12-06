@@ -20,5 +20,13 @@ namespace Crud_Json.Models.Service
 
             return liste;
         }
+        static public Categories GetById(int idCategorie)
+        //Méthode qui permet de modifier un enregistrement
+        {
+            List<Categories> liste = GetAllCategories();
+            // on recherche la position du produit dans la liste
+            Categories p = liste.Find(r => r.IdCategorie == idCategorie);
+            return p;
+        }
     }
 }

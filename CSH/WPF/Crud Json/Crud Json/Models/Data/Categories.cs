@@ -10,5 +10,11 @@ namespace Crud_Json.Models.Data
     {
         public int IdCategorie { get; set; }
         public string LibelleCategorie { get; set; }
+
+        public Categories(int idCategorie, string libelleCategorie)
+        {
+            IdCategorie = idCategorie;
+            LibelleCategorie = libelleCategorie;
+        }
     }
 }
