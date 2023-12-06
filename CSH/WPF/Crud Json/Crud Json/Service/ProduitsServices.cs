@@ -11,7 +11,7 @@ namespace Crud_Json.Service
 {
     public class ProduitsServices
     {
-        static public string Path { get; set; } = "../../../Produits.json";
+        static public string Path { get; set; } = "../../../Json/Produits.json";
         static public int NextId { get; set; }
 
         static public List<Produits> GetAllProduits()

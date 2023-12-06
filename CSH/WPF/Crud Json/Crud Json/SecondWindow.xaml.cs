@@ -36,6 +36,7 @@ namespace Crud_Json
             {
                 idProduit.Content = p.IdProduit.ToString();
                 txtLibelle.Text = p.LibelleProduit;
+                txtDescription.Text = p.Description;
                 txtNumeroProduit.Text = p.NumeroProduit.ToString();
                 txtStock.Text = p.Quantite.ToString();
                 txtPrix.Text = p.Prix.ToString();
@@ -48,7 +49,7 @@ namespace Crud_Json
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            Produits p = new Produits(Int32.Parse((string)idProduit.Content), txtLibelle.Text, Int32.Parse(txtNumeroProduit.Text), Int32.Parse(txtStock.Text), Int32.Parse(txtPrix.Text);
+            Produits p = new Produits(Int32.Parse((string)idProduit.Content), txtLibelle.Text, txtDescription.Text , Int32.Parse(txtNumeroProduit.Text), Int32.Parse(txtStock.Text), Int32.Parse(txtPrix.Text));
             switch (Mode)
             {
                 case "Ajouter": ProduitsServices.AddProduit(p); break;
@@ -68,6 +69,11 @@ namespace Crud_Json
             {
                 Close();
             }
+        }
+
+        private void Txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            btnSave.IsEnabled = true;
         }
     }
 }

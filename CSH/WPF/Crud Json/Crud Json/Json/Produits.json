@@ -4,6 +4,7 @@
     {
       "IdProduit": 1,
       "LibelleProduit": "Scotch",
+      "Description": "Un rouleau de Scotch",
       "NumeroProduit": 12,
       "Quantite": 5,
        "Prix": 12 
@@ -11,6 +12,7 @@
     {
       "IdProduit": 2,
       "LibelleProduit": "Sushi",
+      "Description": "Un delicieux plat de sushi",
       "NumeroProduit": 7,
       "Quantite": 69,
       "Prix": 10
@@ -18,6 +20,7 @@
     {
       "IdProduit": 3,
       "LibelleProduit": "Barbecue Electronique",
+      "Description": "Un magnifique Barbecue Electronique",
       "NumeroProduit": 50,
       "Quantite": 42,
       "Prix": 86
