@@ -40,7 +40,14 @@ namespace GestionCrudMultiFenetre
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            // Petit Message au cas ou il clique par accident 
+            var result = MessageBox.Show("Voulez vous Vraiment quitter la fenetre ?",
+                             "Question",
+                             MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                Close();
+            }
         }
     }
 }
