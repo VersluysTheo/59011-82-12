@@ -46,5 +46,21 @@ namespace GestionCrudMultiFenetre.Controller
                 MessageBox.Show($"Une erreur s'est produite lors du chargement des données : {ex.Message}");
             }
         }
+
+        public void SaveDataToFile()
+        {
+            try
+            {
+                string filePath = "U:\\59011-82-12\\CSH\\WPF\\GestionCrudMultiFenetre\\GestionCrudMultiFenetre\\Json\\produit.json";
+                string jsonContent = JsonConvert.SerializeObject(produitsList, Formatting.Indented);
+                File.WriteAllText(filePath, jsonContent);
+
+                MessageBox.Show("Données enregistrées avec succès !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Une erreur s'est produite lors de l'enregistrement des données : {ex.Message}");
+            }
+        }
     }
 }
