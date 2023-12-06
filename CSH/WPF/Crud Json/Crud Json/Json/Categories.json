@@ -1,0 +1,14 @@
+[
+  {
+    "IdCategorie": 1,
+    "LibelleCategorie": "Alimentaire"
+  },
+  {
+    "IdCategorie": 2,
+    "LibelleCategorie": "Bureautique"
+  },
+  {
+    "IdCategorie": 3,
+    "LibelleCategorie": "Electronique"
+  }
+]

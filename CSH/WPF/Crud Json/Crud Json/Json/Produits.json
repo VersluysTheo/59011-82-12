@@ -1,0 +1,26 @@
+{
+  "NextId": 4,
+  "Liste": [
+    {
+      "IdProduit": 1,
+      "LibelleProduit": "Scotch",
+      "NumeroProduit": 12,
+      "Quantite": 5,
+       "Prix": 12 
+    },
+    {
+      "IdProduit": 2,
+      "LibelleProduit": "Sushi",
+      "NumeroProduit": 7,
+      "Quantite": 69,
+      "Prix": 10
+    },
+    {
+      "IdProduit": 3,
+      "LibelleProduit": "Barbecue Electronique",
+      "NumeroProduit": 50,
+      "Quantite": 42,
+      "Prix": 86
+    }
+  ]
+}
