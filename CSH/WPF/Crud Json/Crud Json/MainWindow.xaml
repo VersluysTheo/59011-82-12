@@ -24,7 +24,7 @@
                 </LinearGradientBrush>
             </DataGrid.Background>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="idProduit" Width="1*" Binding="{Binding IdProduit}"/> 
+                <DataGridTextColumn Header="idProduit" Width="1*" Binding="{Binding IdProduit}"/>
                 <DataGridTextColumn Header="Libelle Produit" Width="2*" Binding="{Binding LibelleProduit}"/>
                 <DataGridTextColumn Header="Description" Width="3*" Binding="{Binding Description}"/>
                 <DataGridTextColumn Header="Numero Produit" Width="2*" Binding="{Binding NumeroProduit}"/>
