@@ -54,11 +54,17 @@ namespace GestionCrudMultiFenetre
         //////////////////////////////////////////////////////////// Delete //////////////////////////////////////////////////////////
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (selectedProduit != null)
+            var result = MessageBox.Show("Voulez vous vraiment supprimer cette donnée ?",
+                 "Question",
+                 MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
             {
-                produitsList.Remove(selectedProduit);
-                produitsController.SaveDataToFile();
-                MessageBox.Show("Données Supprimées avec Succés !");
+                if (selectedProduit != null)
+                {
+                    produitsList.Remove(selectedProduit);
+                    produitsController.SaveDataToFile();
+                    MessageBox.Show("Données Supprimées avec Succés !");
+                }
             }
         }
     }
