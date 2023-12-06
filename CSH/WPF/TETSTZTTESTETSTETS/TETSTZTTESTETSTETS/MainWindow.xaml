@@ -1,0 +1,34 @@
+﻿<Window x:Class="TETSTZTTESTETSTETS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TETSTZTTESTETSTETS"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Produit">
+                <DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="idProduit" Width="1*"/>
+                        <DataGridTextColumn Header="Libelle Produit" Width="2*"/>
+                        <DataGridTextColumn Header="Description" Width="3*"/>
+                        <DataGridTextColumn Header="Numero Produit" Width="2*"/>
+                        <DataGridTextColumn Header="Stock" Width="1*"/>
+                        <DataGridTextColumn Header="Prix" Width="1*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Categorie">
+                <DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="idCategorie" Width="1*"/>
+                        <DataGridTextColumn Header="Libelle Categorie" Width="8*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
