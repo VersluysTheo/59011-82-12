@@ -55,9 +55,11 @@ namespace Crud_Json.Service
             // on recherche la position du produit dans la liste
             int position = liste.FindIndex(r => r.IdProduit == p.IdProduit);
             // on met à jour le produit dans la liste
-            liste[position].NumeroProduit = p.NumeroProduit;
             liste[position].LibelleProduit = p.LibelleProduit;
+            liste[position].NumeroProduit = p.NumeroProduit;
+            liste[position].Description = p.Description;
             liste[position].Quantite = p.Quantite;
+            liste[position].Prix = p.Prix;
             // on sauvegarde dans le fichier
             SaveProduits(liste);
         }

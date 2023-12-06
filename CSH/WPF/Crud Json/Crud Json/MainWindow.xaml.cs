@@ -58,5 +58,11 @@ namespace Crud_Json
             w.ShowDialog();
             RemplirGrid();
         }
+
+        private void Dtg_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnUpdate.IsEnabled = true;
+            btnDelete.IsEnabled = true;
+        }
     }
 }
