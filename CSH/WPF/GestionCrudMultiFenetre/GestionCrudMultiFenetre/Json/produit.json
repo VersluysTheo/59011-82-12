@@ -1,0 +1,65 @@
+[
+  {
+    "LibelleProduit": "Ordinateur portable",
+    "Description": "Un ordinateur portable puissant et léger",
+    "Categorie": "Électronique",
+    "Stock": 10,
+    "Prix": 1200
+  },
+  {
+    "LibelleProduit": "Smartphone",
+    "Description": "Un smartphone avec une superbe caméra",
+    "Categorie": "Électronique",
+    "Stock": 20,
+    "Prix": 800
+  },
+  {
+    "LibelleProduit": "Plat de Sushi",
+    "Description": "Un delicieux plat de sushi",
+    "Categorie": "Alimentation",
+    "Stock": 175000,
+    "Prix": 12
+  },
+  {
+    "LibelleProduit": "Clavier d'ordinateur",
+    "Description": "Un clavier d'ordinateur afin d'être un vrai gamer",
+    "Categorie": "Électronique",
+    "Stock": 6400,
+    "Prix": 40
+  },
+  {
+    "LibelleProduit": "Table de Chevet",
+    "Description": "Une table de chevet en bois",
+    "Categorie": "Mobilier",
+    "Stock": 180,
+    "Prix": 75
+  },
+  {
+    "LibelleProduit": "Une Bouteille d'eau",
+    "Description": "Une bouteille d'eau fraîche",
+    "Categorie": "Alimentation",
+    "Stock": 0,
+    "Prix": 2
+  },
+  {
+    "LibelleProduit": "Appareil a raclette",
+    "Description": "Kit pour faire une raclette avec les coupaings",
+    "Categorie": "Alimentation",
+    "Stock": 16,
+    "Prix": 42
+  },
+  {
+    "LibelleProduit": "Cheval de course",
+    "Description": "Un cheval de course permettant de faire de l'equitation et de gagner des coupes prestigieuses comme l'Open d'australie",
+    "Categorie": "Zoologie",
+    "Stock": 2,
+    "Prix": 6000
+  },
+  {
+    "LibelleProduit": "Chapeau de paille",
+    "Description": "Un chapeau afin de ressembler a Luffy D.Money de Naruto",
+    "Categorie": "Vestimentaire",
+    "Stock": 1400,
+    "Prix": 15
+  }
+]
