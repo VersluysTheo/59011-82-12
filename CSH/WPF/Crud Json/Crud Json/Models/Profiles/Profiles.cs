@@ -30,7 +30,7 @@ namespace Crud_Json.Profiles
             List<Categories> categs = JsonConvert.DeserializeObject<List<Categories>>(listeSerialize);
             return categs;
         }
-        public static List<Object> FromObjectToObject(List<Categories> liste)
+        public static List<Object> FromCategoriesToObject(List<Categories> liste)
         {
             string listeSerialize = JsonConvert.SerializeObject(liste);
             List<Object> objs = JsonConvert.DeserializeObject<List<Object>>(listeSerialize);
