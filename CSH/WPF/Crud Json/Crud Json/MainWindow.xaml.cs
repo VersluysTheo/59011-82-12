@@ -1,4 +1,5 @@
 ﻿using Crud_Json.Models.Data;
+using Crud_Json.Models.Service;
 using Crud_Json.Service;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace Crud_Json
         private void RemplirGrid()
         {
             dtgProduit.ItemsSource = ProduitsServices.GetAllProduits();
+            dtgCategorie.ItemsSource = CategoriesServices.GetAllCategories();
         }
 
 
