@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ScaffoldCrud.Models.Profiles
 {
-    internal class PersonnesProfiles : Profile
+    public class PersonnesProfiles : Profile
     {
         public PersonnesProfiles()
         {
