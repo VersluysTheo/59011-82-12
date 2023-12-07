@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ScaffoldCrud.Models.Data
+namespace ScaffoldCrud.Models.Data;
+
+public partial class Personne
 {
-    public partial class Personne
-    {
-        public int IdPersonne { get; set; }
+    public uint Id { get; set; }
 
-        public string Nom { get; set; } = null!;
+    public string? Nom { get; set; }
 
-        public string Prenom { get; set; } = null!;
+    public string? Prenom { get; set; }
 
-        public string? Adresse { get; set; }
+    public int? CodePostal { get; set; }
 
-        public string? Ville { get; set; }
-    }
+    public string Adresse { get; set; } = null!;
+
+    public string Ville { get; set; } = null!;
 }
