@@ -6,3 +6,6 @@ Deuxieme du Create map => celui qui envoie
 Formember(var=>var.Celui qui envoie, option=>option.mapfrom celui qui recoit)
 ( Ex : pdto=>pdto.ParentEnfant => Liste d'enfants dans mon DTO envoyé dans 
 MapFrom(p=>p.ListeEnfants) => envoyer dans la liste d'enfants dans ma classe parent )
+
+
+SCAFFOLD : DES LE DEBUT QUAND CEST VIERGE SINON CA MARCHE POOOOOOOOOOOOOOOOO
