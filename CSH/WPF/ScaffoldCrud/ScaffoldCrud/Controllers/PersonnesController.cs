@@ -16,6 +16,7 @@ namespace ScaffoldCrud.Controllers
     {
         private readonly PersonnesServices _service;
         private readonly IMapper _mapper;
+
         public PersonnesController(PersonnesDbContext context)
         {
             _service = new PersonnesServices(context);
@@ -25,10 +26,54 @@ namespace ScaffoldCrud.Controllers
             });
             _mapper = config.CreateMapper();
         }
+
         public IEnumerable<PersonnesDTO> GetAllPersonnes()
         {
             IEnumerable<Personne> listePersonnes = _service.GetAllPersonnes();
             return _mapper.Map<IEnumerable<PersonnesDTO>>(listePersonnes);
+        }
+        public ActionResult<PersonnesDTO> GetPersonneById(int id)
+        {
+            var item = _service.GetPersonneById(id);
+            if (item != null)
+            {
+                return Ok(_mapper.Map<PersonnesDTO>(item));
+            }
+            return NotFound();
+        }
+        public ActionResult<PersonnesDTO> CreatePersonne(PersonnesDTO personneDTO)
+        {
+            Personne personnePOCO = _mapper.Map<Personne>(personneDTO);
+            //on ajoute l’objet à la base de données
+            _service.AddPersonnes(personnePOCO);
+            //on retourne le chemin de findById avec l'objet créé
+            return CreatedAtRoute(nameof(GetPersonneById), new { personneId = personnePOCO.Id }, personnePOCO);
+
+        }
+
+        public ActionResult UpdatePersonne(int id, PersonnesDTO personne)
+        {
+            var personneFromRepo = _service.GetPersonneById(id);
+            if (personneFromRepo == null)
+            {
+                return NotFound();
+            }
+            _mapper.Map(personne, personneFromRepo);
+            _service.UpdatePersonne(personneFromRepo);
+
+            return NoContent();
+        }
+
+        public ActionResult DeletePersonne(int id)
+        {
+            var personneModelFromRepo = _service.GetPersonneById(id);
+            if (personneModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            _service.DeletePersonne(personneModelFromRepo);
+
+            return NoContent();
         }
     }
 }
