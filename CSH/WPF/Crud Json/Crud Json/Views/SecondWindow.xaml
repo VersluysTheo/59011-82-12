@@ -46,7 +46,7 @@
             <Label Content="Prix : (en €)" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="14"/>
             <TextBox x:Name="txtLibelle" Grid.Column="1" Grid.Row="1" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="200" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
             <TextBox x:Name="txtDescription" Grid.Column="1" Grid.Row="2" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="250" Height="40" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
-            <TextBox x:Name="txtNumeroProduit" Grid.Column="1" Grid.Row="3" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="250" Height="40" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
+            <TextBox x:Name="txtNumeroProduit" Grid.Column="1" Grid.Row="3" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="150" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
             <TextBox x:Name="txtStock" Grid.Column="1" Grid.Row="4" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
             <TextBox x:Name="txtPrix" Grid.Column="1" Grid.Row="5" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
             <Button x:Name="btnCancel" Background="{DynamicResource GradientButtonCancel}" Content="Annuler" Grid.Row="6" Height="40" Width="100" Foreground="Black" Click="BtnCancel_Click">
