@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ScaffoldCrud.Controllers;
+using ScaffoldCrud.Models.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +24,14 @@ namespace ScaffoldCrud
     /// </summary>
     public partial class MainWindow : Window
     {
+        private PersonnesDbContext _context;
+        private PersonnesController _controller;
         public MainWindow()
         {
             InitializeComponent();
+            _context = new PersonnesDbContext();
+            _controller = new PersonnesController(_context);
+            dtg.ItemsSource = _controller.GetAllPersonnes();
         }
     }
 }
