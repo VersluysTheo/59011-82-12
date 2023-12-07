@@ -10,19 +10,17 @@ namespace ScaffoldCrud.Models.Services
     public class PersonnesServices
     {
         private readonly PersonnesDbContext _context;
-
         public PersonnesServices(PersonnesDbContext context)
         {
             _context = context;
         }
-
         public IEnumerable<Personne> GetAllPersonnes()
         {
             return _context.Personnes.ToList();
         }
-        public Personne GetPersonneById(int id)
+        public Personne? GetPersonneById(int id)
         {
-            return _context.Personnes.FirstOrDefault(p => p.IdPersonne == id);
+            return _context.Personnes.FirstOrDefault(p => p.Id == id);
         }
         public void AddPersonnes(Personne p)
         {
