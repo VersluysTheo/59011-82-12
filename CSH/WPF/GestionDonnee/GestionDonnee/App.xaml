@@ -22,5 +22,9 @@
             <GradientStop Color="#FFBFC1C8"/>
             <GradientStop Color="White" Offset="1"/>
         </LinearGradientBrush>
+        <LinearGradientBrush x:Key="DatagridBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE9F5F5" Offset="1"/>
+            <GradientStop Color="#FFCBE0E0" Offset="0"/>
+        </LinearGradientBrush>
     </Application.Resources>
 </Application>

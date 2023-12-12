@@ -37,5 +37,11 @@ namespace GestionDonnee
             Window CategorieCrud = new CrudCategories();
             CategorieCrud.Show();
         }
+        
+        private void Button_Click_TypeProduit(object sender, RoutedEventArgs e)
+        {
+            Window TypeProduitCrud = new TypeProduits();
+            TypeProduitCrud.Show();
+        }
     }
 }
