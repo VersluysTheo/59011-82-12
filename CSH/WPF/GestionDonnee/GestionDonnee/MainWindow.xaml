@@ -17,5 +17,7 @@
             <RowDefinition Height="400*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
+        <Button Grid.Column="1" Content="Article" HorizontalAlignment="Left" Height="52" Margin="211,183,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Click="Button_Click_Articles"/>
+        <Button Grid.Column="1" Content="Categorie" HorizontalAlignment="Left" Height="52" Margin="351,183,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Click="Button_Click_Categorie"/>
     </Grid>
 </Window>

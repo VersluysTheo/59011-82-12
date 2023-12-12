@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionDonnee.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace GestionDonnee
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_Articles(object sender, RoutedEventArgs e)
+        {
+            Window Articrud = new CrudArticles();
+            Articrud.Show();
+        }
+
+        private void Button_Click_Categorie(object sender, RoutedEventArgs e)
+        {
+            Window CategorieCrud = new CrudCategories();
+            CategorieCrud.Show();
         }
     }
 }

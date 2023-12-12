@@ -10,5 +10,17 @@
             <GradientStop Color="#FFC3CDD0" Offset="1"/>
             <GradientStop Color="#FFA9B2B5" Offset="0.498"/>
         </LinearGradientBrush>
+        <LinearGradientBrush x:Key="GradientButtonCancel" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFA54C4C"/>
+            <GradientStop Color="#FFEA5757" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="GradientButtonSave" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF43983C"/>
+            <GradientStop Color="#FF65E65B" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="GridBackground1" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFBFC1C8"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
     </Application.Resources>
 </Application>
