@@ -14,7 +14,9 @@ namespace ScaffoldCrud.Models.Profiles
         public PersonnesProfiles()
         {
             CreateMap<Personne, PersonnesDTO>();
-            CreateMap<PersonnesDTO, Personne>();
+            CreateMap<PersonnesDTO, Personne>(); 
+            CreateMap<Personne, PersonnesDTOin>();
+            CreateMap<PersonnesDTOin, Personne>();
         }
     }
 }

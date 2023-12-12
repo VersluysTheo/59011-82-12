@@ -1,0 +1,47 @@
+﻿<Window x:Class="ScaffoldCrud.Views.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScaffoldCrud.Views"
+        mc:Ignorable="d"
+        Title="SecondWindow" Height="600" Width="600" MinHeight="500" MinWidth="500" MaxWidth="1200" MaxHeight="1200">
+    <Grid Background="{DynamicResource GridBackground1}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" Height="560" Grid.Row="1" VerticalAlignment="Center" Width="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="idPersonne" Visibility="Hidden" Grid.Row="0" Text="" Width="150"/>
+            <Label Content="Nom :" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Prenom :" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Code Postal :" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Adresse :" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" FontSize="14"/>
+            <Label Content="Ville :" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="14"/>
+            <TextBox x:Name="txtNom" Grid.Column="1" Grid.Row="1" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="150" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
+            <TextBox x:Name="txtPrenom" Grid.Column="1" Grid.Row="2" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="150" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
+            <TextBox x:Name="txtCodePostal" Grid.Column="1" Grid.Row="3" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="100" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged" MaxLength="5"/>
+            <TextBox x:Name="txtAdresse" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="" Background="White" Width="250" Height="50" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
+            <TextBox x:Name="txtVille" Grid.Column="1" Grid.Row="5" TextWrapping="WrapWithOverflow" Text="" Background="White" Width="200" Height="30" VerticalContentAlignment="Center" TextChanged="Txt_TextChanged"/>
+            <Button x:Name="btnCancel" Background="{DynamicResource GradientButtonCancel}" Content="Annuler" Grid.Row="6" Height="40" Width="100" Foreground="Black" Click="BtnCancel_Click">
+            </Button>
+            <Button x:Name="btnSave" Background="{DynamicResource GradientButtonSave}" Content="Enregistrer" Grid.Row="6" Grid.Column="2" Height="40" Width="100" Foreground="Black" IsEnabled="False" Click="BtnSave_Click">
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

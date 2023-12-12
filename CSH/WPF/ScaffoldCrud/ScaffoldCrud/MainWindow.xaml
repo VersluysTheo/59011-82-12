@@ -5,9 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScaffoldCrud"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="800" Width="800">
     <Grid>
-        <DataGrid x:Name="dtg"/>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dtg" SelectionChanged="Dtg_SelectionChanged" ColumnWidth="*">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB8CBCE"/>
+                    <GradientStop Color="#FFE0FAFF" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+        </DataGrid>
+        <Grid Background="{DynamicResource GridBackground1}" Grid.Column="1" HorizontalAlignment="Center" Height="784" VerticalAlignment="Center" Width="160">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnAdd" Content="Ajouter" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="125" FontSize="14" Click="BtnAction_Click" Background="{DynamicResource GradientButtonSave}"/>
+            <Button x:Name="btnUpdate"  Content="Modifier" Grid.Row="4" VerticalAlignment="Center" Height="30" Width="125" FontSize="14" IsEnabled="False" Click="BtnAction_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF97A2A7"/>
+                        <GradientStop Color="#FFCFE8F5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnDelete" Content="Supprimer" Grid.Row="6" VerticalAlignment="Center" Height="30" Width="125" FontSize="14" Background="{DynamicResource GradientButtonCancel}" IsEnabled="False" Click="BtnAction_Click"/>
+        </Grid>
     </Grid>
 </Window>

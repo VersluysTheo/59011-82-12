@@ -27,12 +27,12 @@ namespace ScaffoldCrud.Controllers
             _mapper = config.CreateMapper();
         }
 
-        public IEnumerable<PersonnesDTO> GetAllPersonnes()
+        public IEnumerable<Personne> GetAllPersonnes()
         {
             IEnumerable<Personne> listePersonnes = _service.GetAllPersonnes();
-            return _mapper.Map<IEnumerable<PersonnesDTO>>(listePersonnes);
+            return _mapper.Map<IEnumerable<Personne>>(listePersonnes);
         }
-        public ActionResult<PersonnesDTO> GetPersonneById(int id)
+        public ActionResult<PersonnesDTO> GetPersonneById(uint id)
         {
             var item = _service.GetPersonneById(id);
             if (item != null)
@@ -51,20 +51,20 @@ namespace ScaffoldCrud.Controllers
 
         }
 
-        public ActionResult UpdatePersonne(int id, PersonnesDTO personne)
+        public ActionResult UpdatePersonne( uint id, PersonnesDTO personneDTO)
         {
             var personneFromRepo = _service.GetPersonneById(id);
             if (personneFromRepo == null)
             {
                 return NotFound();
             }
-            _mapper.Map(personne, personneFromRepo);
+            _mapper.Map(personneDTO, personneFromRepo );
             _service.UpdatePersonne(personneFromRepo);
 
             return NoContent();
         }
 
-        public ActionResult DeletePersonne(int id)
+        public ActionResult DeletePersonne(uint id)
         {
             var personneModelFromRepo = _service.GetPersonneById(id);
             if (personneModelFromRepo == null)

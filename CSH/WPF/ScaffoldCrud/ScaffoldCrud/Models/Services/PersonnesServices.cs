@@ -18,28 +18,30 @@ namespace ScaffoldCrud.Models.Services
         {
             return _context.Personnes.ToList();
         }
-        public Personne? GetPersonneById(int id)
+        public Personne? GetPersonneById(uint id)
         {
             return _context.Personnes.FirstOrDefault(p => p.Id == id);
         }
-        public void AddPersonnes(Personne p)
+        public void AddPersonnes(Personne perso)
         {
-            if (p == null) throw new ArgumentNullException(nameof(p));
+            if (perso == null) throw new ArgumentNullException(nameof(perso));
 
-            _context.Personnes.Add(p);
+            _context.Personnes.Add(perso);
             _context.SaveChanges();
         }
-        public void DeletePersonne(Personne p)
+        public void DeletePersonne(Personne perso)
         {
             //si l'objet personne est null, on renvoi une exception
-            if (p == null) throw new ArgumentNullException(nameof(p));
+            if (perso == null) throw new ArgumentNullException(nameof(perso));
 
             // on met à jour le context
-            _context.Personnes.Remove(p);
+            _context.Personnes.Remove(perso);
             _context.SaveChanges();
         }
-        public void UpdatePersonne(Personne p)
+        public void UpdatePersonne(Personne perso)
         {
+            _context.Personnes.Update(perso);
+
             _context.SaveChanges();
         }
     }

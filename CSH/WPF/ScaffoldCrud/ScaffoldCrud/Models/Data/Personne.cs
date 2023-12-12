@@ -16,4 +16,19 @@ public partial class Personne
     public string Adresse { get; set; } = null!;
 
     public string Ville { get; set; } = null!;
+
+    public Personne(uint id,string nom, string prenom, int codePostal,string adresse, string ville)
+    {
+        Id = id;
+        Nom = nom;
+        Prenom = prenom;
+        CodePostal = codePostal;
+        Adresse = adresse;
+        Ville = ville;
+    }
+
+    public Personne()
+    {
+        
+    }
 }
