@@ -19,5 +19,6 @@
         </Grid.RowDefinitions>
         <Button Grid.Column="1" Content="Article" HorizontalAlignment="Left" Height="52" Margin="211,183,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Click="Button_Click_Articles"/>
         <Button Grid.Column="1" Content="Categorie" HorizontalAlignment="Left" Height="52" Margin="351,183,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82" Click="Button_Click_Categorie"/>
+        <Button Grid.Column="1" Content="Type Produits" HorizontalAlignment="Left" Height="52" Margin="501,183,0,0" Grid.Row="1" VerticalAlignment="Top" Width="82"/>
     </Grid>
 </Window>
