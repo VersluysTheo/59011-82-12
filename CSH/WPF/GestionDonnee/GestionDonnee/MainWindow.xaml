@@ -25,12 +25,12 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <TabControl HorizontalAlignment="Center" Height="563" Grid.Row="1" VerticalAlignment="Center" Width="770">
-                <TabItem Header="TabItem">
+                <TabItem Header="Articles">
                     <Grid Background="{DynamicResource DatagridBackground}">
                         <DataGrid x:Name="dtgArticles" ColumnWidth="*"/>
                     </Grid>
                 </TabItem>
-                <TabItem Header="TabItem">
+                <TabItem Header="Categories">
                     <Grid Background="{DynamicResource DatagridBackground}"/>
                 </TabItem>
             </TabControl>

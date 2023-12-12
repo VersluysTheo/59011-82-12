@@ -14,6 +14,9 @@ namespace GestionDonnee.Models.Profiles
         public ArticlesProfiles()
         {
             CreateMap<Article, ArticlesDTO>();
+            CreateMap<ArticlesDTO, Article>();
+            CreateMap<Article, ArticlesDTOin>();
+            CreateMap<ArticlesDTOin, Article>();
         }
     }
 }
