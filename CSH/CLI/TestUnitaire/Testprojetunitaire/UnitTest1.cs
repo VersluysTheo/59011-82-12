@@ -5,6 +5,9 @@ namespace Testprojetunitaire
 {
     public class Tests
     {
+        public const string DebitMontantSuperieurSoldeMessage = "Le montant à débiter est supérieur au solde";
+        public const string DebitMontantNegatifSoldeMessage = "Le montant à débiter est négatif";
+
         [SetUp]
         public void Setup()
         {
@@ -15,6 +18,7 @@ namespace Testprojetunitaire
         {
             Assert.Pass();
         }
+
 
         [Test]
         public void Debit_MontantValide()
@@ -54,5 +58,7 @@ namespace Testprojetunitaire
             Assert.Throws<ArgumentOutOfRangeException>(() =>
            compte.Debit(montantDebite));
         }
+
+        
     }
 }
