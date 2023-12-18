@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using System.Numerics;
+using System.Reflection.Metadata;
 using TestUnitaire;
 
 namespace Testprojetunitaire
@@ -43,11 +45,17 @@ namespace Testprojetunitaire
             double montantDebite = -4;
             Compte compte = new Compte("Mr Toto", soldeDepart);
             // Act et Assert
+
+            if (montantDebite < 0)
+            {
+                throw new ArgumentOutOfRangeException("montant", montantDebite,
+               DebitMontantNegatifSoldeMessage);
+            }
             Assert.Throws<ArgumentOutOfRangeException>(() =>
-           compte.Debit(montantDebite));
+            compte.Debit(montantDebite));
         }
 
-        [Test]
+            [Test]
         public void Debit_MontantSuperieurSolde()
         {
             // Arrange
@@ -55,6 +63,12 @@ namespace Testprojetunitaire
             double montantDebite = -44.55;
             Compte compte = new Compte("Mr Toto", soldeDepart);
             // Act et Assert
+            if (montantDebite > soldeDepart)
+            {
+                throw new ArgumentOutOfRangeException("montant", montantDebite,
+               DebitMontantSuperieurSoldeMessage);
+            }
+
             Assert.Throws<ArgumentOutOfRangeException>(() =>
            compte.Debit(montantDebite));
         }
