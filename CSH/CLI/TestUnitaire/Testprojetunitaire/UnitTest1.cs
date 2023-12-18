@@ -9,10 +9,14 @@ namespace Testprojetunitaire
     {
         public const string DebitMontantSuperieurSoldeMessage = "Le montant à débiter est supérieur au solde";
         public const string DebitMontantNegatifSoldeMessage = "Le montant à débiter est négatif";
+        Compte compte;
+        double SoldeDepart;
 
         [SetUp]
         public void Setup()
         {
+            double SoldeDepart = 11.99;
+            compte = new Compte("Mr Toto",SoldeDepart) ;
         }
 
         [Test]
@@ -26,10 +30,8 @@ namespace Testprojetunitaire
         public void Debit_MontantValide()
         {
             // Arrange
-            double soldeDepart = 11.99;
             double montantDebite = 4.55;
             double attendu = 7.44;
-            Compte compte = new Compte("Mr Toto", soldeDepart);
             // Act
             compte.Debit(montantDebite);
             // Assert
@@ -41,9 +43,7 @@ namespace Testprojetunitaire
         public void Debit_MontantNegatif()
         {
             // Arrange
-            double soldeDepart = 11.99;
             double montantDebite = -4;
-            Compte compte = new Compte("Mr Toto", soldeDepart);
             // Act et Assert
 
             if (montantDebite < 0)
@@ -59,11 +59,9 @@ namespace Testprojetunitaire
         public void Debit_MontantSuperieurSolde()
         {
             // Arrange
-            double soldeDepart = 11.99;
             double montantDebite = -44.55;
-            Compte compte = new Compte("Mr Toto", soldeDepart);
             // Act et Assert
-            if (montantDebite > soldeDepart)
+            if (montantDebite > SoldeDepart)
             {
                 throw new ArgumentOutOfRangeException("montant", montantDebite,
                DebitMontantSuperieurSoldeMessage);
